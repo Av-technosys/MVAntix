@@ -22,7 +22,7 @@ const HomePage = () => {
     <main className="min-h-screen bg-white">
       <section className="relative pt-20 pb-32 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10">
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-orange-100 rounded-full blur-[120px] opacity-50" />
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-cyan-100 rounded-full blur-[120px] opacity-50" />
           <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-cyan-100 rounded-full blur-[120px] opacity-50" />
         </div>
 
@@ -31,7 +31,7 @@ const HomePage = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 border border-orange-100 text-orange-600 text-sm font-bold mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 border border-cyan-100 text-cyan-600 text-sm font-bold mb-8"
             >
               <IconRocket size={16} />
               <span>Next-Gen Tech Solutions</span>
@@ -41,10 +41,14 @@ const HomePage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-6xl md:text-8xl font-black tracking-tighter text-black uppercase italic leading-[0.9]"
+              className="text-4xl md:text-8xl font-black tracking-tighter text-black uppercase italic leading-[0.9]"
             >
               ACCELERATING <br />
-              <span className="text-orange-600">DIGITAL</span> FUTURE
+              <span className="text-[#7191e6]
+
+
+
+">DIGITAL</span> FUTURE
             </motion.h1>
 
             <motion.p
@@ -64,7 +68,7 @@ const HomePage = () => {
               transition={{ delay: 0.3 }}
               className="mt-10 flex flex-col sm:flex-row gap-4"
             >
-              <Button className="bg-black hover:bg-orange-600 text-white px-8 py-7 rounded-2xl text-lg font-bold transition-all group">
+              <Button className="bg-black hover:bg-cyan-600 text-white px-8 py-7 rounded-2xl text-lg font-bold transition-all group">
                 Start Project{" "}
                 <IconArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -110,9 +114,13 @@ const FeatureCard = ({ icon, title, desc, delay }: FeatureCardProps) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay }}
-    className="p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:border-orange-200 hover:bg-white hover:shadow-xl transition-all group"
+    className="p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:border-cyan-200 hover:bg-white hover:shadow-xl transition-all group"
   >
-    <div className="text-orange-600 mb-4 group-hover:scale-110 transition-transform duration-300">
+    <div className="text-[#7191e6]
+
+
+
+ mb-4 group-hover:scale-110 transition-transform duration-300">
       {icon}
     </div>
     <h3 className="text-2xl font-black italic uppercase tracking-tighter mb-2">

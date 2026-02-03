@@ -36,7 +36,11 @@ const ContactPage = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-6xl md:text-8xl font-black italic uppercase tracking-tighter leading-none mb-8">
-              LET'S <br /> <span className="text-cyan-500">CONNECT.</span>
+              LET'S <br /> <span className="text-[#7191e6]
+
+
+
+">CONNECT.</span>
             </h1>
             <p className="text-gray-400 text-lg font-medium max-w-md mb-12 leading-relaxed">
               Have a groundbreaking idea? Our team is ready to turn your digital vision into a cinematic reality.
@@ -44,7 +48,15 @@ const ContactPage = () => {
 
             <div className="space-y-8">
               <div className="flex items-start gap-6 group">
-                <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-cyan-500 border border-white/10 group-hover:border-cyan-500/50 transition-all">
+                <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-[#7191e6]
+
+
+
+ border border-white/10 group-hover:border-[#7191e6]
+
+
+
+/50 transition-all">
                   <Mail size={20} />
                 </div>
                 <div>
@@ -54,7 +66,15 @@ const ContactPage = () => {
               </div>
 
               <div className="flex items-start gap-6 group">
-                <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-cyan-500 border border-white/10 group-hover:border-cyan-500/50 transition-all">
+                <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-[#7191e6]
+
+
+
+ border border-white/10 group-hover:border-[#7191e6]
+
+
+
+/50 transition-all">
                   <Phone size={20} />
                 </div>
                 <div>
@@ -71,7 +91,11 @@ const ContactPage = () => {
                   key={i}
                   href="#"
                   whileHover={{ y: -5, scale: 1.1 }}
-                  className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all"
+                  className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#7191e6]
+
+
+
+ hover:text-black transition-all"
                 >
                   <Icon size={20} />
                 </motion.a>
@@ -96,7 +120,11 @@ const ContactPage = () => {
                   <input 
                     type="text" 
                     placeholder="Enter your name"
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-cyan-500/50 focus:bg-white/10 transition-all font-medium"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-[#7191e6]
+
+
+
+/50 focus:bg-white/10 transition-all font-medium"
                     required
                   />
                 </div>
@@ -108,7 +136,11 @@ const ContactPage = () => {
                   <input 
                     type="email" 
                     placeholder="Enter your email"
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-cyan-500/50 focus:bg-white/10 transition-all font-medium"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-[#7191e6]
+
+
+
+/50 focus:bg-white/10 transition-all font-medium"
                     required
                   />
                 </div>
@@ -123,7 +155,11 @@ const ContactPage = () => {
                   <input 
                     type="tel" 
                     placeholder="Enter phone number"
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-cyan-500/50 focus:bg-white/10 transition-all font-medium"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-[#7191e6]
+
+
+
+/50 focus:bg-white/10 transition-all font-medium"
                   />
                 </div>
                 {/* Company Name */}
@@ -134,7 +170,11 @@ const ContactPage = () => {
                   <input 
                     type="text" 
                     placeholder="Enter company name"
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-cyan-500/50 focus:bg-white/10 transition-all font-medium"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-[#7191e6]
+
+
+
+/50 focus:bg-white/10 transition-all font-medium"
                   />
                 </div>
               </div>
@@ -147,7 +187,11 @@ const ContactPage = () => {
                 <input 
                   type="text" 
                   placeholder="How can we help?"
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-cyan-500/50 focus:bg-white/10 transition-all font-medium"
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-[#7191e6]
+
+
+
+/50 focus:bg-white/10 transition-all font-medium"
                   required
                 />
               </div>
@@ -160,7 +204,11 @@ const ContactPage = () => {
                 <textarea 
                   rows={4}
                   placeholder="Tell us more..."
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-cyan-500/50 focus:bg-white/10 transition-all font-medium resize-none"
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-[#7191e6]
+
+
+
+/50 focus:bg-white/10 transition-all font-medium resize-none"
                   required
                 />
               </div>
@@ -168,7 +216,11 @@ const ContactPage = () => {
               <motion.button 
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-cyan-500 text-black py-6 rounded-2xl font-black uppercase italic tracking-tighter flex items-center justify-center gap-3 group overflow-hidden relative"
+                className="w-full bg-[#7191e6]
+
+
+
+ text-black py-6 rounded-2xl font-black uppercase italic tracking-tighter flex items-center justify-center gap-3 group overflow-hidden relative"
               >
                 <span className="relative z-10">Send Inquiry</span>
                 <Send size={20} className="relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
