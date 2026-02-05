@@ -36,9 +36,17 @@ const ValueCard = ({ icon, title, desc }: ValueCardProps) => (
   <motion.div
     variants={fadeInUp}
     whileHover={{ y: -10 }}
-    className="group relative p-8 rounded-2xl bg-[#0A0A0A] border border-white/5 hover:border-cyan-500/30 transition-all duration-500"
+    className="group relative p-8 rounded-2xl bg-[#0A0A0A] border border-white/5 hover:border-[#7191e6]
+
+
+
+/30 transition-all duration-500"
   >
-    <div className="text-cyan-400 mb-6 group-hover:scale-110 transition-transform duration-500">
+    <div className="text-[#7191e6]
+
+
+
+ mb-6 group-hover:scale-110 transition-transform duration-500">
       {icon}
     </div>
     <h3 className="text-xl font-bold text-white uppercase tracking-tighter mb-3 italic">
@@ -53,7 +61,11 @@ const ValueCard = ({ icon, title, desc }: ValueCardProps) => (
 const Stat = ({ label, value }: StatProps) => (
   <div className="flex flex-col">
     <span className="text-4xl md:text-5xl font-black text-white italic tracking-tighter mb-1">{value}</span>
-    <span className="text-xs uppercase tracking-[0.2em] text-cyan-500 font-bold">{label}</span>
+    <span className="text-xs uppercase tracking-[0.2em] text-[#7191e6]
+
+
+
+ font-bold">{label}</span>
   </div>
 );
 
@@ -71,7 +83,11 @@ export default function AboutPage() {
   const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   return (
-    <main ref={containerRef} className="bg-[#050505] text-white overflow-x-hidden selection:bg-cyan-500 selection:text-black">
+    <main ref={containerRef} className="bg-[#050505] text-white overflow-x-hidden selection:bg-[#7191e6]
+
+
+
+ selection:text-black">
       
       {/* 1. Cinematic Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden px-6">
@@ -152,7 +168,11 @@ export default function AboutPage() {
       </section>
 
       {/* 4. Scrolling Text Marquee */}
-      <section className="py-20 bg-cyan-500 text-black overflow-hidden">
+      <section className="py-20 bg-[#7191e6]
+
+
+
+ text-black overflow-hidden">
         <motion.div 
           animate={{ x: ["0%", "-50%"] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -168,7 +188,11 @@ export default function AboutPage() {
 
       {/* 5. Final CTA */}
       <section className="py-40 px-6 text-center relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-cyan-500/5 blur-[120px] -z-10" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[#7191e6]
+
+
+
+/5 blur-[120px] -z-10" />
        <motion.div 
   initial={{ opacity: 0, y: 40 }}
   whileInView={{ opacity: 1, y: 0 }}
@@ -176,9 +200,17 @@ export default function AboutPage() {
   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
 >
   <h2 className="text-5xl md:text-8xl font-black uppercase italic tracking-tighter mb-10 leading-none">
-    START THE <br /><span className="text-cyan-500">REVOLUTION</span>
+    START THE <br /><span className="text-[#7191e6]
+
+
+
+">REVOLUTION</span>
   </h2>
-  <button className="group bg-white text-black px-12 py-6 rounded-full text-xl font-bold uppercase italic flex items-center gap-3 mx-auto hover:bg-cyan-500 transition-colors">
+  <button className="group bg-white text-black px-12 py-6 rounded-full text-xl font-bold uppercase italic flex items-center gap-3 mx-auto hover:bg-[#7191e6]
+
+
+
+ transition-colors">
   <Link href={"/contact"}>  Contact Us</Link> <ArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
   </button>
 </motion.div>

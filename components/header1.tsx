@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image"; // Image import kiya
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   IconMenu2, 
@@ -31,10 +32,9 @@ const Header1 = () => {
 
   return (
     <>
-      {/* Spacer taaki content header ke peeche na chhupa rahe */}
       <div className="h-20 md:h-[90px] w-full pointer-events-none" />
 
-      <header className="fixed top-0 left-0 right-0 z-100 transition-all duration-500">
+      <header className="fixed top-0 left-0 right-0 z-[100] transition-all duration-500">
         <div 
           className={`mx-auto transition-all duration-500 ${
             isScrolled 
@@ -43,40 +43,46 @@ const Header1 = () => {
           }`}
         >
           <div className="flex items-center justify-between">
-            
-            {/* LEFT SIDE: Contact Route */}
+        
             <div className="hidden md:flex items-center gap-6 flex-1">
               <Link 
                 href="/contact" 
                 className={`group relative flex items-center gap-3 text-sm font-semibold transition-all ${isScrolled ? 'text-white' : 'text-black'}`}
               >
                 <div className="relative">
-                  <div className="absolute inset-0 bg-orange-500/40 rounded-full animate-ping scale-75" />
-                  <div className="relative p-2 bg-orange-600 rounded-full text-white shadow-[0_0_15px_rgba(234,88,12,0.4)]">
+                  <div className="absolute inset-0 bg-[#7191e6]/40 rounded-full animate-ping scale-75" />
+                  <div className="relative p-2 bg-[#7191e6] rounded-full text-white shadow-[0_0_15px_rgba(113,145,230,0.4)]">
                     <IconPhone size={14} />
                   </div>
                 </div>
                 <div className="flex flex-col leading-none">
-                  <span className="text-[10px] uppercase text-orange-500 font-bold tracking-tighter">Availability</span>
-                  <span className="group-hover:text-orange-400 transition-colors">Get in Touch</span>
+                  <span className="text-[10px] uppercase text-[#7191e6] font-bold tracking-tighter">Availability</span>
+                  <span className="group-hover:text-[#7191e6] transition-colors">Get in Touch</span>
                 </div>
               </Link>
             </div>
 
-            {/* MIDDLE: Logo (Back to Home) */}
+            {/* Logo Section Start */}
             <div className="flex-none">
               <Link href="/" className="group flex flex-col items-center">
-                <motion.span 
-                  className={`text-2xl md:text-3xl font-black tracking-tighter uppercase italic transition-colors ${isScrolled ? 'text-white' : 'text-black'}`}
+                <motion.div 
                   whileHover={{ scale: 1.05 }}
+                  className="relative h-10 w-32 md:h-12 md:w-40" // Logo ki size yahan se adjust karein
                 >
-                  MVA<span className="text-orange-500">NTIX</span>
-                </motion.span>
-                <div className="h-0.5 w-0 bg-orange-500 group-hover:w-full transition-all duration-300" />
+                  <Image
+                    src="/images/mainlogo.png"
+                    alt="Mvantix Logo"
+                    fill
+                    priority
+                    className={`object-contain transition-all duration-500 ${isScrolled ? 'brightness-0 invert' : ''}`} 
+                    // brightness-0 invert: Scroll hone par logo white ho jayega (agar dark background hai)
+                  />
+                </motion.div>
+                <div className="h-0.5 w-0 bg-[#7191e6] group-hover:w-full transition-all duration-300 mt-1" />
               </Link>
             </div>
+            {/* Logo Section End */}
 
-            {/* RIGHT SIDE: Navigation Routes */}
             <div className="hidden md:flex items-center justify-end gap-6 flex-1">
               <nav className="flex items-center gap-6 ">
                 {[
@@ -90,42 +96,38 @@ const Header1 = () => {
                     className={`text-xs font-bold uppercase tracking-widest transition-all relative group ${isScrolled ? 'text-white/70 hover:text-white' : 'text-black/70 hover:text-black'}`}
                   >
                     {item.name}
-                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-orange-500 group-hover:w-full transition-all" />
+                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#7191e6] group-hover:w-full transition-all" />
                   </Link>
                 ))}
               </nav>
-
-              {/* Shadcn Dropdown with Links */}
               <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white rounded-full px-5 py-2 text-xs font-black uppercase tracking-tighter transition-all outline-none focus:ring-2 ring-orange-500 ring-offset-2 ring-offset-black">
+                <DropdownMenuTrigger className="flex items-center gap-2 bg-[#7191e6] hover:bg-[#5a7bc7] text-white rounded-full px-5 py-2 text-xs font-black uppercase tracking-tighter transition-all outline-none focus:ring-2 ring-[#7191e6] ring-offset-2 ring-offset-black">
                   Quick Link <IconChevronDown size={14} />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56 bg-black border-white/10 text-white font-poppins rounded-xl shadow-2xl">
-                  <DropdownMenuLabel className="text-orange-500 text-[10px] uppercase tracking-widest">Navigation</DropdownMenuLabel>
+                  <DropdownMenuLabel className="text-[#7191e6] text-[10px] uppercase tracking-widest">Navigation</DropdownMenuLabel>
                   <DropdownMenuSeparator className="bg-white/10" />
                   
-                  <DropdownMenuItem asChild className="focus:bg-orange-600 focus:text-white cursor-pointer py-3">
+                  <DropdownMenuItem asChild className="focus:bg-[#7191e6] focus:text-white cursor-pointer py-3">
                     <Link href="/portfolio" className="flex w-full items-center justify-between">Portfolio <IconArrowRight size={14}/></Link>
                   </DropdownMenuItem>
                   
-                  <DropdownMenuItem asChild className="focus:bg-orange-600 focus:text-white cursor-pointer py-3">
+                  <DropdownMenuItem asChild className="focus:bg-[#7191e6] focus:text-white cursor-pointer py-3">
                     <Link href="/careers" className="flex w-full items-center justify-between">Careers <IconArrowRight size={14}/></Link>
                   </DropdownMenuItem>
                   
-                  <DropdownMenuItem asChild className="focus:bg-orange-600 focus:text-white cursor-pointer py-3">
+                  <DropdownMenuItem asChild className="focus:bg-[#7191e6] focus:text-white cursor-pointer py-3">
                     <Link href="/blog" className="flex w-full items-center justify-between">Tech Blog <IconArrowRight size={14}/></Link>
                   </DropdownMenuItem>
                   
                   <DropdownMenuSeparator className="bg-white/10" />
                   
-                  <DropdownMenuItem asChild className="text-orange-500 font-bold focus:bg-white focus:text-black cursor-pointer">
+                  <DropdownMenuItem asChild className="text-[#7191e6] font-bold focus:bg-white focus:text-black cursor-pointer">
                      <Link href="/contact" className="w-full">Project Inquiry</Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
-
-            {/* Mobile Toggle */}
             <div className="md:hidden">
               <button 
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -136,8 +138,6 @@ const Header1 = () => {
             </div>
           </div>
         </div>
-
-        {/* Mobile Menu Overlay with Links */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
@@ -161,7 +161,7 @@ const Header1 = () => {
                   <Link 
                     href={item.path}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-4xl font-black text-white hover:text-orange-500 uppercase italic tracking-tighter"
+                    className="text-4xl font-black text-white hover:text-[#7191e6] uppercase italic tracking-tighter"
                   >
                     {item.name}
                   </Link>

@@ -60,13 +60,29 @@ const ServiceCard = ({ title, desc, icon, index }: ServiceProps) => (
     viewport={{ once: true }}
     transition={{ delay: index * 0.1, duration: 0.8 }}
     whileHover={{ scale: 1.02 }}
-    className="relative group p-10 rounded-full bg-[#0A0A0A] border border-white/5 overflow-hidden"
+    className="relative group p-10  bg-[#0A0A0A] border border-white/5 overflow-hidden"
   >
     {/* Animated Background Glow */}
-    <div className="absolute inset-0 bg-linear-to-br from-cyan-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    <div className="absolute inset-0 bg-linear-to-br from-[#7191e6]
+
+
+
+/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     
     <div className="relative z-10">
-      <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center text-cyan-500 mb-8 border border-white/10 group-hover:border-cyan-500/50 group-hover:bg-cyan-500/10 transition-all duration-500">
+      <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center text-[#7191e6]
+
+
+
+ mb-8 border border-white/10 group-hover:border-[#7191e6]
+
+
+
+/50 group-hover:bg-[#7191e6]
+
+
+
+/10 transition-all duration-500">
         {icon}
       </div>
       <h3 className="text-2xl font-black italic uppercase tracking-tighter text-white mb-4">
@@ -75,7 +91,11 @@ const ServiceCard = ({ title, desc, icon, index }: ServiceProps) => (
       <p className="text-gray-500 font-medium leading-relaxed mb-6 group-hover:text-gray-300 transition-colors">
         {desc}
       </p>
-      <div className="flex items-center gap-2 text-cyan-500 font-bold uppercase text-xs tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all transform -translate-x-2.5 group-hover:translate-x-0">
+      <div className="flex items-center gap-2 text-[#7191e6]
+
+
+
+ font-bold uppercase text-xs tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all transform -translate-x-2.5 group-hover:translate-x-0">
         Read More <ArrowRight size={14} />
       </div>
     </div>
@@ -97,9 +117,17 @@ export default function ServicesPage() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-3 text-cyan-500 font-black uppercase tracking-[0.4em] text-sm mb-6"
+            className="flex items-center gap-3 text-[#7191e6]
+
+
+
+ font-black uppercase tracking-[0.4em] text-sm mb-6"
           >
-            <div className="w-10 h-0.5 bg-cyan-500" />
+            <div className="w-10 h-0.5 bg-[#7191e6]
+
+
+
+" />
             Our Expertise
           </motion.div>
           
@@ -132,7 +160,11 @@ export default function ServicesPage() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mt-32 p-1 bg-linear-to-r from-transparent via-cyan-500/50 to-transparent rounded-[3rem]"
+          className="mt-32 p-1 bg-linear-to-r from-transparent via-[#7191e6]
+
+
+
+/50 to-transparent rounded-[3rem]"
         >
           <div className="bg-[#080808] rounded-[2.9rem] py-20 px-10 text-center">
             <h2 className="text-3xl md:text-5xl font-black italic uppercase tracking-tighter mb-8">
@@ -141,7 +173,11 @@ export default function ServicesPage() {
             <p className="text-gray-400 max-w-2xl mx-auto mb-10 font-medium">
               Every business is unique. We don't believe in one-size-fits-all. Tell us your vision, and we'll build the tech to reach it.
             </p>
-            <button className="bg-cyan-500 text-black px-14 py-6 rounded-full font-black uppercase italic tracking-tighter hover:bg-white transition-all transform hover:scale-105 active:scale-95">
+            <button className="bg-[#7191e6]
+
+
+
+ text-black px-14 py-6 rounded-full font-black uppercase italic tracking-tighter hover:bg-white transition-all transform hover:scale-105 active:scale-95">
               Get a Quote Now
             </button>
           </div>
