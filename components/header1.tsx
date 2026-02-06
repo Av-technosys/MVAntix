@@ -34,11 +34,11 @@ const Header1 = () => {
     <>
       <div className="h-20 md:h-[90px] w-full pointer-events-none" />
 
-      <header className="fixed top-0 left-0 right-0 z-[100] transition-all duration-500">
+      <header className="fixed top-0 left-0 right-0 z-100 transition-all duration-500">
         <div 
           className={`mx-auto transition-all duration-500 ${
             isScrolled 
-              ? "max-w-5xl mt-4 rounded-full bg-black/90 backdrop-blur-lg border border-white/10 px-8 py-3 shadow-2xl" 
+              ? "max-w-5xl mt-4 rounded-full bg-black/10 backdrop-blur-[2px] border border-white/10 px-8 py-3 shadow-2xl" 
               : "max-w-full bg-white/50 backdrop-blur-sm px-10 py-6"
           }`}
         >
@@ -93,7 +93,7 @@ const Header1 = () => {
                   <Link 
                     key={item.name}
                     href={item.path}
-                    className={`text-xs font-bold uppercase tracking-widest transition-all relative group ${isScrolled ? 'text-white/70 hover:text-white' : 'text-black/70 hover:text-black'}`}
+                    className={`text-xs font-bold uppercase tracking-widest transition-all relative group ${isScrolled ? 'text-white' : 'text-black/70 hover:text-black'}`}
                   >
                     {item.name}
                     <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#7191e6] group-hover:w-full transition-all" />

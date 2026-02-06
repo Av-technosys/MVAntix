@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { 
   Mail, 
   Phone, 
-  MapPin, 
   Send, 
   Twitter, 
   Instagram, 
@@ -36,7 +35,7 @@ const ContactPage = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-6xl md:text-8xl font-black italic uppercase tracking-tighter leading-none mb-8">
-              LET'S <br /> <span className="text-[#7191e6]
+              LET&apos;S <br /> <span className="text-[#7191e6]
 
 
 
