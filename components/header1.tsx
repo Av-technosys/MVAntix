@@ -4,10 +4,10 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image"; // Image import kiya
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  IconMenu2, 
-  IconX, 
-  IconPhone, 
+import {
+  IconMenu2,
+  IconX,
+  IconPhone,
   IconChevronDown,
   IconArrowRight
 } from "@tabler/icons-react";
@@ -35,18 +35,17 @@ const Header1 = () => {
       <div className="h-20 md:h-[90px] w-full pointer-events-none" />
 
       <header className="fixed top-0 left-0 right-0 z-100 transition-all duration-500">
-        <div 
-          className={`mx-auto transition-all duration-500 ${
-            isScrolled 
-              ? "max-w-5xl mt-4 rounded-full bg-black/10 backdrop-blur-[2px] border border-white/10 px-8 py-3 shadow-2xl" 
-              : "max-w-full bg-white/50 backdrop-blur-sm px-10 py-6"
-          }`}
+        <div
+          className={`mx-auto transition-all duration-500 ${isScrolled
+            ? "max-w-6xl mt-2 rounded-full bg-black/10 backdrop-blur-[2px] border border-white/10 px-8 py-3 shadow-2xl"
+            : "max-w-full bg-white/50 backdrop-blur-sm px-10 py-6"
+            }`}
         >
           <div className="flex items-center justify-between">
-        
+
             <div className="hidden md:flex items-center gap-6 flex-1">
-              <Link 
-                href="/contact" 
+              <Link
+                href="/contact"
                 className={`group relative flex items-center gap-3 text-sm font-semibold transition-all ${isScrolled ? 'text-white' : 'text-black'}`}
               >
                 <div className="relative">
@@ -65,7 +64,7 @@ const Header1 = () => {
             {/* Logo Section Start */}
             <div className="flex-none">
               <Link href="/" className="group flex flex-col items-center">
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.05 }}
                   className="relative h-10 w-32 md:h-12 md:w-40" // Logo ki size yahan se adjust karein
                 >
@@ -74,8 +73,8 @@ const Header1 = () => {
                     alt="Mvantix Logo"
                     fill
                     priority
-                    className={`object-contain transition-all duration-500 ${isScrolled ? 'brightness-0 invert' : ''}`} 
-                    // brightness-0 invert: Scroll hone par logo white ho jayega (agar dark background hai)
+                    className={`object-contain transition-all duration-500 ${isScrolled ? 'brightness-0 invert' : ''}`}
+                  // brightness-0 invert: Scroll hone par logo white ho jayega (agar dark background hai)
                   />
                 </motion.div>
                 <div className="h-0.5 w-0 bg-[#7191e6] group-hover:w-full transition-all duration-300 mt-1" />
@@ -86,11 +85,11 @@ const Header1 = () => {
             <div className="hidden md:flex items-center justify-end gap-6 flex-1">
               <nav className="flex items-center gap-6 ">
                 {[
-                    { name: "Home", path: "/" },
-                    { name: "About", path: "/about" },
-                    { name: "Services", path: "/services" }
+                  { name: "Home", path: "/" },
+                  { name: "About", path: "/about" },
+                  { name: "Services", path: "/services" }
                 ].map((item) => (
-                  <Link 
+                  <Link
                     key={item.name}
                     href={item.path}
                     className={`text-xs font-bold uppercase tracking-widest transition-all relative group ${isScrolled ? 'text-white' : 'text-black/70 hover:text-black'}`}
@@ -107,29 +106,29 @@ const Header1 = () => {
                 <DropdownMenuContent className="w-56 bg-black border-white/10 text-white font-poppins rounded-xl shadow-2xl">
                   <DropdownMenuLabel className="text-[#7191e6] text-[10px] uppercase tracking-widest">Navigation</DropdownMenuLabel>
                   <DropdownMenuSeparator className="bg-white/10" />
-                  
+
                   <DropdownMenuItem asChild className="focus:bg-[#7191e6] focus:text-white cursor-pointer py-3">
-                    <Link href="/portfolio" className="flex w-full items-center justify-between">Portfolio <IconArrowRight size={14}/></Link>
+                    <Link href="/portfolio" className="flex w-full items-center justify-between">Portfolio <IconArrowRight size={14} /></Link>
                   </DropdownMenuItem>
-                  
+
                   <DropdownMenuItem asChild className="focus:bg-[#7191e6] focus:text-white cursor-pointer py-3">
-                    <Link href="/careers" className="flex w-full items-center justify-between">Careers <IconArrowRight size={14}/></Link>
+                    <Link href="/career" className="flex w-full items-center justify-between">Career <IconArrowRight size={14} /></Link>
                   </DropdownMenuItem>
-                  
+
                   <DropdownMenuItem asChild className="focus:bg-[#7191e6] focus:text-white cursor-pointer py-3">
-                    <Link href="/blog" className="flex w-full items-center justify-between">Tech Blog <IconArrowRight size={14}/></Link>
+                    <Link href="/blog" className="flex w-full items-center justify-between">Tech Blog <IconArrowRight size={14} /></Link>
                   </DropdownMenuItem>
-                  
+
                   <DropdownMenuSeparator className="bg-white/10" />
-                  
+
                   <DropdownMenuItem asChild className="text-[#7191e6] font-bold focus:bg-white focus:text-black cursor-pointer">
-                     <Link href="/contact" className="w-full">Project Inquiry</Link>
+                    <Link href="/contact" className="w-full">Project Inquiry</Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
             <div className="md:hidden">
-              <button 
+              <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className={`p-2 rounded-full ${isScrolled ? 'text-white bg-white/10' : 'text-black bg-black/5'}`}
               >
@@ -158,7 +157,7 @@ const Header1 = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: i * 0.1 }}
                 >
-                  <Link 
+                  <Link
                     href={item.path}
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-4xl font-black text-white hover:text-[#7191e6] uppercase italic tracking-tighter"
