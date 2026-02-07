@@ -16,9 +16,9 @@ const AboutCommit = () => {
           className="text-lg md:text-xl leading-relaxed mb-10"
           style={{ color: "#000000" }}
         >
-          Plug and play isn’t a dream; it’s our standard. We are committed to
+          Plug and play isn&apos;t a dream; it&apos;s our standard. We are committed to
           ethical AI adoption, inclusive growth, and long-term partnerships.
-          When you choose MVANTIX, you aren't just filling a seat; you are
+          When you choose MVANTIX, you aren&apos;t just filling a seat; you are
           gaining a competitive edge.
         </p>
 

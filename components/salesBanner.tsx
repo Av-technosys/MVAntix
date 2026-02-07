@@ -1,0 +1,78 @@
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+
+const SalesBanner = () => {
+  return (
+    <section className="relative w-full min-h-[80vh] flex items-center bg-white overflow-hidden py-20">
+      {/* Background Accent - Isse layout "alag" dikhega */}
+      <div className="absolute top-0 right-0 w-[40%] h-full bg-[#3d52a1]/3 hidden lg:block" />
+      <div className="absolute top-10 right-20 w-32 h-32 border-20 border-[#7191e6]/10 rounded-4xl hidden lg:block" />
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          {/* Main Title Section - Left */}
+          <div className="lg:col-span-8">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-0.5 bg-[#7191e6]" />
+                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#7191e6]">
+                  The New Standard
+                </span>
+              </div>
+              
+              <h1 className="text-4xl md:text-4xl lg:text-5xl font-black text-black leading-[0.95] tracking-tighter uppercase italic">
+                Enterprise Talent & <br />
+                <span className="not-italic text-[#7191e6]">Technology Solutions</span> <br />
+                Built for Performance
+              </h1>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="mt-12 max-w-2xl"
+            >
+              <p className="text-xl md:text-2xl text-gray-400 font-medium leading-tight">
+              MVANTIX delivers end to end talent and technology services designed to help enterprises 
+                <span className="text-[#3d52a1] font-bold"> scale faster</span>, reduce hiring risk, 
+                and execute digital transformation with confidence.
+              </p>
+              
+            
+            </motion.div>
+          </div>
+
+          {/* Side Content Section - Right (Stacked uniquely) */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="lg:col-span-4 lg:mt-25"
+          >
+            <div className="relative p-10 bg-[#3d52a1] text-white rounded-br-[80px]">
+              <div className="absolute -top-6 -left-6 w-12 h-12 bg-[#7191e6]" />
+              
+              <p className="text-lg font-medium leading-relaxed italic opacity-90">
+                &quot;Our services combine enterprise platforms, AI driven solutions, and performance validated talent, enabling organizations to build smarter teams, stronger workflows, and future-ready operations.&quot;
+
+              </p>
+              
+             
+            </div>
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default SalesBanner;
