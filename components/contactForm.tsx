@@ -116,7 +116,7 @@ const ContactForm = () => {
                       name="email"
                       type="email"
                       required
-                      placeholder="Enter your email"
+                      placeholder="Enter your email-id"
                       className="bg-gray-50 h-12"
                     />
                   </div>
