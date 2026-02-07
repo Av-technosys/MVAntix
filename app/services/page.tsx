@@ -171,7 +171,7 @@ export default function ServicesPage() {
               Need a Custom Solution?
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto mb-10 font-medium">
-              Every business is unique. We don't believe in one-size-fits-all. Tell us your vision, and we'll build the tech to reach it.
+              Every business is unique. We don&apos;=t believe in one-size-fits-all. Tell us your vision, and we&apos;ll build the tech to reach it.
             </p>
             <button className="bg-[#7191e6]
 
