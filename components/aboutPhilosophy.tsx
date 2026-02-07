@@ -15,7 +15,7 @@ const layers = [
   },
   {
     title: "Execution Intelligence",
-    desc: "Discipline and ownership. Moving projects through sprint cycles with speed and accountability.",
+    desc: "Discipline and ownership. Moving projects through sprint cycles with speed and accountabity",
   },
 ];
 
