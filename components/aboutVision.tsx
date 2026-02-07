@@ -23,12 +23,12 @@ const AboutVision = () => {
         {/* Mission Card */}
         <div className="group bg-[#dfe8e6] text-gray-900 rounded-2xl p-8 shadow-lg 
         transition-all duration-300 hover:shadow-2xl hover:scale-105
-        hover:bg-gradient-to-br hover:from-[#3d52a1] hover:to-[#7191e6] hover:text-white">
+        hover:bg-linear-to-br hover:from-[#3d52a1] hover:to-[#7191e6] hover:text-white">
 
           <FaBullseye className="text-4xl mb-4 text-green-600 transition duration-300 group-hover:text-white" />
           <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
           <p className="leading-relaxed">
-            Creating "Day One Ready" Professionals to transform individuals into high value professionals who contribute to enterprise environments immediately. We achieve this by aligning our specialized learning programs with real world business requirements. We focus on the Whole Professional balancing technical expertise with cognitive and communication intelligence. Through live projects, simulations, and dedicated mentorship, we ensure performance is validated through action. At MVANTIX, we don’t just train talent; we forge professionals who deliver results from their very first hour on the job.
+            Creating &quot;Day One Ready&quot; Professionals to transform individuals into high value professionals who contribute to enterprise environments immediately. We achieve this by aligning our specialized learning programs with real world business requirements. We focus on the Whole Professional balancing technical expertise with cognitive and communication intelligence. Through live projects, simulations, and dedicated mentorship, we ensure performance is validated through action. At MVANTIX, we don’t just train talent; we forge professionals who deliver results from their very first hour on the job.
 
           </p>
         </div>
