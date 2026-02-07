@@ -4,10 +4,10 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image"; // Image import kiya
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  IconMenu2, 
-  IconX, 
-  IconPhone, 
+import {
+  IconMenu2,
+  IconX,
+  IconPhone,
   IconChevronDown,
   IconArrowRight,
 } from "@tabler/icons-react";
@@ -51,8 +51,8 @@ const Header1 = () => {
         
             {/* Left: Contact */}
             <div className="hidden md:flex items-center gap-6 flex-1">
-              <Link 
-                href="/contact" 
+              <Link
+                href="/contact"
                 className={`group relative flex items-center gap-3 text-sm font-semibold transition-all ${isScrolled ? 'text-white' : 'text-black'}`}
               >
                 <div className="relative p-2 bg-[#7191e6] rounded-full text-white">
