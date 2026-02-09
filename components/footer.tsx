@@ -23,7 +23,8 @@ const Footer = () => {
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-75 bg-[#7191e6]/5 blur-[120px] rounded-full -z-10" />
 
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 mb-20">
+
             
             {/* Brand Column - Logo Added Here */}
             <div className="lg:col-span-1">
@@ -51,16 +52,73 @@ const Footer = () => {
             {/* Navigation Links */}
             <div>
               <h4 className="text-xs uppercase tracking-[0.3em] text-white font-semibold mb-8">Navigation</h4>
-              <ul className="space-y-4">
-                {['About Us', 'Services', 'Projects', 'Contact'].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="text-gray-500 hover:text-[#7191e6] transition-colors font-bold uppercase text-sm flex items-center group">
-                      {item} <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 ml-1 transition-all group-hover:translate-x-1" />
-                    </a>
-                  </li>
-                ))}
-              </ul>
+            <ul className="space-y-4">
+  <li>
+    <Link href="/about" className="text-gray-500 hover:text-[#7191e6] transition-colors font-bold uppercase text-sm flex items-center group">
+      About Us
+      <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 ml-1 transition-all group-hover:translate-x-1" />
+    </Link>
+  </li>
+
+    <li>
+    <Link href="/blog" className="text-gray-500 hover:text-[#7191e6] transition-colors font-bold uppercase text-sm flex items-center group">
+      Blog
+      <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 ml-1 transition-all group-hover:translate-x-1" />
+    </Link>
+  </li>
+   <li>
+    <Link href="/career" className="text-gray-500 hover:text-[#7191e6] transition-colors font-bold uppercase text-sm flex items-center group">
+     Careers
+      <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 ml-1 transition-all group-hover:translate-x-1" />
+    </Link>
+  </li>
+  <li>
+    <Link href="/case-study" className="text-gray-500 hover:text-[#7191e6] transition-colors font-bold uppercase text-sm flex items-center group">
+     Case Study
+      <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 ml-1 transition-all group-hover:translate-x-1" />
+    </Link>
+  </li>
+
+  <li>
+    <Link href="/contact" className="text-gray-500 hover:text-[#7191e6] transition-colors font-bold uppercase text-sm flex items-center group">
+      Contact Us
+      <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 ml-1 transition-all group-hover:translate-x-1" />
+    </Link>
+  </li>
+</ul>
+
             </div>
+
+            {/* Services */}
+<div>
+  <h4 className="text-xs uppercase tracking-[0.3em] text-white font-semibold mb-8">
+    Services
+  </h4>
+
+  <ul className="space-y-4">
+    <li>
+      <Link href="/services/Salesforce-Enterprise-Platforms" className="text-gray-500 hover:text-[#7191e6] transition-colors font-bold uppercase text-sm flex items-center group">
+        Salesforce & Enterprise Platforms
+        <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 ml-1 transition-all group-hover:translate-x-1" />
+      </Link>
+    </li>
+
+    <li>
+      <Link href="/services/Talent-Hiring-Solutions" className="text-gray-500 hover:text-[#7191e6] transition-colors font-bold uppercase text-sm flex items-center group">
+        Talent & Hiring Solutions
+        <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 ml-1 transition-all group-hover:translate-x-1" />
+      </Link>
+    </li>
+
+    <li>
+      <Link href="/services/Industries-We-Serve" className="text-gray-500 hover:text-[#7191e6] transition-colors font-bold uppercase text-sm flex items-center group">
+        Industries We Serve
+        <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 ml-1 transition-all group-hover:translate-x-1" />
+      </Link>
+    </li>
+  </ul>
+</div>
+
 
             {/* Contact Details */}
             <div>
