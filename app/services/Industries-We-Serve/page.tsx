@@ -1,9 +1,16 @@
+import IndustriesBuild from '@/components/industriesBuild'
+import IndustriesEngagement from '@/components/industriesEngagement'
+import IndustriesModel from '@/components/industriesModel'
+import IndustriesWhy from '@/components/industriesWhy'
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-      industries we serve 
+      <IndustriesEngagement/>
+      <IndustriesBuild/>
+      <IndustriesWhy/>
+      <IndustriesModel/>
     </div>
   )
 }

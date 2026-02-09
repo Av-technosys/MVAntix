@@ -12,7 +12,6 @@ import {
 } from "@tabler/icons-react";
 
 const SalesOperations = () => {
-  // Exact Content from your list
   const offerings = [
     {
       title: "ITSM Deployment",
@@ -47,7 +46,7 @@ const SalesOperations = () => {
   ];
 
   return (
-    <section className="py-24 bg-gray-50/50 relative overflow-hidden">
+    <section className="py-12 md:py-16 bg-gray-50/50 relative overflow-hidden">
       {/* Background Decorative Tech Circle */}
       <div className="absolute -bottom-24 -right-24 w-96 h-96 border-40 border-[#3d52a1]/5 rounded-full" />
 
@@ -60,14 +59,15 @@ const SalesOperations = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-[#7191e6] text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">
-              ServiceNow Capabilities
+            
+            <span className="text-xs  font-semibold uppercase tracking-[0.2em] text-slate-600 backdrop-blur animate-in fade-in slide-in-from-bottom-6 duration-700 mb-4 block">
+              Service Now Capabilities
             </span>
-            <h2 className="text-4xl md:text-4xl lg:text-5xl font-black text-black leading-[1.1] tracking-tighter uppercase italic">
+            <h2 className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900 ">
               Intelligent Digital Workflows <br />
-              <span className="text-[#7191e6] not-italic">for Enterprise Operations</span>
+              <span className="text-[#7191e6] ">for Enterprise Operations</span>
             </h2>
-            <p className="mt-8 text-xl text-gray-500 font-medium leading-relaxed max-w-3xl">
+            <p className="mt-8 max-w-xl text-lg text-slate-600 animate-in fade-in duration-700 delay-100 slide-in-from-bottom-8">
               MVANTIX helps organizations simplify complex operations through <span className="text-[#3d52a1] font-bold underline decoration-[#7191e6] decoration-4 underline-offset-4">ServiceNow-powered</span> digital workflows.
             </p>
           </motion.div>
@@ -88,10 +88,10 @@ const SalesOperations = () => {
               <div className="absolute top-0 right-0 w-24 h-24 bg-[#7191e6]/5 rounded-bl-[5rem] group-hover:bg-[#7191e6]/10 transition-colors" />
               
               <div className="relative z-10">
-                <div className="mb-6 text-[#3d52a1] group-hover:text-[#7191e6] group-hover:scale-110 transition-all duration-300">
+                <div className="mb-6  text-[#3d52a1] group-hover:text-[#7191e6] group-hover:scale-110 transition-all duration-300">
                   {item.icon}
                 </div>
-                <h3 className="text-sm font-black text-[#3d52a1] uppercase tracking-wider mb-4">
+                <h3 className="text-sm font-semibold text-[#3d52a1] uppercase tracking-wider mb-4">
                   {item.title}
                 </h3>
                 <p className="text-xs text-gray-500 font-semibold leading-relaxed">
@@ -110,7 +110,7 @@ const SalesOperations = () => {
           className="mt-20 flex flex-col lg:flex-row items-center justify-between gap-10 p-1 bg-white rounded-[3rem] border border-gray-100 shadow-xl overflow-hidden"
         >
           <div className="bg-[#3d52a1] text-white px-10 py-8 rounded-[2.8rem] flex-1 w-full">
-            <h4 className="text-2xl font-black italic uppercase tracking-tighter mb-2">Operational Results</h4>
+            <h4 className="text-2xl font-semibold uppercase tracking-tighter mb-2">Operational Results</h4>
             <p className="text-white/60 text-[10px] font-bold uppercase tracking-widest">Efficiency through automation</p>
           </div>
           
@@ -122,7 +122,7 @@ const SalesOperations = () => {
             ].map((text, i) => (
               <div key={i} className="flex items-center gap-3">
                 <div className="h-2 w-2 rounded-full bg-[#7191e6]" />
-                <span className="text-xs font-black text-[#3d52a1] uppercase tracking-tighter">{text}</span>
+                <span className="text-xs font-semibold text-[#3d52a1] uppercase tracking-tighter">{text}</span>
               </div>
             ))}
           </div>

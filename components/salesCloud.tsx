@@ -13,7 +13,7 @@ const SalesCloud = () => {
   ];
 
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-12 md:py-16 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
         
         {/* Main Content Split */}
@@ -26,10 +26,10 @@ const SalesCloud = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-[#7191e6] text-[10px] font-black uppercase tracking-[0.5em] mb-6 block">
+              <span className="text-[#7191e6] text-[10px] font-semibold uppercase tracking-[0.5em] mb-6 block">
                 Infrastructure
               </span>
-              <h2 className="text-5xl font-black uppercase italic tracking-tighter leading-none mb-8">
+              <h2 className="text-5xl uppercase tracking-tighter leading-none mb-8">
                 Cloud & <br /> DevOps <br /> <span className="text-[#7191e6]">Services</span>
               </h2>
               <p className="text-white/60 text-sm font-medium leading-relaxed">
@@ -59,12 +59,12 @@ const SalesCloud = () => {
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="text-xs font-black text-[#7191e6] uppercase tracking-widest">
+                    <span className="text-xs font-semibold text-[#7191e6] uppercase tracking-widest">
                       Capability / 0{idx + 1}
                     </span>
                     <div className="w-8 h-px bg-gray-200 group-hover:w-12 group-hover:bg-[#3d52a1] transition-all" />
                   </div>
-                  <h3 className="text-xl font-black text-[#3d52a1] uppercase tracking-tighter mb-4">
+                  <h3 className="text-xl font-semibold text-[#3d52a1] uppercase tracking-tighter mb-4">
                     {service.title}
                   </h3>
                   <p className="text-xs text-gray-500 font-medium leading-relaxed max-w-sm">
@@ -88,7 +88,7 @@ const SalesCloud = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           className="mt-12 lg:-mt-6 relative z-20 bg-white border-2 border-[#3d52a1] p-8 md:p-12 max-w-4xl mx-auto text-center shadow-2xl"
         >
-          <p className="text-[#3d52a1] text-lg md:text-2xl font-black uppercase italic tracking-tighter">
+          <p className="text-[#3d52a1] text-lg md:text-2xl font-semibold uppercase tracking-tighter">
             We help organizations accelerate deployments, improve reliability, and <span className="text-[#7191e6]">scale with confidence.</span>
           </p>
         </motion.div>

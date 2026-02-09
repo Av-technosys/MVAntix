@@ -2,18 +2,18 @@ import React from "react";
 
 const AboutCommit = () => {
   return (
-    <section className="w-full bg-[#dfe8e6] py-20 px-6">
+    <section className="w-full bg-blue-50 py-12 md:py-16 px-6">
       <div className="max-w-4xl mx-auto text-center">
 
         <h1
-          className="text-2xl md:text-3xl font-bold mb-6"
-          style={{ color: "#3d52a1" }}
+          className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900  mb-6"
+          style={{ color: "#7191e6" }}
         >
-          The MVANTIX Commitment
+          The Mvantix <span className="text-black">Commitment</span>
         </h1>
 
         <p
-          className="text-lg md:text-xl leading-relaxed mb-10"
+          className="text-lg text-slate-600 animate-in fade-in duration-700 delay-100 slide-in-from-bottom-8 mb-10"
           style={{ color: "#000000" }}
         >
           Plug and play isn&apos;t a dream; it&apos;s our standard. We are committed to

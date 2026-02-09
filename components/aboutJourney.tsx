@@ -14,7 +14,7 @@ const steps = [
       "Communication Mastery: Training in professional articulation and stakeholder presence.",
       "Project Execution Discipline: Mastering workflow ownership and accountability.",
     ],
-    img: "/product4.jpg",
+    img: "/images/service.webp",
   },
   {
     title: "Month 2:",
@@ -26,7 +26,7 @@ const steps = [
       "Culture Fit: Do they integrate seamlessly with your existing team?",
       "Speed & Communication: How quickly do they adapt and how clearly do they report progress?",
     ],
-    img: "/product4.jpg",
+    img: "/images/service.webp",
   },
   {
     title: "Month 3 Onward:",
@@ -51,30 +51,28 @@ const AboutJourney = () => {
   const height = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section ref={ref} className="bg-gray-50 py-12 px-4">
-      <h2 className="text-center text-3xl font-bold text-[#3d52a1] mb-12">
-        The MVANTIX Journey
+    <section ref={ref} className="bg-gray-50 py-12 md:py-16 px-4">
+      <h2 className="text-4xl md:text-5xl font-semibold leading-13 text-[#7191e6] text-center mb-12">
+        The Mvantix <span className="text-black"> Journey </span>
       </h2>
 
       <div className="relative max-w-6xl mx-auto">
-
         {/* mobile line */}
-        <div className="absolute left-4 top-0 h-full w-[2px] bg-gray-300 md:hidden" />
+        <div className="absolute left-4 top-0 h-full w-0.5 bg-gray-300 md:hidden" />
         <motion.div
           style={{ height }}
-          className="absolute left-4 top-0 w-[4px] bg-[#3d52a1] origin-top md:hidden"
+          className="absolute left-4 top-0 w-1 bg-[#3d52a1] origin-top md:hidden"
         />
 
         {/* desktop line */}
-        <div className="hidden md:block absolute left-1/2 top-0 h-full w-[2px] bg-gray-300 -translate-x-1/2" />
+        <div className="hidden md:block absolute left-1/2 top-0 h-full w-0.5 bg-gray-300 -translate-x-1/2" />
         <motion.div
           style={{ height }}
-          className="hidden md:block absolute left-1/2 top-0 w-[4px] bg-[#3d52a1] -translate-x-1/2 origin-top"
+          className="hidden md:block absolute left-1/2 top-0 w-1 bg-[#3d52a1] -translate-x-1/2 origin-top"
         />
 
         {steps.map((step, i) => (
           <div key={i} className="mb-16 relative w-full">
-
             {/* mobile dot */}
             <div className="md:hidden absolute left-0 top-3 w-6 h-6 bg-[#7191e6] rounded-full border-4 border-white" />
 
@@ -84,9 +82,13 @@ const AboutJourney = () => {
             {/* mobile layout */}
             <div className="md:hidden pl-14">
               <div className="bg-[#dfe8e6] border shadow-md rounded-xl p-5">
-                <h3 className="font-semibold text-[#3d52a1] mb-1">{step.title}</h3>
+                <h3 className="font-semibold text-[#3d52a1] mb-1">
+                  {step.title}
+                </h3>
                 {step.heading && (
-                  <h4 className="font-medium text-gray-800 mb-2">{step.heading}</h4>
+                  <h4 className="font-medium text-gray-800 mb-2">
+                    {step.heading}
+                  </h4>
                 )}
                 <p className="text-gray-600 text-sm mb-3">{step.desc}</p>
 
@@ -113,14 +115,20 @@ const AboutJourney = () => {
               {i % 2 === 0 ? (
                 <>
                   <div className="w-[40%] bg-[#dfe8e6] border shadow-md rounded-xl p-6">
-                    <h3 className="font-semibold text-[#3d52a1] mb-2">{step.title}</h3>
+                    <h3 className="font-semibold  text-[#3d52a1] mb-2">
+                      {step.title}
+                    </h3>
                     {step.heading && (
-                      <h4 className="font-medium text-gray-800 mb-2">{step.heading}</h4>
+                      <h4 className="font-semibold text-xl text-gray-800 mb-2">
+                        {step.heading}
+                      </h4>
                     )}
-                    <p className="text-gray-600 text-sm mb-3">{step.desc}</p>
+                    <p className="text-gray-600 text-sm font-medium mb-3">
+                      {step.desc}
+                    </p>
 
                     {step.points && (
-                      <ul className="list-disc pl-5 text-gray-600 text-sm space-y-1">
+                      <ul className="list-disc pl-5 text-gray-600 font-medium text-sm space-y-1">
                         {step.points.map((p, idx) => (
                           <li key={idx}>{p}</li>
                         ))}
@@ -139,14 +147,20 @@ const AboutJourney = () => {
                   </div>
 
                   <div className="w-[40%] bg-[#dfe8e6] border shadow-md rounded-xl p-6">
-                    <h3 className="font-semibold text-[#3d52a1] mb-2">{step.title}</h3>
+                    <h3 className="font-semibold text-[#3d52a1] mb-2">
+                      {step.title}
+                    </h3>
                     {step.heading && (
-                      <h4 className="font-medium text-gray-800 mb-2">{step.heading}</h4>
+                      <h4 className="font-semibold text-xl text-gray-800 mb-2">
+                        {step.heading}
+                      </h4>
                     )}
-                    <p className="text-gray-600 text-sm mb-3">{step.desc}</p>
+                    <p className="text-gray-600 font-medium text-sm mb-3">
+                      {step.desc}
+                    </p>
 
                     {step.points && (
-                      <ul className="list-disc pl-5 text-gray-600 text-sm space-y-1">
+                      <ul className="list-disc pl-5 font-medium text-gray-600 text-sm space-y-1">
                         {step.points.map((p, idx) => (
                           <li key={idx}>{p}</li>
                         ))}
@@ -156,7 +170,6 @@ const AboutJourney = () => {
                 </>
               )}
             </div>
-
           </div>
         ))}
       </div>

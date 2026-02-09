@@ -19,12 +19,12 @@ const brands = [
 
 const BrandCarousel = () => {
   return (
-    <section className="w-full py-10 px-8 bg-white border-y border-gray-100 overflow-hidden">
+    <section className="w-full py-12 md:py-16 px-8 bg-white border-y border-gray-100 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
         
         {/* Left Side: Fixed Text */}
         <div className="z-10 bg-white pr-8 min-w-fit">
-          <h2 className="text-xl md:text-2xl font-bold text-slate-600 leading-tight">
+          <h2 className="text-xl md:text-2xl font-bold text-slate-600 md:text-left text-center leading-tight">
             Tech leaders trust <br /> 
             MVANTIX to quickly <br />
             source qualified talent
@@ -53,7 +53,7 @@ const BrandCarousel = () => {
                 key={idx}
                 className="flex items-center justify-center opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
               >
-                <span className="text-2xl md:text-4xl font-black tracking-tighter text-slate-800 uppercase">
+                <span className="text-2xl md:text-4xl font-semibold tracking-tighter text-slate-800 uppercase">
                   {brand.logo}
                 </span>
               </div>

@@ -30,7 +30,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-7xl lg:text-6xl  font-black tracking-tighter text-black uppercase italic leading-[0.95]"
+            className="text-4xl md:text-7xl lg:text-6xl  font-semibold tracking-tighter text-black uppercase leading-[0.95]"
           >
             Transforming Talent Into <br />
             <span className="text-[#7191e6]">Enterprise Ready</span> Power
@@ -47,7 +47,7 @@ export const HeroSection = () => {
               raw talent into AI native, communication strong, cognitively
               sharp, and execution ready professionals.
             </p>
-            <p className="text-base md:text-lg text-gray-500 font-medium italic">
+            <p className="text-base md:text-lg text-gray-500 font-medium">
               Our mission is simple: help enterprises scale faster with
               job-ready talent and help professionals build future-proof careers
               through real-world skills.

@@ -52,10 +52,10 @@ const outcomes = [
 
 const HomeOutcome = () => {
   return (
-    <section className="relative py-24 bg-white overflow-hidden">
+    <section className="relative py-12 md:py-16 bg-white overflow-hidden">
       {/* Subtle Background Elements */}
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#7191e6]/5 blur-[100px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#3d52a1]/5 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 right-0 w-100 h-400 bg-[#7191e6]/5 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-100 h-100 bg-[#3d52a1]/5 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
@@ -64,18 +64,18 @@ const HomeOutcome = () => {
           <motion.span 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-[#7191e6] font-black uppercase tracking-[0.4em] text-xs"
+            className="text-[#7191e6] font-semibold uppercase tracking-[0.4em] text-xs"
           >
             The Result
           </motion.span>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-black text-black uppercase italic tracking-tighter"
+            className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900 "
           >
-            The MVANTIX <span className="text-[#3d52a1]">Outcome</span>
+            The Mvantix <span className="text-[#3d52a1]">Outcome</span>
           </motion.h2>
-          <p className="text-slate-500 font-bold italic text-xl">
+          <p className="text-lg text-slate-600 animate-in fade-in duration-700 delay-100 slide-in-from-bottom-8">
             Building the Future of Talent
           </p>
         </div>
@@ -100,10 +100,10 @@ const HomeOutcome = () => {
                   {item.icon}
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-xl font-black text-black uppercase italic leading-none tracking-tight">
+                  <h3 className="text-xl font-semibold text-black uppercase leading-none tracking-tight">
                     {item.title}
                   </h3>
-                  <p className="text-slate-500 text-sm font-medium italic leading-relaxed">
+                  <p className="text-slate-500 text-sm font-medium leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -119,10 +119,10 @@ const HomeOutcome = () => {
           className="mt-28 text-center"
         >
           <div className="space-y-4">
-            <h4 className="text-2xl md:text-3xl font-black text-slate-300 uppercase italic tracking-tighter">
+            <h4 className="text-2xl md:text-2xl font-semibold text-slate-300 uppercase  tracking-tighter">
               MVANTIX does not just prepare talent for the future.
             </h4>
-            <h4 className="text-4xl md:text-7xl font-black text-black uppercase italic leading-[0.85] tracking-tighter">
+            <h4 className="text-4xl md:text-5xl font-semibold text-black uppercase leading-[0.85] tracking-tighter">
               We prepare the <span className="text-[#3d52a1]">future of talent.</span>
             </h4>
           </div>
@@ -131,7 +131,7 @@ const HomeOutcome = () => {
              <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-12 py-6 bg-black text-white font-black uppercase italic rounded-2xl text-xl shadow-xl hover:bg-[#3d52a1] transition-all flex items-center gap-3"
+                className="px-8 py-3 bg-black text-white font-semibold uppercase  rounded-2xl text-xl shadow-xl hover:bg-[#3d52a1] transition-all flex items-center gap-3"
               >
                 Join The Future
               </motion.button>

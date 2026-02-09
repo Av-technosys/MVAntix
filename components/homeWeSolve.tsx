@@ -27,7 +27,7 @@ const HomeWeSolve = () => {
     <section 
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative py-20 md:py-32 bg-white overflow-hidden group/section"
+      className="relative py-12 md:py-16 bg-white overflow-hidden group/section"
     >
       {/* --- WORKING MOUSE GLOW --- */}
       <motion.div
@@ -50,7 +50,7 @@ const HomeWeSolve = () => {
                 src="/images/TechHub.avif" 
                 alt="The Talent Gap Problem"
                 fill
-                className="object-cover transform hover:scale-105 transition-transform duration-1000 grayscale hover:grayscale-0"
+                className="object-cover"
                 priority
               />
              
@@ -60,11 +60,14 @@ const HomeWeSolve = () => {
           {/* RIGHT SIDE: CONTENT */}
           <div className="w-full lg:w-1/2 space-y-8">
             <div className="space-y-4 text-center lg:text-left">
-              <span className="text-[#7191e6] font-black uppercase tracking-[0.3em] text-xs inline-block">
+              <div className="flex items-center gap-4">
+                   <div className="h-0.5 w-12 bg-[#7191e6]" />
+              <span className="text-[#7191e6] font-semibold uppercase tracking-[0.3em] text-xs inline-block">
                 The Problem We Solve
               </span>
+              </div>
               
-              <h2 className="text-4xl md:text-4xl lg:text-5xl font-black text-black uppercase italic leading-[0.9] tracking-tighter">
+              <h2 className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900">
                 The Talent Gap <br />
                 Enterprises Can <br />
                 No Longer <span className="text-[#3d52a1]">Ignore</span>
@@ -72,17 +75,17 @@ const HomeWeSolve = () => {
             </div>
 
             <div className="space-y-6 text-slate-600">
-              <p className="text-xl font-bold text-slate-900 leading-tight text-center lg:text-left">
+              <p className="text-md  text-slate-900 leading-tight text-center lg:text-left">
               Today’s workforce enters the job market with degrees, but not readiness.
               </p>
               
-              <p className="text-lg font-medium text-slate-500 leading-relaxed text-center lg:text-left italic">
+              <p className="text-lg text-slate-600 animate-in fade-in duration-700 delay-100 slide-in-from-bottom-8">
              struggle with AI skill shortages, weak communication, poor problem solving ability, long onboarding cycles, and high hiring risks.
               </p>
 
               <motion.div 
                 whileHover={{ x: 10 }}
-                className="p-8 bg-slate-50 rounded-4xl border-l-[6px] border-[#3d52a1] italic font-bold shadow-sm relative group cursor-default"
+                className="p-8 bg-slate-50 rounded-4xl border-l-[6px] border-[#3d52a1] font-bold shadow-sm relative group cursor-default"
               >
               
                 <span className="relative z-10 text-slate-800 text-lg leading-snug block">

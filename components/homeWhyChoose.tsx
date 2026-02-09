@@ -26,7 +26,7 @@ const HomeWhyChoose = () => {
     },
   ];
   return (
-      <section className="relative py-16 md:py-24 px-6 md:px-8 bg-[#3d52a1]/30 overflow-hidden">
+      <section className="relative py-12 md:py-16 px-6 md:px-8 bg-[#3d52a1]/30 overflow-hidden">
       
       {/* Background Decor - Desktop only for performance */}
       <div className="max-w-7xl mx-auto">
@@ -35,7 +35,7 @@ const HomeWhyChoose = () => {
           
           {/* LEFT CONTENT */}
           <div className="lg:col-span-5 space-y-6 md:space-y-8 text-center lg:text-left">
-            <h2 className="text-4xl md:text-4xl lg:text-5xl font-black tracking-tighter text-black uppercase italic leading-[0.9]">
+            <h2 className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900 ">
               Talent Built <br />
               <span className="text-[#7191e6]">For Real</span> <br />
               Business <br /> 
@@ -43,14 +43,14 @@ const HomeWhyChoose = () => {
             </h2>
 
             <div className="space-y-6">
-              <p className="text-lg md:text-xl text-slate-800 font-semibold leading-tight max-w-md mx-auto lg:mx-0">
+              <p className="text-lg md:text-md text-slate-800 font-semibold leading-tight max-w-md mx-auto lg:mx-0">
                 MVANTIX delivers enterprise-ready talent built to perform from Day One.
               </p>
               
               <div className="flex gap-4 items-start text-left max-w-md mx-auto lg:mx-0">
                 {/* Vertical Line - Hidden on small mobile if needed */}
                 <div className="shrink-0 w-1 h-20 bg-linear-to-b from-[#7191e6] to-transparent rounded-full" />
-                <p className="text-slate-500 text-base md:text-lg font-medium italic leading-relaxed">
+                <p className="text-lg text-slate-600 animate-in fade-in duration-700 delay-100 slide-in-from-bottom-8">
                   Our professionals are AI native, cognitively sharp, communication ready, 
                   and execution driven, enabling faster onboarding.
                 </p>
@@ -73,10 +73,10 @@ const HomeWhyChoose = () => {
                   
                   {/* Text Content */}
                   <div className="space-y-2 text-center md:text-left">
-                    <h3 className="text-xl md:text-2xl font-black text-black uppercase italic tracking-tight">
+                    <h3 className="text-xl md:text-2xl  text-black tracking-tight">
                       {item.title}
                     </h3>
-                    <p className="text-slate-500 font-medium leading-relaxed text-sm md:text-base">
+                    <p className="text-slate-500 leading-relaxed text-sm md:text-base">
                       {item.desc}
                     </p>
                   </div>

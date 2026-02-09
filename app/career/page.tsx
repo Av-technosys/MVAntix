@@ -86,14 +86,14 @@ const page = () => {
                             <div className="mt-8 flex flex-wrap items-center gap-4 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
                                 <a
                                     href="#open-roles"
-                                    className="group relative rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:translate-y-[-2px] hover:bg-slate-800 hover:shadow-lg overflow-hidden"
+                                    className="group relative rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:translate-y-0.5 hover:bg-slate-800 hover:shadow-lg overflow-hidden"
                                 >
                                     <span className="relative z-10">View open roles</span>
-                                    <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-emerald-400 opacity-0 group-hover:opacity-20 transition-opacity" />
+                                    <div className="absolute inset-0 bg-linear-to-r from-blue-400 to-emerald-400 opacity-0 group-hover:opacity-20 transition-opacity" />
                                 </a>
                                 <a
                                     href="#apply"
-                                    className="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:translate-y-[-2px] hover:border-slate-400 hover:shadow-lg hover:bg-slate-50"
+                                    className="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:translate-y-0.5 hover:border-slate-400 hover:shadow-lg hover:bg-slate-50"
                                 >
                                     Apply now
                                 </a>
@@ -322,7 +322,7 @@ const page = () => {
                                         animationDelay: `${idx * 150}ms`,
                                     }}
                                 >
-                                    <div className="text-sm font-semibold text-slate-500 bg-gradient-to-br from-sky-100 to-emerald-100 rounded-lg px-3 py-2">{item.step}</div>
+                                    <div className="text-sm font-semibold text-slate-500 bg-linear-to-br from-sky-100 to-emerald-100 rounded-lg px-3 py-2">{item.step}</div>
                                     <div>
                                         <p className="text-base font-semibold text-slate-900">{item.title}</p>
                                         <p className="mt-1 text-sm text-slate-600">{item.text}</p>
@@ -429,7 +429,7 @@ const page = () => {
                                 <label className="grid gap-2 text-sm font-semibold text-slate-700 sm:col-span-2">
                                     Tell us about your proudest project
                                     <textarea
-                                        className="min-h-[120px] rounded-xl border border-slate-200 px-4 py-3 text-sm text-slate-700 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-100"
+                                        className="min-h-30 rounded-xl border border-slate-200 px-4 py-3 text-sm text-slate-700 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-100"
                                         placeholder="Share the problem, your approach, and the outcome."
                                         name="message"
                                     />
@@ -458,7 +458,7 @@ const page = () => {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="mt-6 w-full rounded-full bg-gradient-to-r from-slate-900 to-slate-800 px-6 py-3 text-sm font-semibold text-white transition hover:translate-y-[-2px] hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-60 hover:from-slate-800 hover:to-slate-700"
+                                className="mt-6 w-full rounded-full bg-linear-to-r from-slate-900 to-slate-800 px-6 py-3 text-sm font-semibold text-white transition hover:translate-y-0.5 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-60 hover:from-slate-800 hover:to-slate-700"
                             >
                                 {isSubmitting ? 'Sending...' : 'Submit application'}
                             </button>
