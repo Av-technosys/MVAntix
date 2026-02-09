@@ -2,13 +2,13 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  IconShieldCheck, 
-  IconCpu, 
-  IconMessageChatbot, 
-  IconBolt, 
-  IconTimeline, 
-  IconChartLine 
+import {
+  IconShieldCheck,
+  IconCpu,
+  IconMessageChatbot,
+  IconBolt,
+  IconTimeline,
+  IconChartLine
 } from "@tabler/icons-react";
 
 const outcomes = [
@@ -57,18 +57,18 @@ const HomeOutcome = () => {
       <div className="absolute top-0 right-0 w-100 h-400 bg-[#7191e6]/5 blur-[100px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-100 h-100 bg-[#3d52a1]/5 blur-[100px] rounded-full pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
+
         {/* HEADER */}
         <div className="text-center mb-20 space-y-4">
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-[#7191e6] font-semibold uppercase tracking-[0.4em] text-xs"
           >
             The Result
           </motion.span>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900 "
@@ -93,7 +93,7 @@ const HomeOutcome = () => {
               className="group p-8 rounded-[2.5rem] bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl hover:shadow-[#3d52a1]/10 transition-all duration-500"
             >
               <div className="flex flex-col items-center text-center space-y-4">
-                <div 
+                <div
                   className="w-16 h-16 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110"
                   style={{ backgroundColor: `${item.color}10`, color: item.color }}
                 >
@@ -113,7 +113,7 @@ const HomeOutcome = () => {
         </div>
 
         {/* FINAL STATEMENT */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           className="mt-28 text-center"
@@ -128,13 +128,13 @@ const HomeOutcome = () => {
           </div>
 
           <div className="mt-12 flex justify-center">
-             <motion.button 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-black text-white font-semibold uppercase  rounded-2xl text-xl shadow-xl hover:bg-[#3d52a1] transition-all flex items-center gap-3"
-              >
-                Join The Future
-              </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-3 bg-black text-white font-semibold uppercase  rounded-2xl text-xl shadow-xl hover:bg-[#3d52a1] transition-all flex items-center gap-3"
+            >
+              Join The Future
+            </motion.button>
           </div>
         </motion.div>
 

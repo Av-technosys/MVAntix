@@ -24,7 +24,7 @@ const cards = [
 const AboutPurpose = () => {
   return (
     <section className="w-full bg-white py-12 md:py-16 px-6">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900  mb-2">
           Our Purpose
         </h2>

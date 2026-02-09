@@ -3,7 +3,7 @@ import React from "react";
 const AboutCommit = () => {
   return (
     <section className="w-full bg-blue-50 py-12 md:py-16 px-6">
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-4xl mx-auto px-6 text-center">
 
         <h1
           className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900  mb-6"

@@ -2,11 +2,11 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  IconHexagonNumber1, 
-  IconHexagonNumber2, 
+import {
+  IconHexagonNumber1,
+  IconHexagonNumber2,
   IconHexagonNumber3,
-  IconCircleChevronRight 
+  IconCircleChevronRight
 } from "@tabler/icons-react";
 
 const HomeModel = () => {
@@ -33,11 +33,11 @@ const HomeModel = () => {
 
   return (
     <section className="relative py-12 md:py-16 px-6 md:px-8 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        
+      <div className="max-w-6xl mx-auto px-6">
+
         {/* HEADER */}
         <div className="mb-20 text-center lg:text-left">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="flex items-center justify-center lg:justify-start gap-3 mb-4"
@@ -56,7 +56,7 @@ const HomeModel = () => {
 
         {/* STAGES GRID */}
         <div className="relative grid grid-cols-1 lg:grid-cols-3 gap-8">
-          
+
           {/* Connecting Line (Desktop Only) */}
           <div className="absolute top-1/2 left-0 w-full h-0.5 bg-slate-100 -translate-y-1/2 hidden lg:block -z-10" />
 
@@ -71,7 +71,7 @@ const HomeModel = () => {
             >
               {/* CARD */}
               <div className="h-full bg-slate-50 border border-slate-100 p-8 rounded-[2.5rem] hover:bg-white hover:shadow-2xl hover:shadow-[#3d52a1]/10 transition-all duration-500 group-hover:-translate-y-2">
-                
+
                 {/* ICON & TAG */}
                 <div className="flex justify-between items-start mb-10">
                   <div className="text-[#3d52a1] group-hover:scale-110 transition-transform duration-500">
@@ -91,9 +91,9 @@ const HomeModel = () => {
                   </p>
                 </div>
                 <div className="mt-8 flex justify-end">
-                  <IconCircleChevronRight 
-                    size={32} 
-                    className="text-slate-200 group-hover:text-[#3d52a1] transition-colors" 
+                  <IconCircleChevronRight
+                    size={32}
+                    className="text-slate-200 group-hover:text-[#3d52a1] transition-colors"
                   />
                 </div>
               </div>
@@ -101,7 +101,7 @@ const HomeModel = () => {
             </motion.div>
           ))}
         </div>
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           className="mt-20 p-10 rounded-[3rem] bg-linear-to-br from-[#3d52a1] to-[#7191e6] text-white flex flex-col md:flex-row items-center justify-between gap-8"

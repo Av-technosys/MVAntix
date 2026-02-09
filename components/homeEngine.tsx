@@ -56,7 +56,7 @@ const HomeEngine = () => {
       <div className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-[#7191e6]/10 rounded-full blur-[120px]" />
       <div className="absolute -bottom-[10%] -right-[10%] w-[50%] h-[50%] bg-blue-500/5 rounded-full blur-[120px]" />
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20 space-y-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

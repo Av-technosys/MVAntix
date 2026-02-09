@@ -20,12 +20,12 @@ const brands = [
 const BrandCarousel = () => {
   return (
     <section className="w-full py-12 md:py-16 px-8 bg-white border-y border-gray-100 overflow-hidden">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-        
+      <div className="max-w-6xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
+
         {/* Left Side: Fixed Text */}
         <div className="z-10 bg-white pr-8 min-w-fit">
           <h2 className="text-xl md:text-2xl font-bold text-slate-600 md:text-left text-center leading-tight">
-            Tech leaders trust <br /> 
+            Tech leaders trust <br />
             MVANTIX to quickly <br />
             source qualified talent
           </h2>
@@ -37,15 +37,15 @@ const BrandCarousel = () => {
           <div className="absolute inset-y-0 left-0 w-20 bg-linear-to-r from-white to-transparent z-10" />
           <div className="absolute inset-y-0 right-0 w-20 bg-linear-to-l from-white to-transparent z-10" />
 
-          <motion.div 
+          <motion.div
             className="flex items-center gap-16 min-w-max"
-            animate={{ 
+            animate={{
               x: [0, -1000] // Adjust -1000 based on total width of logos
             }}
-            transition={{ 
-              duration: 25, 
-              repeat: Infinity, 
-              ease: "linear" 
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "linear"
             }}
           >
             {brands.map((brand, idx) => (
@@ -60,7 +60,7 @@ const BrandCarousel = () => {
             ))}
           </motion.div>
         </div>
-        
+
       </div>
     </section>
   );

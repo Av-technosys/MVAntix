@@ -6,7 +6,7 @@ import React from "react";
 export default function AboutDeliver() {
   return (
     <section className="relative w-full bg-[#dfe8e6] py-12 md:py-16 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
         {/* LEFT SIDE SINGLE IMAGE */}
         {/* LEFT SIDE SIMPLE NATURAL IMAGE */}
         <div className="w-full">

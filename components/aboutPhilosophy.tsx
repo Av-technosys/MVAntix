@@ -22,12 +22,12 @@ const layers = [
 const AboutPhilosophy = () => {
   return (
     <section className="py-12 md:py-16 px-6 bg-gray-50 text-gray-900">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto px-6">
 
         {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-semibold leading-15 text-[#7191e6] ">
-           <span className="text-black">The</span> Mvantix Philosophy
+            <span className="text-black">The</span> Mvantix Philosophy
           </h2>
 
           <p className="text-lg text-slate-600 animate-in fade-in duration-700 delay-100 slide-in-from-bottom-8 max-w-2xl mx-auto">

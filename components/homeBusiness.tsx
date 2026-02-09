@@ -2,10 +2,10 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  IconUsers, 
-  IconSchool, 
-  IconChartInfographic, 
+import {
+  IconUsers,
+  IconSchool,
+  IconChartInfographic,
   IconRocket,
   IconArrowRight
 } from "@tabler/icons-react";
@@ -42,16 +42,16 @@ const HomeBusiness = () => {
     <section className="relative py-12 md:py-16 bg-white overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/grid-me.png')]" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20 space-y-4">
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-[#7191e6] font-semibold uppercase tracking-[0.4em] text-xs"
           >
             How We Work
           </motion.span>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900 "
@@ -76,8 +76,8 @@ const HomeBusiness = () => {
               className="relative group z-10"
             >
               <div className="h-full p-8 rounded-[2.5rem] bg-white border border-slate-100 shadow-xl shadow-slate-200/50 hover:shadow-2xl transition-all duration-500 flex flex-col items-center text-center">
-                
-                <div 
+
+                <div
                   className="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-500 group-hover:rotate-10"
                   style={{ backgroundColor: `${step.color}15`, color: step.color }}
                 >
@@ -90,12 +90,12 @@ const HomeBusiness = () => {
                 <h3 className="text-xl font-semibold text-black uppercase mb-4 tracking-tight">
                   {step.title}
                 </h3>
-                
+
                 <p className="text-slate-500 text-sm font-medium leading-relaxed">
                   {step.description}
                 </p>
                 <div className="mt-8 w-12 h-1 bg-slate-100 rounded-full overflow-hidden">
-                  <motion.div 
+                  <motion.div
                     initial={{ x: "-100%" }}
                     whileInView={{ x: "0%" }}
                     transition={{ duration: 1, delay: index * 0.2 }}
@@ -112,7 +112,7 @@ const HomeBusiness = () => {
             </motion.div>
           ))}
         </div>
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5 }}

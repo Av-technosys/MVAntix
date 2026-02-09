@@ -3,10 +3,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { 
-  IconArrowUpRight, 
-  IconDatabase, 
-  IconCloudCode, 
+import {
+  IconArrowUpRight,
+  IconDatabase,
+  IconCloudCode,
   IconRobot
 } from "@tabler/icons-react";
 
@@ -15,7 +15,7 @@ const studies = [
     category: "Cloud & ERP",
     title: "Unified Data Cloud & ERP Architecture",
     description: "Streamlined enterprise operations with unified data systems and faster deployments.",
-    image: "/images/TechHub2.webp", 
+    image: "/images/TechHub2.webp",
     icon: <IconDatabase size={24} />,
     color: "#7191e6"
   },
@@ -40,29 +40,29 @@ const studies = [
 const CaseStudy = () => {
   return (
     <section className="relative py-12 md:py-16 bg-gray-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
+
         {/* --- HEADER SECTION --- */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-20">
           <div className="max-w-3xl space-y-4">
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               className="text-[#7191e6] font-semibold uppercase tracking-[0.3em] text-xs inline-block"
             >
               Case Studies & Proven Results
             </motion.span>
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900 "
             >
-              Delivering Measurable <br /> 
+              Delivering Measurable <br />
               <span className="text-[#3d52a1]">Business Impact</span>
             </motion.h2>
           </div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="max-w-sm lg:text-right"
@@ -86,8 +86,8 @@ const CaseStudy = () => {
             >
               {/* Background Image with Overlay */}
               <div className="absolute inset-0 z-0">
-                <Image 
-                  src={study.image} 
+                <Image
+                  src={study.image}
                   alt={study.title}
                   fill
                   className="object-cover  group-hover:scale-110 transition-all duration-1000 group-hover:opacity-100"
@@ -98,17 +98,17 @@ const CaseStudy = () => {
               {/* Content Overlay */}
               <div className="absolute inset-0 z-10 p-10 flex flex-col justify-end text-white">
                 {/* Icon Box */}
-                <div 
+                <div
                   className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-xl bg-white/10 border border-white/20"
                   style={{ color: study.color }}
                 >
                   {study.icon}
                 </div>
-                
+
                 <span className="text-[#7191e6] text-xs font-semibold uppercase tracking-widest mb-3">
                   {study.category}
                 </span>
-                
+
                 <h3 className="text-3xl font-semibold uppercase leading-[0.85] mb-4 tracking-tighter group-hover:text-white transition-colors">
                   {study.title}
                 </h3>
@@ -130,7 +130,7 @@ const CaseStudy = () => {
         </div>
 
         {/* --- FOOTER CONTENT --- */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           className="mt-16 text-center lg:text-left border-l-4 border-[#3d52a1] pl-8 py-4"

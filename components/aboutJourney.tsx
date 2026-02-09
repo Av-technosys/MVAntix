@@ -56,7 +56,7 @@ const AboutJourney = () => {
         The Mvantix <span className="text-black"> Journey </span>
       </h2>
 
-      <div className="relative max-w-6xl mx-auto">
+      <div className="relative max-w-6xl mx-auto px-6">
         {/* mobile line */}
         <div className="absolute left-4 top-0 h-full w-0.5 bg-gray-300 md:hidden" />
         <motion.div
