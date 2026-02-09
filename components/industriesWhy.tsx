@@ -14,7 +14,7 @@ const IndustriesWhy = () => {
 
   return (
     <section className="py-12 md:py-16 bg-white overflow-hidden font-sans">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 max-w-6xl">
         
         {/* TOP BRANDING: Technical Tag */}
         <div className="flex justify-center mb-3">

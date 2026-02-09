@@ -1,15 +1,15 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { 
-  Code2, 
-  Layers, 
-  Fingerprint, 
-  BarChart3, 
-  MonitorSmartphone, 
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  Code2,
+  Layers,
+  Fingerprint,
+  BarChart3,
+  MonitorSmartphone,
   Cpu,
-  ArrowRight
+  ArrowRight,
 } from "lucide-react";
 
 // Types for Services
@@ -24,33 +24,33 @@ const services = [
   {
     title: "AI & Neural Networks",
     desc: "We build self-learning systems that automate complex decision-making processes with 99% precision.",
-    icon: <Cpu size={32} />
+    icon: <Cpu size={32} />,
   },
   {
     title: "Next-Gen Web Apps",
     desc: "Ultra-fast, SEO-optimized, and cinematic web experiences using Next.js and high-end motion design.",
-    icon: <Code2 size={32} />
+    icon: <Code2 size={32} />,
   },
   {
     title: "Blockchain Security",
     desc: "Bulletproof smart contracts and decentralized architectures for the modern financial era.",
-    icon: <Fingerprint size={32} />
+    icon: <Fingerprint size={32} />,
   },
   {
     title: "Cloud Infrastructure",
     desc: "Scaling your business to millions of users without a single millisecond of downtime.",
-    icon: <Layers size={32} />
+    icon: <Layers size={32} />,
   },
   {
     title: "Data Intelligence",
     desc: "Turning raw data into actionable visual insights using advanced predictive analytics.",
-    icon: <BarChart3 size={32} />
+    icon: <BarChart3 size={32} />,
   },
   {
     title: "UI/UX Architecture",
     desc: "Designing interfaces that aren't just pretty, but psychologically engineered for conversion.",
-    icon: <MonitorSmartphone size={32} />
-  }
+    icon: <MonitorSmartphone size={32} />,
+  },
 ];
 
 const ServiceCard = ({ title, desc, icon, index }: ServiceProps) => (
@@ -63,14 +63,17 @@ const ServiceCard = ({ title, desc, icon, index }: ServiceProps) => (
     className="relative group p-10  bg-[#0A0A0A] border border-white/5 overflow-hidden"
   >
     {/* Animated Background Glow */}
-    <div className="absolute inset-0 bg-linear-to-br from-[#7191e6]
+    <div
+      className="absolute inset-0 bg-linear-to-br from-[#7191e6]
 
 
 
-/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-    
+/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+    />
+
     <div className="relative z-10">
-      <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center text-[#7191e6]
+      <div
+        className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center text-[#7191e6]
 
 
 
@@ -82,7 +85,8 @@ const ServiceCard = ({ title, desc, icon, index }: ServiceProps) => (
 
 
 
-/10 transition-all duration-500">
+/10 transition-all duration-500"
+      >
         {icon}
       </div>
       <h3 className="text-2xl font-semibold  uppercase tracking-tighter text-white mb-4">
@@ -91,11 +95,13 @@ const ServiceCard = ({ title, desc, icon, index }: ServiceProps) => (
       <p className="text-gray-500 font-medium leading-relaxed mb-6 group-hover:text-gray-300 transition-colors">
         {desc}
       </p>
-      <div className="flex items-center gap-2 text-[#7191e6]
+      <div
+        className="flex items-center gap-2 text-[#7191e6]
 
 
 
- font-bold uppercase text-xs tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all transform -translate-x-2.5 group-hover:translate-x-0">
+ font-bold uppercase text-xs tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all transform -translate-x-2.5 group-hover:translate-x-0"
+      >
         Read More <ArrowRight size={14} />
       </div>
     </div>
@@ -123,14 +129,16 @@ export default function ServicesPage() {
 
  font-semibold uppercase tracking-[0.4em] text-sm mb-6"
           >
-            <div className="w-10 h-0.5 bg-[#7191e6]
+            <div
+              className="w-10 h-0.5 bg-[#7191e6]
 
 
 
-" />
+"
+            />
             Our Expertise
           </motion.div>
-          
+
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -138,14 +146,16 @@ export default function ServicesPage() {
             className="text-6xl md:text-[8rem] font-semibold  uppercase tracking-tighter leading-[0.85]"
           >
             WE BUILD <br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-white via-gray-400 to-gray-700">THE IMPOSSIBLE.</span>
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-white via-gray-400 to-gray-700">
+              THE IMPOSSIBLE.
+            </span>
           </motion.h1>
         </div>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <ServiceCard 
+            <ServiceCard
               key={index}
               index={index}
               title={service.title}
@@ -156,7 +166,7 @@ export default function ServicesPage() {
         </div>
 
         {/* Interactive Bottom Section */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -171,13 +181,17 @@ export default function ServicesPage() {
               Need a Custom Solution?
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto mb-10 font-medium">
-              Every business is unique. We don&apos;=t believe in one-size-fits-all. Tell us your vision, and we&apos;ll build the tech to reach it.
+              Every business is unique. We don&apos;=t believe in
+              one-size-fits-all. Tell us your vision, and we&apos;ll build the
+              tech to reach it.
             </p>
-            <button className="bg-[#7191e6]
+            <button
+              className="bg-[#7191e6]
 
 
 
- text-black px-14 py-6 rounded-full font-semibold uppercase  tracking-tighter hover:bg-white transition-all transform hover:scale-105 active:scale-95">
+ text-black px-14 py-6 rounded-full font-semibold uppercase  tracking-tighter hover:bg-white transition-all transform hover:scale-105 active:scale-95"
+            >
               Get a Quote Now
             </button>
           </div>

@@ -14,10 +14,10 @@ const SalesCloud = () => {
 
   return (
     <section className="py-12 md:py-16 bg-white overflow-hidden">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 max-w-6xl ">
         
         {/* Main Content Split */}
-        <div className="flex flex-col lg:flex-row items-stretch gap-0 border-2 border-[#3d52a1]">
+        <div className="flex flex-col lg:flex-row rounded-2xl overflow-hidden items-stretch gap-0 border-2 border-[#3d52a1]">
           
           {/* Left Block: Main Branding */}
           <div className="lg:w-1/3 bg-[#3d52a1] p-12 text-white flex flex-col justify-between min-h-125">
@@ -86,7 +86,7 @@ const SalesCloud = () => {
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          className="mt-12 lg:-mt-6 relative z-20 bg-white border-2 border-[#3d52a1] p-8 md:p-12 max-w-4xl mx-auto text-center shadow-2xl"
+          className="mt-12 lg:-mt-6 relative z-20 bg-white rounded-2xl border-2 border-[#3d52a1] p-8 md:p-12 max-w-4xl mx-auto text-center shadow-2xl"
         >
           <p className="text-[#3d52a1] text-lg md:text-2xl font-semibold uppercase tracking-tighter">
             We help organizations accelerate deployments, improve reliability, and <span className="text-[#7191e6]">scale with confidence.</span>

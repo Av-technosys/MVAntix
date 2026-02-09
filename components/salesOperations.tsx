@@ -50,7 +50,7 @@ const SalesOperations = () => {
       {/* Background Decorative Tech Circle */}
       <div className="absolute -bottom-24 -right-24 w-96 h-96 border-40 border-[#3d52a1]/5 rounded-full" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
         
         {/* Header Section */}
         <div className="max-w-4xl mb-20">

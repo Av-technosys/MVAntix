@@ -14,7 +14,7 @@ const SalesSolution = () => {
 
   return (
     <section className="min-h-screen bg-blue-50 flex items-center py-12 md:py-16 overflow-hidden">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 max-w-6xl">
         <div className="flex flex-col lg:flex-row items-stretch border-l border-gray-200">
           
           {/* Left Panel: The Vision (Sticky) */}
