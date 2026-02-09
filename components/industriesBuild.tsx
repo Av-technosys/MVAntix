@@ -9,7 +9,7 @@ import Link from "next/link";
 const IndustriesBuild = () => {
   return (
     <section className="py-12 md:py-16 bg-white overflow-hidden">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 max-w-6xl">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           
           {/* LEFT SIDE: Image Layout (The Visual Focus) */}

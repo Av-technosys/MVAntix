@@ -10,7 +10,7 @@ const SalesBanner = () => {
       <div className="absolute top-0 right-0 w-[40%] h-full bg-[#3d52a1]/3 hidden lg:block" />
       <div className="absolute top-10 right-20 w-32 h-32 border-20 border-[#7191e6]/10 rounded-4xl hidden lg:block" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Main Title Section - Left */}

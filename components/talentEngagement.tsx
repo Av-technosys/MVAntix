@@ -36,7 +36,7 @@ const TalentEngagement = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
         
         {/* HEADER: Bold & Off-Center */}
         <div className="mb-18">

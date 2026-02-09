@@ -14,7 +14,7 @@ const IndustriesModel = () => {
   return (
     <section className="md:py-16 py-12 bg-white overflow-hidden relative min-h-screen flex items-center">
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
         
         <div className="flex flex-col items-center">
           

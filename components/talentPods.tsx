@@ -18,7 +18,7 @@ const TalentPods = () => {
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none" 
            style={{ backgroundImage: `linear-gradient(#3d52a1 0.5px, transparent 0.5px), linear-gradient(90deg, #3d52a1 0.5px, transparent 0.5px)`, backgroundSize: '50px 50px' }} />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
         
         {/* TOP ROW: Title + Featured Image */}
         <div className="flex flex-col lg:flex-row gap-12 items-center mb-20">

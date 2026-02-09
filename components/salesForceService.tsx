@@ -17,7 +17,7 @@ const SalesForceService = () => {
 
   return (
     <section className="py-12 md:py-16 bg-white">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 max-w-6xl">
         <div className="flex flex-col lg:flex-row gap-16">
           
           {/* LEFT SIDE: Heading & Description (Sticky on Desktop) */}
