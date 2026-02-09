@@ -32,7 +32,7 @@ const HomeModel = () => {
   ];
 
   return (
-    <section className="relative py-24 px-6 md:px-8 bg-white overflow-hidden">
+    <section className="relative py-12 md:py-16 px-6 md:px-8 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* HEADER */}
@@ -43,13 +43,13 @@ const HomeModel = () => {
             className="flex items-center justify-center lg:justify-start gap-3 mb-4"
           >
             <span className="w-12 h-0.5 bg-[#3d52a1]" />
-            <span className="text-[#3d52a1] font-black uppercase tracking-[0.3em] text-xs">A Performance Based Approach</span>
+            <span className="text-[#3d52a1] font-semibold uppercase tracking-[0.3em] text-xs">A Performance Based Approach</span>
           </motion.div>
-          <h2 className="text-4xl md:text-4xl lg:text-5xl font-black text-black uppercase italic leading-[0.85] tracking-tighter">
-            OUR SIGNATURE <br />
-            <span className="text-[#7191e6]">3-STAGE</span> MODEL
+          <h2 className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900 ">
+            Our Signature <br />
+            <span className="text-[#7191e6]">3-Stage</span> Model
           </h2>
-          <p className="mt-6 text-xl text-slate-500 font-bold uppercase italic">
+          <p className="text-lg text-slate-600 animate-in fade-in duration-700 delay-100 slide-in-from-bottom-8 mt-4">
             A Risk-Free, Performance Based Hiring Approach
           </p>
         </div>
@@ -77,23 +77,19 @@ const HomeModel = () => {
                   <div className="text-[#3d52a1] group-hover:scale-110 transition-transform duration-500">
                     {stage.icon}
                   </div>
-                  <span className="px-4 py-1 rounded-full bg-white text-[10px] font-black uppercase tracking-widest text-slate-400 border border-slate-100 group-hover:border-[#7191e6] group-hover:text-[#7191e6] transition-colors">
+                  <span className="px-4 py-1 rounded-full bg-white text-[10px] font-semibold uppercase tracking-widest text-slate-400 border border-slate-100 group-hover:border-[#7191e6] group-hover:text-[#7191e6] transition-colors">
                     {stage.tag}
                   </span>
                 </div>
-
-                {/* CONTENT */}
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-black text-black uppercase italic leading-tight tracking-tight">
+                  <h3 className="text-xl font-semibold text-black uppercase leading-tight tracking-tight">
                     {stage.title}
                   </h3>
                   <div className="w-12 h-1 bg-[#7191e6] group-hover:w-full transition-all duration-700" />
-                  <p className="text-slate-600 font-medium leading-relaxed">
+                  <p className="text-slate-600 text-sm font-medium leading-relaxed">
                     {stage.desc}
                   </p>
                 </div>
-
-                {/* ARROW INDICATOR */}
                 <div className="mt-8 flex justify-end">
                   <IconCircleChevronRight 
                     size={32} 
@@ -102,25 +98,19 @@ const HomeModel = () => {
                 </div>
               </div>
 
-              {/* Step Number Badge */}
-              {/* <div className="absolute -top-4 -left-4 w-10 h-10 bg-black text-white rounded-full flex items-center justify-center font-black italic text-sm border-4 border-white">
-                0{idx + 1}
-              </div> */}
             </motion.div>
           ))}
         </div>
-
-        {/* BOTTOM CALLOUT */}
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           className="mt-20 p-10 rounded-[3rem] bg-linear-to-br from-[#3d52a1] to-[#7191e6] text-white flex flex-col md:flex-row items-center justify-between gap-8"
         >
           <div className="space-y-2 text-center md:text-left">
-            <h4 className="text-3xl font-black uppercase italic tracking-tighter">Ready to see talent in action?</h4>
+            <h4 className="text-3xl font-semibold uppercase  tracking-tighter">Ready to see talent in action?</h4>
             <p className="font-medium text-white/80">Experience Month 2 with zero strings attached.</p>
           </div>
-          <button className="bg-white text-[#3d52a1] px-10 py-5 rounded-full font-black uppercase italic text-sm hover:bg-black hover:text-white transition-all shadow-xl">
+          <button className="bg-white text-[#3d52a1] px-10 py-5 rounded-full font-semibold uppercase  text-sm hover:bg-black hover:text-white transition-all shadow-xl">
             Get Started Now
           </button>
         </motion.div>

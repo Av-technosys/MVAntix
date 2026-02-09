@@ -45,7 +45,7 @@ const HomeEngine = () => {
   ];
 
   return (
-    <section className="relative py-24 px-6 md:px-8 bg-[#3d52a1] overflow-hidden">
+    <section className="relative py-12 md:py-16 px-6 md:px-8 bg-[#3d52a1] overflow-hidden">
       <div
         className="absolute inset-0 opacity-20"
         style={{
@@ -67,7 +67,7 @@ const HomeEngine = () => {
               className="text-[#7191e6] animate-pulse"
               size={24}
             />
-            <span className="text-[#7191e6] font-black uppercase tracking-[0.4em] text-xs">
+            <span className="text-[#7191e6] font-semibold uppercase tracking-[0.4em] text-xs">
               The Transformation Engine
             </span>
           </motion.div>
@@ -75,7 +75,7 @@ const HomeEngine = () => {
           <motion.h2
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            className="text-4xl md:text-4xl lg:text-5xl font-black text-white uppercase italic leading-none tracking-tighter"
+            className="text-4xl md:text-5xl font-semibold leading-13  text-white uppercase "
           >
             THE MVANTIX TALENT <br />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7191e6] to-cyan-400">
@@ -112,7 +112,7 @@ const HomeEngine = () => {
                 )}
               </AnimatePresence>
               <div className="relative z-10 h-full bg-slate-900/50 backdrop-blur-xl border border-white/10 p-8 rounded-4xl hover:border-[#7191e6]/50 transition-colors duration-500 overflow-hidden">
-                <span className="absolute -right-1 -bottom-4 text-8xl font-black text-white/5 italic select-none">
+                <span className="absolute -right-1 -bottom-4 text-8xl font-semibold text-white/5  select-none">
                   0{idx + 1}
                 </span>
                 <div
@@ -121,7 +121,7 @@ const HomeEngine = () => {
                   {pillar.icon}
                 </div>
 
-                <h3 className="text-xl font-black text-white uppercase italic mb-4 tracking-tight group-hover:text-[#7191e6] transition-colors">
+                <h3 className="text-xl font-semibold text-white uppercase  mb-4 tracking-tight group-hover:text-[#7191e6] transition-colors">
                   {pillar.title}
                 </h3>
 
@@ -139,7 +139,7 @@ const HomeEngine = () => {
           className="mt-20 text-center"
         >
           <div className="inline-block p-px rounded-full bg-linear-to-r from-transparent via-[#7191e6]/50 to-transparent w-full max-w-4xl" />
-          <p className="mt-8 text-2xl md:text-3xl font-black text-white uppercase italic tracking-tighter">
+          <p className="mt-8 text-2xl md:text-3xl font-semibold text-white uppercase tracking-tighter">
             &quot;Talent that behaves like experienced professionals{" "}
             <span className="text-[#7191e6]">from Day One.</span>&quot;
           </p>

@@ -23,17 +23,17 @@ const cards = [
 
 const AboutPurpose = () => {
   return (
-    <section className="w-full bg-white py-16 px-6">
+    <section className="w-full bg-white py-12 md:py-16 px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl text-[#7191e6] md:text-5xl font-bold mb-4">
+        <h2 className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900  mb-2">
           Our Purpose
         </h2>
 
-        <p className="text-xl text-[#3d52a1] md:text-2xl font-semibold mb-4">
+        <p className="text-4xl md:text-5xl font-semibold leading-13 text-[#7191e6]  mb-4">
           Predictable Talent. Zero Guesswork.
         </p>
 
-        <p className="text-black mb-12 max-w-3xl">
+        <p className="text-lg text-slate-600 animate-in fade-in duration-700 delay-100 slide-in-from-bottom-8 mb-12 max-w-3xl">
           Traditional training focuses on tools; we focus on readiness. We
           exist to solve the three biggest headaches in the enterprise world:
         </p>
@@ -47,7 +47,7 @@ const AboutPurpose = () => {
               <div>
                 <h3 className="text-xl  text-[#3d52a1] font-semibold mb-3">{card.title}</h3>
 
-                <p className="text-gray-700 mb-4">{card.desc}</p>
+                <p className="text-gray-700 text-md font-medium mb-4">{card.desc}</p>
 
                 <button className="flex items-center gap-2 font-medium text-[#7191e6] transition group-hover:text-black">
                   Learn More →

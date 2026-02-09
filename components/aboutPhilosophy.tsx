@@ -21,16 +21,16 @@ const layers = [
 
 const AboutPhilosophy = () => {
   return (
-    <section className="py-20 px-6 bg-gray-50 text-gray-900">
+    <section className="py-12 md:py-16 px-6 bg-gray-50 text-gray-900">
       <div className="max-w-6xl mx-auto">
 
         {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl text-[#3d52a1] font-bold">
-            The MVANTIX Philosophy
+          <h2 className="text-4xl md:text-5xl font-semibold leading-15 text-[#7191e6] ">
+           <span className="text-black">The</span> Mvantix Philosophy
           </h2>
 
-          <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 animate-in fade-in duration-700 delay-100 slide-in-from-bottom-8 max-w-2xl mx-auto">
             Intelligence. Talent. Execution. A transformation engine across
             four critical intelligence layers.
           </p>
@@ -47,11 +47,11 @@ const AboutPhilosophy = () => {
               {/* Rect accent */}
               <div className="w-12 h-2 bg-[#7191e6] rounded mb-6 group-hover:w-20 transition-all duration-300" />
 
-              <h3 className="text-2xl font-semibold mb-4 text-[#3d52a1]">
+              <h3 className="text-xl font-semibold mb-4 text-[#3d52a1]">
                 {item.title}
               </h3>
 
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 text-md font-medium leading-relaxed">
                 {item.desc}
               </p>
 

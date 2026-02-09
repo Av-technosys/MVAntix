@@ -85,7 +85,7 @@ const ServiceCard = ({ title, desc, icon, index }: ServiceProps) => (
 /10 transition-all duration-500">
         {icon}
       </div>
-      <h3 className="text-2xl font-black italic uppercase tracking-tighter text-white mb-4">
+      <h3 className="text-2xl font-semibold  uppercase tracking-tighter text-white mb-4">
         {title}
       </h3>
       <p className="text-gray-500 font-medium leading-relaxed mb-6 group-hover:text-gray-300 transition-colors">
@@ -121,7 +121,7 @@ export default function ServicesPage() {
 
 
 
- font-black uppercase tracking-[0.4em] text-sm mb-6"
+ font-semibold uppercase tracking-[0.4em] text-sm mb-6"
           >
             <div className="w-10 h-0.5 bg-[#7191e6]
 
@@ -135,7 +135,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-6xl md:text-[8rem] font-black italic uppercase tracking-tighter leading-[0.85]"
+            className="text-6xl md:text-[8rem] font-semibold  uppercase tracking-tighter leading-[0.85]"
           >
             WE BUILD <br />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-white via-gray-400 to-gray-700">THE IMPOSSIBLE.</span>
@@ -167,7 +167,7 @@ export default function ServicesPage() {
 /50 to-transparent rounded-[3rem]"
         >
           <div className="bg-[#080808] rounded-[2.9rem] py-20 px-10 text-center">
-            <h2 className="text-3xl md:text-5xl font-black italic uppercase tracking-tighter mb-8">
+            <h2 className="text-3xl md:text-5xl font-semibold  uppercase tracking-tighter mb-8">
               Need a Custom Solution?
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto mb-10 font-medium">
@@ -177,14 +177,14 @@ export default function ServicesPage() {
 
 
 
- text-black px-14 py-6 rounded-full font-black uppercase italic tracking-tighter hover:bg-white transition-all transform hover:scale-105 active:scale-95">
+ text-black px-14 py-6 rounded-full font-semibold uppercase  tracking-tighter hover:bg-white transition-all transform hover:scale-105 active:scale-95">
               Get a Quote Now
             </button>
           </div>
         </motion.div>
       </div>
 
-      <footer className="mt-20 text-center text-white/20 text-[10px] font-black uppercase tracking-[0.5em]">
+      <footer className="mt-20 text-center text-white/20 text-[10px] font-semibold uppercase tracking-[0.5em]">
         MVANTIX // DEPLOYING THE FUTURE
       </footer>
     </main>

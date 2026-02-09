@@ -39,7 +39,7 @@ const steps = [
 
 const HomeBusiness = () => {
   return (
-    <section className="relative py-24 bg-white overflow-hidden">
+    <section className="relative py-12 md:py-16 bg-white overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/grid-me.png')]" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -47,18 +47,18 @@ const HomeBusiness = () => {
           <motion.span 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-[#7191e6] font-black uppercase tracking-[0.4em] text-xs"
+            className="text-[#7191e6] font-semibold uppercase tracking-[0.4em] text-xs"
           >
             How We Work
           </motion.span>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-4xl lg:text-5xl font-black text-black uppercase italic tracking-tighter"
+            className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900 "
           >
             Our Business <span className="text-[#3d52a1]">Model</span>
           </motion.h2>
-          <p className="text-slate-500 font-medium max-w-2xl mx-auto italic">
+          <p className="text-lg text-slate-600 animate-in fade-in duration-700 delay-100 slide-in-from-bottom-8 max-w-2xl mx-auto">
             A scalable pipeline of future-ready professionals, built for modern enterprise demands.
           </p>
         </div>
@@ -83,11 +83,11 @@ const HomeBusiness = () => {
                 >
                   {step.icon}
                 </div>
-                <span className="absolute top-6 right-8 text-slate-200 font-black text-4xl italic opacity-50 group-hover:text-[#7191e6]/20 transition-colors">
+                <span className="absolute top-6 right-8 text-slate-200 font-semibold text-4xl opacity-50 group-hover:text-[#7191e6]/20 transition-colors">
                   0{index + 1}
                 </span>
 
-                <h3 className="text-2xl font-black text-black uppercase italic mb-4 tracking-tight">
+                <h3 className="text-xl font-semibold text-black uppercase mb-4 tracking-tight">
                   {step.title}
                 </h3>
                 
@@ -119,10 +119,10 @@ const HomeBusiness = () => {
           className="mt-20 p-8 rounded-4xl bg-[#3d52a1] text-white flex flex-col md:flex-row items-center justify-between gap-6"
         >
           <div className="text-center md:text-left">
-            <h4 className="text-xl font-black uppercase italic">The Result?</h4>
-            <p className="text-white/70 font-medium italic">A scalable pipeline of future-ready professionals.</p>
+            <h4 className="text-3xl font-semibold tracking-tighter uppercase">The Result?</h4>
+            <p className="text-white/70 font-medium">A scalable pipeline of future-ready professionals.</p>
           </div>
-          <button className="px-8 py-4 bg-white text-[#3d52a1] rounded-xl font-black uppercase italic text-sm hover:scale-105 transition-transform shadow-lg">
+          <button className="px-8 py-4 bg-white text-[#3d52a1] rounded-xl font-semibold uppercase text-sm hover:scale-105 transition-transform shadow-lg">
             Start Scaling Now
           </button>
         </motion.div>

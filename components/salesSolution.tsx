@@ -13,7 +13,7 @@ const SalesSolution = () => {
   ];
 
   return (
-    <section className="min-h-screen bg-[#f8f9fa] flex items-center py-20 overflow-hidden">
+    <section className="min-h-screen bg-blue-50 flex items-center py-12 md:py-16 overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-stretch border-l border-gray-200">
           
@@ -24,13 +24,13 @@ const SalesSolution = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-[#7191e6] text-[10px] font-black uppercase tracking-[0.5em] mb-10">
+              <h4 className="text-xs  font-semibold uppercase tracking-[0.2em] text-slate-600 backdrop-blur animate-in fade-in slide-in-from-bottom-6 duration-700 mb-10">
                 Enterprise Platforms
               </h4>
-              <h2 className="text-6xl lg:text-8xl font-black text-[#3d52a1] tracking-tighter uppercase italic leading-[0.8] mb-12">
-                ERP <br /> <span className="text-[#7191e6] not-italic">HUB</span>
+              <h2 className="text-4xl md:text-6xl font-semibold leading-13 text-slate-900  mb-12">
+                ERP <br /> <span className="text-[#7191e6] ">HUB</span>
               </h2>
-              <p className="text-gray-400 text-lg font-medium leading-relaxed italic border-l-4 border-[#7191e6] pl-6">
+              <p className="text-lg text-slate-600 animate-in fade-in duration-700 delay-100 slide-in-from-bottom-8  border-l-4 border-[#7191e6] pl-6">
                 Integrated Systems for Smarter Operations. Unifying business processes and data across your entire organization.
               </p>
             </motion.div>
@@ -46,27 +46,27 @@ const SalesSolution = () => {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className={`relative group p-12 border-b border-r border-gray-200 min-h-[350px] flex flex-col justify-between transition-all duration-700 hover:bg-[#3d52a1] ${
+                  className={`relative group p-12 border-b border-r border-gray-200 min-h-87.5 flex flex-col justify-between transition-all duration-700 hover:bg-[#3d52a1] ${
                     idx === 0 ? "bg-white" : "bg-white"
                   }`}
                 >
                   {/* Background Number Reveal */}
-                  <span className="absolute top-10 right-10 text-8xl font-black text-gray-50 group-hover:text-white/5 transition-colors duration-500 italic pointer-events-none">
+                  <span className="absolute top-10 right-10 text-8xl font-semibold text-gray-50 group-hover:text-white/5 transition-colors duration-500 pointer-events-none">
                     0{idx + 1}
                   </span>
 
                   <div className="relative z-10">
-                    <h3 className="text-2xl font-black text-[#3d52a1] group-hover:text-[#7191e6] uppercase tracking-tighter mb-4 transition-colors duration-500">
+                    <h3 className="text-2xl font-semibold text-[#3d52a1] group-hover:text-[#7191e6] uppercase tracking-tighter mb-4 transition-colors duration-500">
                       {service.title}
                     </h3>
-                    <p className="text-sm text-gray-400 group-hover:text-white/60 font-medium leading-relaxed transition-colors duration-500 max-w-[200px]">
+                    <p className="text-sm text-gray-400 group-hover:text-white/60 font-medium leading-relaxed transition-colors duration-500 max-w-50">
                       {service.desc}
                     </p>
                   </div>
 
                   <div className="relative z-10">
                     <div className="w-10 h-1 bg-[#7191e6] group-hover:w-full transition-all duration-700" />
-                    <p className="mt-4 text-[9px] font-black text-[#3d52a1] group-hover:text-white uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all">
+                    <p className="mt-4 text-[9px] font-semibold text-[#3d52a1] group-hover:text-white uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all">
                       Enterprise Ready Solution
                     </p>
                   </div>
@@ -78,7 +78,7 @@ const SalesSolution = () => {
                 className="p-12 bg-[#7191e6] text-white flex flex-col justify-center items-center text-center"
                 whileHover={{ backgroundColor: "#3d52a1" }}
               >
-                <p className="text-xl font-black uppercase italic tracking-tighter leading-tight">
+                <p className="text-xl font-semibold uppercase tracking-tighter leading-tight">
                   Better Visibility. <br /> Improved Forecasting. <br /> Operational Efficiency.
                 </p>
               </motion.div>

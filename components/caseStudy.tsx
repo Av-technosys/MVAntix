@@ -39,7 +39,7 @@ const studies = [
 
 const CaseStudy = () => {
   return (
-    <section className="relative py-24 bg-gray-50 overflow-hidden">
+    <section className="relative py-12 md:py-16 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* --- HEADER SECTION --- */}
@@ -48,14 +48,14 @@ const CaseStudy = () => {
             <motion.span 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="text-[#7191e6] font-black uppercase tracking-[0.3em] text-xs inline-block"
+              className="text-[#7191e6] font-semibold uppercase tracking-[0.3em] text-xs inline-block"
             >
               Case Studies & Proven Results
             </motion.span>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-6xl font-black text-black uppercase italic leading-[0.9] tracking-tighter"
+              className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900 "
             >
               Delivering Measurable <br /> 
               <span className="text-[#3d52a1]">Business Impact</span>
@@ -67,7 +67,7 @@ const CaseStudy = () => {
             whileInView={{ opacity: 1 }}
             className="max-w-sm lg:text-right"
           >
-            <p className="text-slate-500 font-bold italic leading-relaxed">
+            <p className="text-lg text-slate-600 animate-in fade-in duration-700 delay-100 slide-in-from-bottom-8">
               We focus on real ROI, real performance, and real scalability.
             </p>
           </motion.div>
@@ -82,7 +82,7 @@ const CaseStudy = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -10 }}
-              className="group relative h-[500px] rounded-[2.5rem] overflow-hidden bg-slate-100 border border-slate-100 shadow-2xl shadow-slate-200/40"
+              className="group relative h-125 rounded-[2.5rem] overflow-hidden bg-slate-100 border border-slate-100 shadow-2xl shadow-slate-200/40"
             >
               {/* Background Image with Overlay */}
               <div className="absolute inset-0 z-0">
@@ -105,21 +105,21 @@ const CaseStudy = () => {
                   {study.icon}
                 </div>
                 
-                <span className="text-[#7191e6] text-xs font-black uppercase tracking-widest mb-3">
+                <span className="text-[#7191e6] text-xs font-semibold uppercase tracking-widest mb-3">
                   {study.category}
                 </span>
                 
-                <h3 className="text-3xl font-black uppercase italic leading-[0.85] mb-4 tracking-tighter group-hover:text-white transition-colors">
+                <h3 className="text-3xl font-semibold uppercase leading-[0.85] mb-4 tracking-tighter group-hover:text-white transition-colors">
                   {study.title}
                 </h3>
 
-                <p className="text-slate-300 text-sm font-medium italic mb-6 line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <p className="text-slate-300 text-sm font-medium mb-6 line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   {study.description}
                 </p>
 
                 {/* Bottom Bar */}
                 <div className="pt-6 border-t border-white/10 flex items-center justify-between">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-white/50">View Success Story</span>
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-white/50">View Success Story</span>
                   <div className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center group-hover:bg-[#7191e6] group-hover:text-white transition-all transform group-hover:rotate-45">
                     <IconArrowUpRight size={20} />
                   </div>
@@ -135,7 +135,7 @@ const CaseStudy = () => {
           whileInView={{ opacity: 1 }}
           className="mt-16 text-center lg:text-left border-l-4 border-[#3d52a1] pl-8 py-4"
         >
-          <p className="text-xl md:text-2xl text-slate-800 font-bold max-w-4xl">
+          <p className="text-xl md:text-xl text-slate-900 font-bold max-w-4xl">
             MVANTIX has delivered high impact solutions across healthcare, security, enterprise services, and technology firms.
           </p>
         </motion.div>

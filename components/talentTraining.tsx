@@ -12,7 +12,7 @@ const TalentTraining = () => {
   ];
 
   return (
-    <section className="py-24 bg-white min-h-screen flex items-center">
+    <section className="py-12 md:py-16 bg-white min-h-screen flex items-center">
       <div className="container mx-auto px-6">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
@@ -25,17 +25,17 @@ const TalentTraining = () => {
               className="sticky top-32"
             >
               <div className="flex items-center gap-2 mb-6">
-                <span className="w-8 h-[2px] bg-[#7191e6]"></span>
-                <span className="text-[#7191e6] text-[10px] font-black uppercase tracking-[0.4em]">Training & Enablement</span>
+                <span className="w-8 h-0.5 bg-[#7191e6]"></span>
+                <span className="text-xs  font-semibold uppercase tracking-[0.2em] text-slate-600 backdrop-blur animate-in fade-in slide-in-from-bottom-6 duration-700">Training & Enablement</span>
               </div>
               
-              <h2 className="text-6xl font-black text-black uppercase tracking-tighter leading-none mb-8">
+              <h2 className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900  mb-8">
                Upskilling Teams for
-                <span className="text-[#7191e6] not-italic"> Long-Term Success</span>
+                <span className="text-[#7191e6]"> Long-Term Success</span>
               </h2>
               
               <div className="p-8 bg-gray-50 border-l-4 border-[#3d52a1] rounded-r-2xl">
-                <p className="text-gray-500 font-bold italic text-sm leading-relaxed uppercase">
+                <p className="text-lg text-slate-600 animate-in fade-in duration-700 delay-100 slide-in-from-bottom-8">
                   MVANTIX delivers structured training and enablement programs aligned with enterprise needs.
                 </p>
               </div>
@@ -51,26 +51,26 @@ const TalentTraining = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.15 }}
-                className="group relative overflow-hidden bg-white border border-gray-100 p-8 md:p-12 rounded-[2rem] hover:border-[#7191e6] transition-all duration-500 shadow-sm hover:shadow-xl hover:shadow-[#3d52a1]/5"
+                className="group relative overflow-hidden bg-white border border-gray-100 p-8 md:p-12 rounded-4xl hover:border-[#7191e6] transition-all duration-500 shadow-sm hover:shadow-xl hover:shadow-[#3d52a1]/5"
               >
                 {/* Background Numbering */}
-                <span className="absolute -right-4 -bottom-8 text-9xl font-black text-gray-50 group-hover:text-[#7191e6]/5 transition-colors italic">
+                <span className="absolute -right-1 -bottom-8 text-9xl font-semibold text-gray-50 group-hover:text-[#7191e6]/5 transition-colors">
                   0{idx + 1}
                 </span>
 
                 <div className="relative z-10">
                   <div className="flex items-center gap-4 mb-4">
-                    <span className="text-[10px] font-mono text-[#7191e6] font-black uppercase">Service_Stream // 0{idx + 1}</span>
-                    <div className="flex-1 h-[1px] bg-gray-50 group-hover:bg-[#7191e6]/20 transition-all"></div>
+                    <span className="text-[10px] font-mono text-[#7191e6] font-semibold uppercase">Service_Stream // 0{idx + 1}</span>
+                    <div className="flex-1 h-1px bg-gray-50 group-hover:bg-[#7191e6]/20 transition-all"></div>
                   </div>
                   
-                  <h3 className="text-xl md:text-2xl font-black text-[#3d52a1] uppercase tracking-tight group-hover:translate-x-2 transition-transform duration-500 max-w-md">
+                  <h3 className="text-xl md:text-xl font-semibold text-[#3d52a1] uppercase tracking-tight group-hover:translate-x-2 transition-transform duration-500 max-w-md">
                     {service}
                   </h3>
                 </div>
 
                 {/* Micro Tech Element */}
-                <div className="mt-8 flex gap-1 group-hover:translate-y-[-5px] transition-transform">
+                <div className="mt-8 flex gap-1 group-hover:translate-y-1.25 transition-transform">
                    <div className="w-1 h-1 bg-[#3d52a1]" />
                    <div className="w-4 h-1 bg-[#7191e6]" />
                    <div className="w-1 h-1 bg-gray-100" />
@@ -82,12 +82,12 @@ const TalentTraining = () => {
             <motion.div 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              className="p-10 bg-[#3d52a1] rounded-[2rem] text-center lg:text-left flex flex-col lg:flex-row items-center justify-between gap-6"
+              className="p-10 bg-[#3d52a1] rounded-4xl text-center lg:text-left flex flex-col lg:flex-row items-center justify-between gap-6"
             >
-              <p className="text-white text-lg font-black uppercase italic tracking-tighter">
+              <p className="text-white text-lg font-semibold uppercase tracking-tighter">
                 We ensure teams remain future-ready through continuous learning.
               </p>
-              <div className="px-6 py-2 bg-[#7191e6] text-white text-[10px] font-black uppercase tracking-widest rounded-full animate-pulse">
+              <div className="px-6 py-2 bg-[#7191e6] text-white text-[10px] font-semibold uppercase tracking-widest rounded-full animate-pulse">
                 System_Active
               </div>
             </motion.div>
