@@ -17,7 +17,7 @@ export default function CaseStudyPage() {
         Case Studies
       </motion.h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-28 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-28 max-w-6xl mx-auto px-6">
 
         {caseStudies.map((item, i) => (
           <motion.div
@@ -36,7 +36,7 @@ export default function CaseStudyPage() {
                 alt={item.title}
                 width={800}
                 height={600}
-                className="w-full h-72 object-cover rounded-3xl shadow-lg"
+                className="w-full h-64 object-cover rounded-3xl shadow-lg"
               />
 
               <div className="
