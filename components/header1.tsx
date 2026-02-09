@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image"; 
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   IconMenu2,
@@ -30,20 +30,19 @@ const Header1 = () => {
 
   const services = [
     { name: "Salesforce & Enterprise Platforms Covers", path: "/services/Salesforce-Enterprise-Platforms", },
-    { name: "Talent & Hiring Solutions Covers", path: "/services/Talent-Hiring-Solutions",},
-    { name: "Industries We Serve", path: "/services/Industries-We-Serve",  },
+    { name: "Talent & Hiring Solutions Covers", path: "/services/Talent-Hiring-Solutions", },
+    { name: "Industries We Serve", path: "/services/Industries-We-Serve", },
   ];
 
   return (
     <>
       <div className="h-20 md:h-22.5 w-full pointer-events-none" />
       <header className="fixed top-0 left-0 right-0 z-100 transition-all duration-500">
-        <div 
-          className={`mx-auto transition-all duration-500 ${
-            isScrolled 
-              ? "max-w-6xl mt-4 rounded-full bg-black/10 backdrop-blur-md border border-white/10 px-8 py-3 shadow-2xl" 
-              : "max-w-full bg-white/50 backdrop-blur-sm px-10 py-6"
-          }`}
+        <div
+          className={`mx-auto transition-all duration-500 ${isScrolled
+            ? "max-w-6xl mt-2 rounded-full bg-black/10 backdrop-blur-lg border border-white/10 px-8 py-3 shadow-2xl"
+            : "max-w-full bg-white/50 backdrop-blur-sm px-10 py-6"
+            }`}
         >
           <div className="flex items-center justify-between">
             <div className="hidden md:flex items-center gap-6 flex-1">
@@ -68,7 +67,7 @@ const Header1 = () => {
                     alt="Mvantix Logo"
                     fill
                     priority
-                    className={`object-contain transition-all duration-500 ${isScrolled ? 'brightness-0 invert' : ''}`} 
+                    className={`object-contain transition-all duration-500 ${isScrolled ? 'brightness-0 invert' : ''}`}
                   />
                 </motion.div>
               </Link>
@@ -86,7 +85,7 @@ const Header1 = () => {
                 </Link>
                 <DropdownMenu modal={false}>
                   <DropdownMenuTrigger className={`flex items-center gap-1 text-xs font-bold uppercase tracking-widest outline-none group cursor-pointer transition-all ${isScrolled ? 'text-white' : 'text-black/70 hover:text-black'}`}>
-                    Services 
+                    Services
                     <IconChevronDown size={14} className="group-data-[state=open]:rotate-180 transition-transform duration-200" />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="z-110 w-56 bg-white border-none shadow-[0_15px_50px_rgba(0,0,0,0.2)] rounded-xl p-2 mt-4 animate-in fade-in slide-in-from-top-2">
@@ -107,13 +106,13 @@ const Header1 = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="z-110 w-56 bg-white border border-white/10 text-[#5a7bc] rounded-xl shadow-[0_15px_50px_rgba(0,0,0,0.4)] p-2 mt-4">
                   <DropdownMenuItem asChild className="focus:bg-[#7191e6] focus:text-white cursor-pointer py-3">
-                    <Link href="/blog" className="flex w-full items-center justify-between uppercase text-[10px] font-bold tracking-widest">Blogs <IconArrowRight size={14}/></Link>
+                    <Link href="/blog" className="flex w-full items-center justify-between uppercase text-[10px] font-bold tracking-widest">Blogs <IconArrowRight size={14} /></Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild className="focus:bg-[#7191e6] focus:text-white cursor-pointer py-3">
-                    <Link href="/career" className="flex w-full items-center justify-between uppercase text-[10px] font-bold tracking-widest">Careers <IconArrowRight size={14}/></Link>
+                    <Link href="/career" className="flex w-full items-center justify-between uppercase text-[10px] font-bold tracking-widest">Careers <IconArrowRight size={14} /></Link>
                   </DropdownMenuItem>
-                   <DropdownMenuItem asChild className="focus:bg-[#7191e6] focus:text-white cursor-pointer py-3">
-                    <Link href="/case-study" className="flex w-full items-center justify-between uppercase text-[10px] font-bold tracking-widest">Case Study <IconArrowRight size={14}/></Link>
+                  <DropdownMenuItem asChild className="focus:bg-[#7191e6] focus:text-white cursor-pointer py-3">
+                    <Link href="/case-study" className="flex w-full items-center justify-between uppercase text-[10px] font-bold tracking-widest">Case Study <IconArrowRight size={14} /></Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -152,8 +151,8 @@ const Header1 = () => {
                       className="object-contain"
                     />
                   </div>
-                  <button 
-                    onClick={() => setMobileMenuOpen(false)} 
+                  <button
+                    onClick={() => setMobileMenuOpen(false)}
                     className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-900"
                   >
                     <IconX size={20} />
@@ -162,16 +161,16 @@ const Header1 = () => {
                 <div className="flex-1 overflow-y-auto px-8 py-10">
                   <nav className="flex flex-col gap-10">
                     <div className="flex flex-col gap-5">
-                      <Link 
-                        href="/" 
-                        onClick={() => setMobileMenuOpen(false)} 
+                      <Link
+                        href="/"
+                        onClick={() => setMobileMenuOpen(false)}
                         className="text-2xl font-medium text-slate-900 tracking-tight"
                       >
                         Home
                       </Link>
-                      <Link 
-                        href="/about" 
-                        onClick={() => setMobileMenuOpen(false)} 
+                      <Link
+                        href="/about"
+                        onClick={() => setMobileMenuOpen(false)}
                         className="text-2xl font-medium text-slate-900 tracking-tight"
                       >
                         About
@@ -186,10 +185,10 @@ const Header1 = () => {
                       </div>
                       <div className="grid gap-6">
                         {services.map((s) => (
-                          <Link 
-                            key={s.path} 
-                            href={s.path} 
-                            onClick={() => setMobileMenuOpen(false)} 
+                          <Link
+                            key={s.path}
+                            href={s.path}
+                            onClick={() => setMobileMenuOpen(false)}
                             className="group flex items-center justify-between text-[15px] font-medium text-slate-600 active:text-[#3d52a1]"
                           >
                             <span className="max-w-[85%] leading-snug">{s.name}</span>
@@ -199,16 +198,16 @@ const Header1 = () => {
                       </div>
                     </div>
                     <div className="pt-6 border-t border-gray-50 flex flex-col gap-5">
-                       <Link 
-                        href="/blog" 
-                        onClick={() => setMobileMenuOpen(false)} 
+                      <Link
+                        href="/blog"
+                        onClick={() => setMobileMenuOpen(false)}
                         className="text-lg font-medium text-slate-700 flex items-center justify-between"
                       >
                         Blog <span className="text-[10px] bg-slate-100 px-2 py-1 rounded-md uppercase font-bold text-slate-400">Read</span>
                       </Link>
-                      <Link 
-                        href="/career" 
-                        onClick={() => setMobileMenuOpen(false)} 
+                      <Link
+                        href="/career"
+                        onClick={() => setMobileMenuOpen(false)}
                         className="text-lg font-medium text-slate-700 flex items-center justify-between"
                       >
                         Careers <span className="text-[10px] bg-slate-100 px-2 py-1 rounded-md uppercase font-bold text-slate-400">Join Us</span>
@@ -217,9 +216,9 @@ const Header1 = () => {
                   </nav>
                 </div>
                 <div className="p-8 bg-white border-t border-gray-50">
-                   <Link 
-                    href="/contact" 
-                    onClick={() => setMobileMenuOpen(false)} 
+                  <Link
+                    href="/contact"
+                    onClick={() => setMobileMenuOpen(false)}
                     className="flex items-center justify-center gap-3 w-full bg-[#3d52a1] text-white py-5 rounded-2xl font-bold uppercase text-xs tracking-widest shadow-lg shadow-[#3d52a1]/20 active:scale-[0.98] transition-all"
                   >
                     Contact Us <IconArrowRight size={18} />
