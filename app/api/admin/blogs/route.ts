@@ -1,7 +1,7 @@
 // src/app/api/admin/blogs/route.ts
 
-import { db } from "@/src/db/client";
-import { blogs } from "@/src/db/schema/blogs";
+import { db } from "@/lib/db";
+import { blogs } from "@/db/schema";
 
 export async function POST(req: Request) {
   const body = await req.json();

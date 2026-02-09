@@ -1,13 +1,15 @@
-import { db } from "@/src/db/client";
-import { blogs } from "@/src/db/schema/blogs";
+import { db } from "@/lib/db";
+import { blogs } from "@/db/schema";
 import { eq } from "drizzle-orm";
+import { NextRequest } from "next/server";
 
 // /api/blogs/[slug]/route.ts
 export async function GET(
-  req: Request,
-  { params }: { params: { slug: string } },
+  req: NextRequest,
+  { params }: { params: Promise<{ slug: string }> },
 ) {
-  const blog = await db.select().from(blogs).where(eq(blogs.slug, params.slug));
+  const { slug } = await params;
+  const blog = await db.select().from(blogs).where(eq(blogs.slug, slug));
 
   return Response.json(blog[0]);
 }
