@@ -112,6 +112,9 @@ const Header1 = () => {
                   <DropdownMenuItem asChild className="focus:bg-[#7191e6] focus:text-white cursor-pointer py-3">
                     <Link href="/career" className="flex w-full items-center justify-between uppercase text-[10px] font-bold tracking-widest">Careers <IconArrowRight size={14}/></Link>
                   </DropdownMenuItem>
+                   <DropdownMenuItem asChild className="focus:bg-[#7191e6] focus:text-white cursor-pointer py-3">
+                    <Link href="/case-study" className="flex w-full items-center justify-between uppercase text-[10px] font-bold tracking-widest">Case Study <IconArrowRight size={14}/></Link>
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
