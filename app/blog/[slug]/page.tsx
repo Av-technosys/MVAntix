@@ -24,7 +24,7 @@ export default async function BlogPage({ params }: Props) {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000"}/api/blogs/${slug}`, {
       cache: "no-store",
     });
-    
+
     if (res.ok) {
       blog = await res.json();
     }
@@ -64,11 +64,10 @@ export default async function BlogPage({ params }: Props) {
 
         {/* Status Badge */}
         <div className="mb-6">
-          <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${
-            blog.status === "published" 
-              ? "bg-green-100 text-green-700" 
+          <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${blog.status === "published"
+              ? "bg-green-100 text-green-700"
               : "bg-yellow-100 text-yellow-700"
-          }`}>
+            }`}>
             {blog.status === "published" ? "✅ Published" : "📝 Draft"}
           </span>
         </div>
@@ -123,7 +122,7 @@ export default async function BlogPage({ params }: Props) {
               className="w-full p-3 text-sm border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition resize-none"
             />
 
-            <button 
+            <button
               type="submit"
               className="w-full bg-blue-600 text-white py-3 text-sm font-medium rounded-lg hover:bg-blue-700 transition"
             >
