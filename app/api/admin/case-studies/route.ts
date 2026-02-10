@@ -26,13 +26,11 @@ async function uniqueSlug(base: string) {
 }
 
 export async function GET() {
-  if (!(await ensureAuthed())) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
   const data = await db
     .select()
     .from(caseStudies)
     .orderBy(asc(caseStudies.createdAt));
+
   return NextResponse.json(data);
 }
 

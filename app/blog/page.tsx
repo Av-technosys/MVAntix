@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { FaSearch } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaSearch } from "react-icons/fa";
 
 type Blog = {
   id: string;
@@ -165,23 +165,45 @@ const Page = () => {
       </section>
 
       {/* PAGINATION */}
-      {totalPages > 1 && (
-        <section className="max-w-6xl mx-auto px-6 py-12 flex justify-center gap-2">
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
-            <button
-              key={p}
-              onClick={() => setPage(p)}
-              className={`px-4 py-2 rounded-lg transition ${
-                page === p
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-              }`}
-            >
-              {p}
-            </button>
-          ))}
-        </section>
-      )}
+    {/* PAGINATION */}
+<section className="max-w-6xl mx-auto px-6 pb-16 flex justify-center">
+  <div className="flex items-center gap-2">
+
+    {/* Previous */}
+    <button
+      onClick={() => setPage((p) => Math.max(1, p - 1))}
+      className="flex items-center gap-2 px-4 py-2 border rounded-lg text-gray-600 hover:bg-gray-100"
+    >
+      <FaChevronLeft />
+      Previous
+    </button>
+
+    {/* Numbers */}
+    {Array.from({ length: totalPages || 1 }, (_, i) => i + 1).map((p) => (
+      <button
+        key={p}
+        onClick={() => setPage(p)}
+        className={`px-4 py-2 border rounded-lg transition ${
+          page === p
+            ? "border-[#7191e6] text-[#7191e6] bg-white"
+            : "text-gray-700 hover:bg-gray-100"
+        }`}
+      >
+        {p}
+      </button>
+    ))}
+
+    {/* Next */}
+    <button
+      onClick={() => setPage((p) => Math.min(totalPages || 1, p + 1))}
+      className="flex items-center gap-2 px-4 py-2 border rounded-lg text-gray-600 hover:bg-gray-100"
+    >
+      Next
+      <FaChevronRight />
+    </button>
+
+  </div>
+</section>
 
     </div>
   );
