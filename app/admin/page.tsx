@@ -71,13 +71,23 @@ export default function AdminPage() {
     void loadAll();
   }, [status]);
 
-  async function loadAll() {
-    setLoading(true);
-    const [b, c] = await Promise.all([fetch("/api/admin/blogs"), fetch("/api/admin/case-studies")]);
-    if (b.ok) setBlogs(await b.json());
-    if (c.ok) setCaseStudies(await c.json());
-    setLoading(false);
+async function loadAll() {
+  setLoading(true);
+  const [b, c] = await Promise.all([
+    fetch("/api/admin/blogs"),
+    fetch("/api/admin/case-studies"),
+  ]);
+
+  if (b.ok) {
+    const data = await b.json();
+    setBlogs(data.reverse()); // latest blog upar
   }
+
+  if (c.ok) setCaseStudies(await c.json());
+
+  setLoading(false);
+}
+
 
   async function saveBlog(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -218,7 +228,7 @@ export default function AdminPage() {
               className="h-fit rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
             >
               <h2 className="text-xl font-semibold text-gray-900">
-                {isEditingBlog ? "✏️ Edit Blog" : "✨ Create Blog"}
+                {isEditingBlog ? " Edit Blog" : " Create Blog"}
               </h2>
               <div className="mt-6 space-y-4">
                 <div>
@@ -291,8 +301,8 @@ export default function AdminPage() {
                     onChange={(e) => setBlogForm({ ...blogForm, status: e.target.value })}
                     className="mt-2 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                   >
-                    <option value="draft">📝 Draft</option>
-                    <option value="published">✅ Published</option>
+                    <option value="draft"> Draft</option>
+                    <option value="published"> Published</option>
                   </select>
                 </div>
               </div>

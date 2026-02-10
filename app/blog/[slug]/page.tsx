@@ -95,8 +95,8 @@ export default async function BlogPage({ params }: Props) {
         />
 
         <div className="p-6">
-          <h3 className="font-semibold text-lg mb-4">
-            📬 Get in Touch With Us
+          <h3 className="font-semibold text-lg  mb-4">
+             Get in Touch With Us
           </h3>
 
           <form className="space-y-3">
