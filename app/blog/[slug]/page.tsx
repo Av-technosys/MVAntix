@@ -1,4 +1,15 @@
-import { blogs } from "@/lib/data/blogs";
+import { notFound } from "next/navigation";
+
+type Blog = {
+  id: string;
+  title: string;
+  slug: string;
+  description: string | null;
+  content: string | null;
+  coverImage: string | null;
+  keywords: string[] | null;
+  status: string | null;
+};
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -7,10 +18,22 @@ type Props = {
 export default async function BlogPage({ params }: Props) {
   const { slug } = await params;
 
-  const blog = blogs.find((b) => b.slug === slug);
+  let blog: Blog | null = null;
+
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000"}/api/blogs/${slug}`, {
+      cache: "no-store",
+    });
+    
+    if (res.ok) {
+      blog = await res.json();
+    }
+  } catch (error) {
+    console.error("Failed to fetch blog:", error);
+  }
 
   if (!blog) {
-    return <div className="p-10">Blog not found</div>;
+    notFound();
   }
 
   return (
@@ -18,68 +41,95 @@ export default async function BlogPage({ params }: Props) {
 
       {/* LEFT BLOG CONTENT */}
       <div className="md:col-span-2">
-        <h1 className="text-3xl font-bold mb-4">{blog.title}</h1>
+        <h1 className="text-4xl font-bold mb-4">{blog.title}</h1>
 
-        <p className="text-gray-600 mb-6">{blog.description}</p>
+        <p className="text-gray-600 mb-6 text-lg">{blog.description}</p>
 
         <img
-          src={blog.image}
-          className="rounded-xl mb-8"
+          src={blog.coverImage || "/Images/TechHub.avif"}
+          className="rounded-xl mb-8 w-full h-96 object-cover"
           alt={blog.title}
         />
 
-        <div className="flex items-center gap-3 mb-8">
-          <div className="w-10 h-10 bg-yellow-400 rounded-full"></div>
-
-          <div>
-            <p className="font-medium">{blog.author}</p>
-            <p className="text-sm text-gray-400">{blog.date}</p>
+        {/* Keywords */}
+        {blog.keywords && blog.keywords.length > 0 && (
+          <div className="flex gap-2 flex-wrap mb-8">
+            {blog.keywords.map((keyword, idx) => (
+              <span key={idx} className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-full">
+                #{keyword}
+              </span>
+            ))}
           </div>
+        )}
+
+        {/* Status Badge */}
+        <div className="mb-6">
+          <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${
+            blog.status === "published" 
+              ? "bg-green-100 text-green-700" 
+              : "bg-yellow-100 text-yellow-700"
+          }`}>
+            {blog.status === "published" ? "✅ Published" : "📝 Draft"}
+          </span>
         </div>
 
-        <div className="whitespace-pre-line text-lg leading-7">
-          {blog.content}
+        {/* Content */}
+        <div className="prose prose-lg max-w-none mb-12">
+          {blog.content && (
+            <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+          )}
         </div>
+
+        {/* Back Link */}
+        <a href="/blog" className="inline-block mt-8 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+          ← Back to Blogs
+        </a>
       </div>
 
       {/* RIGHT CONTACT CARD */}
-      <div className="sticky top-24 h-fit bg-white rounded-xl shadow overflow-hidden">
+      <div className="sticky top-24 h-fit bg-white rounded-xl shadow overflow-hidden border">
 
         <img
-          src="/Images/techcircle.jpg"
-          className="w-full h-38 object-cover"
+          src="/Images/TechHub.avif"
+          className="w-full h-48 object-cover"
           alt="Contact"
         />
 
-        <div className="p-4">
-          <h3 className="font-semibold text-base mb-3">
+        <div className="p-6">
+          <h3 className="font-semibold text-lg mb-4">
             📬 Get in Touch With Us
           </h3>
 
-          <input
-            placeholder="Enter full name"
-            className="w-full mb-2 p-2 text-sm border rounded-lg"
-          />
+          <form className="space-y-3">
+            <input
+              placeholder="Enter full name"
+              className="w-full p-3 text-sm border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
+            />
 
-          <input
-            placeholder="Enter email"
-            className="w-full mb-2 p-2 text-sm border rounded-lg"
-          />
+            <input
+              placeholder="Enter email"
+              type="email"
+              className="w-full p-3 text-sm border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
+            />
 
-          <input
-            placeholder="Enter mobile number"
-            className="w-full mb-2 p-2 text-sm border rounded-lg"
-          />
+            <input
+              placeholder="Enter mobile number"
+              className="w-full p-3 text-sm border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
+            />
 
-          <textarea
-            placeholder="Enter your message"
-            rows={3}
-            className="w-full mb-3 p-2 text-sm border rounded-lg"
-          />
+            <textarea
+              placeholder="Enter your message"
+              rows={4}
+              className="w-full p-3 text-sm border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition resize-none"
+            />
 
-          <button className="w-full bg-blue-800 text-white py-2 text-sm rounded-lg">
-            Submit
-          </button>
+            <button 
+              type="submit"
+              className="w-full bg-blue-600 text-white py-3 text-sm font-medium rounded-lg hover:bg-blue-700 transition"
+            >
+              Send Message
+            </button>
+          </form>
         </div>
       </div>
     </div>
