@@ -41,7 +41,7 @@ export default function CaseStudyPage() {
 
               <div className="
                 absolute left-1/2 -translate-x-1/2
-                bottom-[-55px]
+                -bottom-13.75
                 w-[85%]
                 bg-white p-6
                 rounded-2xl shadow-xl

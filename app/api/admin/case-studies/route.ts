@@ -3,7 +3,7 @@ import { getServerSession } from "next-auth";
 import { eq, asc } from "drizzle-orm";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { blogs } from "@/db/schema";
+import { caseStudies } from "@/db/schema";
 import { slugify } from "@/lib/slug";
 
 async function ensureAuthed() {
@@ -16,8 +16,8 @@ async function uniqueSlug(base: string) {
   let counter = 1;
   // eslint-disable-next-line no-constant-condition
   while (true) {
-    const existing = await db.query.blogs.findFirst({
-      where: eq(blogs.slug, slug),
+    const existing = await db.query.caseStudies.findFirst({
+      where: eq(caseStudies.slug, slug),
       columns: { id: true },
     });
     if (!existing) return slug;
@@ -29,7 +29,10 @@ export async function GET() {
   if (!(await ensureAuthed())) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
-  const data = await db.select().from(blogs).orderBy(asc(blogs.createdAt));
+  const data = await db
+    .select()
+    .from(caseStudies)
+    .orderBy(asc(caseStudies.createdAt));
   return NextResponse.json(data);
 }
 
@@ -45,14 +48,13 @@ export async function POST(req: Request) {
   const slugBase = slugify(title);
   const slug = await uniqueSlug(slugBase);
   const [created] = await db
-    .insert(blogs)
+    .insert(caseStudies)
     .values({
       title,
       slug,
       description: body.description ?? null,
       content: body.content ?? null,
       coverImage: body.coverImage ?? null,
-      keywords: Array.isArray(body.keywords) ? body.keywords : null,
       status: body.status ?? "draft",
     })
     .returning();
