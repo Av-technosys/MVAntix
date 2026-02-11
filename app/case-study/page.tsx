@@ -68,46 +68,53 @@ export default function CaseStudyPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-28 max-w-6xl mx-auto px-6">
 
-        {current.map((data, i) => (
-          <motion.div
-            key={data.id}
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.15 }}
-            viewport={{ once: true }}
-            className="relative group flex flex-col items-center"
-          >
-            <Link href={`/case-study/${data.slug}`} className="w-full">
+      {current.map((data, i) => (
+  <motion.div
+    key={data.id}
+    initial={{ opacity: 0, y: 60 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ delay: i * 0.15 }}
+    viewport={{ once: true }}
+    className="group"
+  >
+    <Link href={`/case-study/${data.slug}`}>
+
+      <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden border">
 
         <Image
-  src={data.coverImage || "/Images/TechHub.avif"}
-  alt={data.title}
-  width={900}
-  height={600}
-  className="w-96 h-64 object-cover rounded-3xl shadow-lg"
-/>
+          src={data.coverImage || "/Images/TechHub.avif"}
+          alt={data.title}
+          width={900}
+          height={600}
+          className="w-full h-48 object-cover"
+        />
 
-<div className="
-  absolute left-1/2 -translate-x-1/2
-  -bottom-14
-  w-[90%]
-  bg-white p-6
-  rounded-2xl shadow-xl
-  transition duration-500 group-hover:-translate-y-2
-">
-  <h2 className="text-lg font-semibold">{data.title}</h2>
- {/* <p
-  className="text-sm mt-2 leading-relaxed text-gray-600 overflow-hidden text-ellipsis whitespace-nowrap"
->
-  {data.description}
-</p> */}
+        <div className="p-6">
 
-</div>
+          <h2 className="text-lg font-semibold mb-2">
+            {data.title}
+          </h2>
 
+          {data.description && (
+            <p className="text-sm text-gray-600 line-clamp-2 mb-4">
+              {data.description}
+            </p>
+          )}
 
-            </Link>
-          </motion.div>
-        ))}
+          <div className="mt-auto">
+            <span className="inline-block w-full text-center py-2 rounded-lg border text-blue-600 font-medium group-hover:bg-blue-600 group-hover:text-white transition">
+              Explore Case Study
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </Link>
+  </motion.div>
+))}
+
 
       </div>
 

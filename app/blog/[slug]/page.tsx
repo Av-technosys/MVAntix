@@ -1,3 +1,4 @@
+import BlogContactForm from "@/components/blogContactForm";
 import { notFound } from "next/navigation";
 
 type Blog = {
@@ -85,52 +86,7 @@ export default async function BlogPage({ params }: Props) {
         </a>
       </div>
 
-      {/* RIGHT CONTACT CARD */}
-      <div className="sticky top-24 h-fit bg-white rounded-xl shadow overflow-hidden border">
-
-        <img
-          src="/Images/TechHub.avif"
-          className="w-full h-48 object-cover"
-          alt="Contact"
-        />
-
-        <div className="p-6">
-          <h3 className="font-semibold text-lg  mb-4">
-             Get in Touch With Us
-          </h3>
-
-          <form className="space-y-3">
-            <input
-              placeholder="Enter full name"
-              className="w-full p-3 text-sm border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
-            />
-
-            <input
-              placeholder="Enter email"
-              type="email"
-              className="w-full p-3 text-sm border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
-            />
-
-            <input
-              placeholder="Enter mobile number"
-              className="w-full p-3 text-sm border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
-            />
-
-            <textarea
-              placeholder="Enter your message"
-              rows={4}
-              className="w-full p-3 text-sm border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition resize-none"
-            />
-
-            <button
-              type="submit"
-              className="w-full bg-blue-600 text-white py-3 text-sm font-medium rounded-lg hover:bg-blue-700 transition"
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
-      </div>
+      <BlogContactForm/>
     </div>
   );
 }
