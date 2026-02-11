@@ -411,7 +411,7 @@ async function loadAll() {
               className="h-fit rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
             >
               <h2 className="text-xl font-semibold text-gray-900">
-                {isEditingCase ? "✏️ Edit Case Study" : "✨ Create Case Study"}
+                {isEditingCase ? "✏️ Edit Case Study" : " Create Case Study"}
               </h2>
               <div className="mt-6 space-y-4">
                 <div>
@@ -474,8 +474,8 @@ async function loadAll() {
                     onChange={(e) => setCaseForm({ ...caseForm, status: e.target.value })}
                     className="mt-2 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                   >
-                    <option value="draft">📝 Draft</option>
-                    <option value="published">✅ Published</option>
+                    <option value="draft"> Draft</option>
+                    <option value="published">Published</option>
                   </select>
                 </div>
               </div>

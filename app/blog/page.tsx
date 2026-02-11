@@ -129,7 +129,8 @@ const Page = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {gridBlogs.map((blog) => (
               <Link key={blog.id} href={`/blog/${blog.slug}`} className="block">
-                <div className="cursor-pointer hover:shadow-lg transition-shadow rounded-xl overflow-hidden">
+               <div className="cursor-pointer rounded-xl overflow-hidden transition-transform duration-300 hover:scale-105">
+
 
                   <img 
                     src={blog.coverImage || "/Images/TechHub.avif"} 
