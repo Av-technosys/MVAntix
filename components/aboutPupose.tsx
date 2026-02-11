@@ -42,7 +42,7 @@ const AboutPurpose = () => {
           {cards.map((card, i) => (
             <div
               key={i}
-              className="group bg-[#dfe8e6] rounded-2xl p-6 flex flex-col justify-between overflow-hidden cursor-pointer transition duration-300 hover:shadow-xl"
+              className="group bg-sky-50 rounded-2xl p-6 flex flex-col justify-between overflow-hidden cursor-pointer transition duration-300 hover:shadow-xl"
             >
               <div>
                 <h3 className="text-xl  text-[#3d52a1] font-semibold mb-3">{card.title}</h3>

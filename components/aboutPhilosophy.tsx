@@ -42,7 +42,7 @@ const AboutPhilosophy = () => {
             <div
               key={i}
 
-              className="relative p-8 rounded-2xl bg-[#dfe8e6] border border-[#3d52a1]/20 shadow-md hover:shadow-xl transition duration-300 group"
+              className="relative p-8 rounded-2xl bg-sky-50 border border-[#3d52a1]/20 shadow-md hover:shadow-xl transition duration-300 group"
             >
               {/* Rect accent */}
               <div className="w-12 h-2 bg-[#7191e6] rounded mb-6 group-hover:w-20 transition-all duration-300" />

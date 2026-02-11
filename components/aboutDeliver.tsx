@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function AboutDeliver() {
   return (
-    <section className="relative w-full bg-[#dfe8e6] py-12 md:py-16 overflow-hidden">
+    <section className="relative w-full bg-sky-50 py-12 md:py-16 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
         {/* LEFT SIDE SINGLE IMAGE */}
         {/* LEFT SIDE SIMPLE NATURAL IMAGE */}
@@ -58,7 +59,7 @@ export default function AboutDeliver() {
           </div>
 
           <button className="bg-[#7191e6] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#3d52a1] transition">
-            Get Started
+           <Link href={"/services/Salesforce-Enterprise-Platforms"}> Get Started</Link>
           </button>
         </div>
       </div>

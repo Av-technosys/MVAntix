@@ -4,11 +4,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { IconArrowRight } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export const HeroSection = () => {
   return (
     <section className="relative pt-20 pb-32 overflow-hidden min-h-screen flex flex-col justify-center">
-      
       {/* --- VIDEO BACKGROUND --- */}
       <div className="absolute inset-0 -z-10">
         <video
@@ -61,14 +61,14 @@ export const HeroSection = () => {
             className="mt-10 flex flex-col sm:flex-row gap-4"
           >
             <Button className="bg-black hover:bg-[#7191e6] text-white px-8 py-7 rounded-2xl text-lg font-bold transition-all group">
-              Start Hiring Smarter
+              <Link href={"/contact"}> Start Hiring Smarter</Link>
               <IconArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
               variant="outline"
-              className="border-2 border-black text-black px-8 py-7 rounded-2xl text-lg font-bold hover:bg-black hover:text-white transition-all"
+              className="border border-black text-black px-8 py-7 rounded-2xl text-lg font-bold hover:bg-black hover:text-white transition-all"
             >
-              Explore Our Model
+              <Link href="#model-section">Explore Our Model</Link>
             </Button>
           </motion.div>
         </div>

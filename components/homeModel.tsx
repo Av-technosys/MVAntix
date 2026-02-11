@@ -9,7 +9,10 @@ import {
   IconCircleChevronRight
 } from "@tabler/icons-react";
 
+
+
 const HomeModel = () => {
+  
   const stages = [
     {
       title: "Month 1  MVANTIX Intelligence Lab",
@@ -32,7 +35,7 @@ const HomeModel = () => {
   ];
 
   return (
-    <section className="relative py-12 md:py-16 px-6 md:px-8 bg-white overflow-hidden">
+    <section id="model-section" className="relative py-12 md:py-16 px-6 md:px-8 bg-white overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* HEADER */}
