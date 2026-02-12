@@ -22,9 +22,10 @@ export default async function BlogPage({ params }: Props) {
   let blog: Blog | null = null;
 
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000"}/api/blogs/${slug}`, {
-      cache: "no-store",
-    });
+   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs/${slug}`, {
+  cache: "no-store",
+});
+
 
     if (res.ok) {
       blog = await res.json();
