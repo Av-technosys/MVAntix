@@ -154,7 +154,7 @@ const ContactPage = () => {
                     {loading ? (
                       <IconLoader2 className="animate-spin" />
                     ) : (
-                      <span className="flex items-center gap-2 italic font-semibold">
+                      <span className="flex items-center gap-2 font-semibold">
                         Send Message <IconSend size={18} />
                       </span>
                     )}
@@ -181,7 +181,7 @@ const ContactPage = () => {
                       Connect Locally
                     </span>
                   </div>
-                  <h3 className="text-3xl font-bold leading-tight mb-2 italic">
+                  <h3 className="text-3xl font-bold leading-tight mb-2">
                     Global Vision,
                     <br /> Local Presence.
                   </h3>

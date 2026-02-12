@@ -217,7 +217,7 @@ const values = [
             className="relative"
           >
             <div className="bg-white rounded-[2.5rem] border border-slate-200 p-8 md:p-10 shadow-2xl shadow-slate-200/40 relative z-10">
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#7191e6] mb-4 italic tracking-widest">// Team snapshot</p>
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#7191e6] mb-4 tracking-widest">// Team snapshot</p>
               <h3 className="text-3xl font-bold text-slate-900 mb-4 tracking-tight">Small, senior, high-trust</h3>
               <p className="text-slate-500 mb-8 leading-relaxed font-medium">
                 We keep teams lean and highly collaborative. You will own problems end-to-end and work closely with founders.
@@ -274,7 +274,7 @@ const values = [
           className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between mb-16"
         >
           <div className="max-w-md">
-            <p className="text-[10px] uppercase tracking-[0.4em] text-[#7191e6] font-black italic mb-3">
+            <p className="text-[10px] uppercase tracking-[0.4em] text-[#7191e6] font-black mb-3">
               // Our values
             </p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
@@ -379,7 +379,7 @@ const values = [
           <div>
             <div className="flex items-center gap-2 mb-3">
               <span className="h-1.5 w-1.5 rounded-full bg-[#7191e6] animate-pulse" />
-              <p className="text-[10px] uppercase tracking-[0.4em] text-slate-500 font-black italic">
+              <p className="text-[10px] uppercase tracking-[0.4em] text-slate-500 font-black">
                 // Open roles
               </p>
             </div>
@@ -467,7 +467,7 @@ const values = [
             viewport={{ once: true }}
             className="lg:sticky lg:top-32"
           >
-            <p className="text-[10px] uppercase tracking-[0.4em] text-[#7191e6] font-black italic mb-4">
+            <p className="text-[10px] uppercase tracking-[0.4em] text-[#7191e6] font-black mb-4">
               // Hiring process
             </p>
             <h2 className="text-4xl font-bold tracking-tight text-slate-900 mb-6">
@@ -546,7 +546,7 @@ const values = [
             className="space-y-8"
           >
             <div>
-              <p className="text-[10px] uppercase tracking-[0.4em] text-[#7191e6] font-black italic mb-3">// Apply</p>
+              <p className="text-[10px] uppercase tracking-[0.4em] text-[#7191e6] font-black mb-3">// Apply</p>
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.1]">
                 Tell us about <br /> <span className="text-[#7191e6]">yourself</span>
               </h2>
