@@ -26,7 +26,7 @@ const IndustriesModel = () => {
           >
             <span className="text-xs  font-semibold uppercase tracking-[0.2em] text-slate-600 backdrop-blur animate-in fade-in slide-in-from-bottom-6 duration-700 mb-4 block">ENGAGEMENT MODELS</span>
             <h2 className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900 ">
-              Flexible <span className="text-[#7191e6] not-italic">Delivery</span>
+              Flexible <span className="text-[#7191e6]">Delivery</span>
             </h2>
             <p className="mt-3 text-lg text-slate-600 animate-in fade-in duration-700 delay-100 slide-in-from-bottom-8">
               Built around your business goals through performance-validated frameworks.
@@ -55,7 +55,7 @@ const IndustriesModel = () => {
                     {item.title}
                   </h3>
                   <div className="w-8 h-1 bg-[#7191e6] mb-6 group-hover:w-full transition-all duration-500" />
-                  <p className="text-xs text-gray-400 font-bold leading-relaxed italic group-hover:text-gray-600">
+                  <p className="text-xs text-gray-400 font-bold leading-relaxed group-hover:text-gray-600">
                     {item.desc}
                   </p>
                 </div>
@@ -63,7 +63,7 @@ const IndustriesModel = () => {
                 {/* Cyber Button Element */}
                 <div className="mt-8 flex justify-end">
                    <div className="w-8 h-8 rounded-full border border-gray-100 flex items-center justify-center group-hover:bg-[#3d52a1] group-hover:text-white transition-all text-gray-300">
-                      <span className="text-xs italic">»</span>
+                      <span className="text-xs">»</span>
                    </div>
                 </div>
               </motion.div>
@@ -78,7 +78,7 @@ const IndustriesModel = () => {
           whileInView={{ opacity: 1, width: "100%" }}
           className="mt-24 h-px bg-linear-to-r from-transparent via-gray-200 to-transparent relative"
         >
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-6 bg-white text-[9px] font-semibold text-gray-300 tracking-[0.5em] uppercase italic">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-6 bg-white text-[9px] font-semibold text-gray-300 tracking-[0.5em] uppercase">
             Mvantix
           </div>
         </motion.div>

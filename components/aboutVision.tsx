@@ -8,7 +8,7 @@ const AboutVision = () => {
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10">
 
         {/* Vision Card */}
-        <div className="group relative bg-[#dfe8e6] rounded-2xl p-8 shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden">
+        <div className="group relative bg-sky-50 rounded-2xl p-8 shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden">
           
           {/* Smooth Transition Layer */}
           <div className="absolute inset-0 bg-linear-to-br from-[#3d52a1] to-[#7191e6] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out" />
@@ -26,7 +26,7 @@ const AboutVision = () => {
         </div>
 
         {/* Mission Card */}
-        <div className="group relative bg-[#dfe8e6] rounded-2xl p-8 shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden">
+        <div className="group relative bg-sky-50 rounded-2xl p-8 shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden">
           
           {/* Smooth Transition Layer */}
           <div className="absolute inset-0 bg-linear-to-br from-[#3d52a1] to-[#7191e6] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out" />

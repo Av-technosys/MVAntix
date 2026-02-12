@@ -81,7 +81,7 @@ const AboutJourney = () => {
 
             {/* mobile layout */}
             <div className="md:hidden pl-14">
-              <div className="bg-[#dfe8e6] border shadow-md rounded-xl p-5">
+              <div className="bg-sky-50 border shadow-md rounded-xl p-5">
                 <h3 className="font-semibold text-[#3d52a1] mb-1">
                   {step.title}
                 </h3>
@@ -114,7 +114,7 @@ const AboutJourney = () => {
             <div className="hidden md:flex items-center justify-between w-full">
               {i % 2 === 0 ? (
                 <>
-                  <div className="w-[40%] bg-[#dfe8e6] border shadow-md rounded-xl p-6">
+                  <div className="w-[40%] bg-sky-50 border shadow-md rounded-xl p-6">
                     <h3 className="font-semibold  text-[#3d52a1] mb-2">
                       {step.title}
                     </h3>
@@ -146,7 +146,7 @@ const AboutJourney = () => {
                     <Image src={step.img} alt="" width={280} height={280} />
                   </div>
 
-                  <div className="w-[40%] bg-[#dfe8e6] border shadow-md rounded-xl p-6">
+                  <div className="w-[40%] bg-sky-50 border shadow-md rounded-xl p-6">
                     <h3 className="font-semibold text-[#3d52a1] mb-2">
                       {step.title}
                     </h3>

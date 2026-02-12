@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 
 const TradingHero = () => {
@@ -29,10 +30,10 @@ const TradingHero = () => {
 
           <div className="mt-8 flex gap-4">
             <button className="px-8 py-3 bg-[#3d52a1] hover:bg-[#2f3f7e] rounded-lg font-semibold transition">
-              Get Started
+             <Link href={"/contact"}> Get Started </Link>
             </button>
             <button className="px-8 py-3 border border-[#3d52a1] text-[#7191e6] hover:bg-[#7191e6] hover:text-black rounded-lg transition">
-              Learn More
+             <Link href={"/services/Talent-Hiring-Solutions"}> Learn More </Link> 
             </button>
           </div>
         </div>

@@ -1,167 +1,137 @@
 "use client";
 
-import React, { useRef } from 'react';
-import Image from 'next/image'; // Image import kiya
+import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { 
   Twitter, 
   Instagram, 
   Linkedin, 
   Github, 
-  ArrowUpRight
+  ArrowUpRight,
+  Mail,
+  Zap
 } from "lucide-react";
 import Link from 'next/link';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <main ref={containerRef} className="bg-[#050505] text-white overflow-x-hidden selection:bg-[#7191e6] selection:text-black">
-      <footer className="bg-[#050505] pt-24 pb-12 px-6 border-t border-white/5 relative overflow-hidden">
-        {/* Background Glow */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-75 bg-[#7191e6]/5 blur-[120px] rounded-full -z-10" />
+    <footer className="relative bg-black pt-15 pb-10 overflow-hidden border-t border-white/5">
+      {/* 1. TECH BACKGROUND: Grid Overlay & Glow */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+           style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E")` }} />
+      
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-linear-to-r from-transparent via-[#7191e6] to-transparent shadow-[0_0_20px_#7191e6]" />
+      <div className="absolute -bottom-24 left-1/2 -translate-x-1/2 w-full h-64 bg-[#7191e6]/10 blur-[120px] rounded-full" />
 
-        <div className="container mx-auto">
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 mb-20">
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
+          
+          {/* BRAND SECTION */}
+          <div className="lg:col-span-4 space-y-8">
+            <Link href="/">
+              <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                className="relative h-12 w-40"
+              >
+                <Image
+                  src="/images/mainlogo.png"
+                  alt="Mvantix Logo"
+                  fill
+                  className="object-contain brightness-0 invert" 
+                />
+              </motion.div>
+            </Link>
+            <p className="text-gray-400 mt-4 text-sm leading-relaxed max-w-sm font-medium">
+              We architect high-performance digital ecosystems. Merging <span className="text-white">AI precision</span> with cutting-edge <span className="text-white">enterprise solutions</span> to redefine the global tech landscape.
+            </p>
+           
+          </div>
 
-            
-            {/* Brand Column - Logo Added Here */}
-            <div className="lg:col-span-1">
-              <Link href="/">
-                <motion.div 
-                  className="flex items-center gap-2 mb-6 group cursor-pointer"
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <div className="relative h-12 w-44"> {/* Logo Size adjust karne ke liye */}
-                    <Image
-                      src="/images/mainlogo.png"
-                      alt="Mvantix Logo"
-                      fill
-                      className="object-contain " 
-                      // 'brightness-0 invert' logo ko white kar dega kyunki footer black hai
-                    />
-                  </div>
-                </motion.div>
-              </Link>
-              <p className="text-gray-500 font-medium leading-relaxed max-w-xs">
-                Engineering the digital frontier with cinematic precision and hyper-performance code.
-              </p>
-            </div>
-
-            {/* Navigation Links */}
+          {/* NAVIGATION GRID */}
+          <div className="lg:col-span-5 grid grid-cols-2 gap-8">
             <div>
-              <h4 className="text-xs uppercase tracking-[0.3em] text-white font-semibold mb-8">Navigation</h4>
-            <ul className="space-y-4">
-  <li>
-    <Link href="/about" className="text-gray-500 hover:text-[#7191e6] transition-colors font-bold uppercase text-sm flex items-center group">
-      About Us
-      <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 ml-1 transition-all group-hover:translate-x-1" />
-    </Link>
-  </li>
-
-    <li>
-    <Link href="/blog" className="text-gray-500 hover:text-[#7191e6] transition-colors font-bold uppercase text-sm flex items-center group">
-      Blog
-      <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 ml-1 transition-all group-hover:translate-x-1" />
-    </Link>
-  </li>
-   <li>
-    <Link href="/career" className="text-gray-500 hover:text-[#7191e6] transition-colors font-bold uppercase text-sm flex items-center group">
-     Careers
-      <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 ml-1 transition-all group-hover:translate-x-1" />
-    </Link>
-  </li>
-  <li>
-    <Link href="/case-study" className="text-gray-500 hover:text-[#7191e6] transition-colors font-bold uppercase text-sm flex items-center group">
-     Case Study
-      <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 ml-1 transition-all group-hover:translate-x-1" />
-    </Link>
-  </li>
-
-  <li>
-    <Link href="/contact" className="text-gray-500 hover:text-[#7191e6] transition-colors font-bold uppercase text-sm flex items-center group">
-      Contact Us
-      <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 ml-1 transition-all group-hover:translate-x-1" />
-    </Link>
-  </li>
-</ul>
-
-            </div>
-
-            {/* Services */}
-<div>
-  <h4 className="text-xs uppercase tracking-[0.3em] text-white font-semibold mb-8">
-    Services
-  </h4>
-
-  <ul className="space-y-4">
-    <li>
-      <Link href="/services/Salesforce-Enterprise-Platforms" className="text-gray-500 hover:text-[#7191e6] transition-colors font-bold uppercase text-sm flex items-center group">
-        Salesforce & Enterprise Platforms
-        <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 ml-1 transition-all group-hover:translate-x-1" />
-      </Link>
-    </li>
-
-    <li>
-      <Link href="/services/Talent-Hiring-Solutions" className="text-gray-500 hover:text-[#7191e6] transition-colors font-bold uppercase text-sm flex items-center group">
-        Talent & Hiring Solutions
-        <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 ml-1 transition-all group-hover:translate-x-1" />
-      </Link>
-    </li>
-
-    <li>
-      <Link href="/services/Industries-We-Serve" className="text-gray-500 hover:text-[#7191e6] transition-colors font-bold uppercase text-sm flex items-center group">
-        Industries We Serve
-        <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 ml-1 transition-all group-hover:translate-x-1" />
-      </Link>
-    </li>
-  </ul>
-</div>
-
-
-            {/* Contact Details */}
-            <div>
-              <h4 className="text-xs uppercase tracking-[0.3em] text-white font-semibold mb-8">Connect</h4>
-              <ul className="space-y-4 text-gray-500 font-bold text-sm">
-                <li className="hover:text-white transition-colors cursor-pointer uppercase">hello@mvantix.com</li>
-                <li className="hover:text-white transition-colors cursor-pointer uppercase">+91 98765 43210</li>
-                <li className="hover:text-white transition-colors cursor-pointer uppercase tracking-tighter">Jaipur, Rajasthan, India</li>
+              <h4 className="text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold mb-8">Base_Menu</h4>
+              <ul className="space-y-4">
+                {['About', 'Blog', 'Career', 'Contact'].map((item) => (
+                  <li key={item} className="overflow-hidden">
+                    <Link href={`/${item.toLowerCase()}`} className="group flex items-center text-sm text-gray-400 hover:text-white transition-all duration-300 font-medium">
+                      <span className="relative">
+                        {item}
+                        <span className="absolute bottom-0 left-0 w-0 h-px bg-[#7191e6] transition-all duration-300 group-hover:w-full" />
+                      </span>
+                      <ArrowUpRight size={14} className="ml-1 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all" />
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
-
-            {/* Socials */}
             <div>
-              <h4 className="text-xs uppercase tracking-[0.3em] text-white font-semibold mb-8">Social Ecosystem</h4>
-              <div className="flex gap-4">
-                {[Twitter, Instagram, Linkedin, Github].map((Icon, i) => (
+              <h4 className="text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold mb-8">Node_Services</h4>
+              <ul className="space-y-4">
+                {/* Active Links added here */}
+                <li>
+                  <Link href="/services/Salesforce-Enterprise-Platforms" className="group flex items-center text-sm text-gray-400 hover:text-[#7191e6] transition-colors font-medium">
+                    Salesforce
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services/Talent-Hiring-Solutions" className="group flex items-center text-sm text-gray-400 hover:text-[#7191e6] transition-colors font-medium">
+                    Talent Engine
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services/Industries-We-Serve" className="group flex items-center text-sm text-gray-400 hover:text-[#7191e6] transition-colors font-medium">
+                    Mvantix Hiring Engine 
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* NEWSLETTER/CONNECT */}
+          <div className="lg:col-span-3 space-y-8">
+            <h4 className="text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold mb-8">Global_Connect</h4>
+            <div className="space-y-4">
+              <a href="mailto:hello@mvantix.com" className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-[#7191e6]/30 transition-all group">
+                <Mail size={18} className="text-gray-400 group-hover:text-[#7191e6]" />
+                <span className="text-sm text-gray-400 font-medium">hello@mvantix.com</span>
+              </a>
+              <div className="flex gap-3">
+                {[ Instagram, Linkedin].map((Icon, i) => (
                   <motion.a
                     key={i}
                     href="#"
-                    whileHover={{ y: -5, scale: 1.1 }}
-                    className="w-12 h-12 rounded-xl border border-white/5 flex items-center justify-center text-gray-500 hover:bg-white/5 hover:text-[#7191e6] transition-all"
+                    whileHover={{ scale: 1.1, backgroundColor: 'rgba(113, 145, 230, 0.1)' }}
+                    className="w-11 h-11 rounded-lg border border-white/5 flex items-center justify-center text-gray-400 hover:text-[#7191e6] transition-colors"
                   >
-                    <Icon size={20} />
+                    <Icon size={18} />
                   </motion.a>
                 ))}
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Bottom Bar */}
-          <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-[10px] font-semibold uppercase tracking-[0.5em] text-gray-600">
-              © {currentYear} MVANTIX // ALL RIGHTS RESERVED
-            </div>
-            
-            <div className="flex gap-8 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            </div>
+        {/* BOTTOM TERMINAL BAR */}
+        <div className=" border-t border-white/5 flex flex-col md:row justify-between items-center gap-6">
+          <div className="flex items-center gap-4">
+            <div className="w-2 h-2 rounded-full bg-green-500 animate-ping" />
+            <span className="text-[10px] tracking-[0.3em] text-gray-500 font-bold uppercase">
+              © {currentYear} MVANTIX
+            </span>
+          </div>
+          
+          <div className="flex gap-8 text-[10px] font-bold uppercase tracking-widest text-gray-600">
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy policy</Link>
+            <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms & conditions</Link>
           </div>
         </div>
-      </footer>
-    </main>
+      </div>
+    </footer>
   );
 };
 

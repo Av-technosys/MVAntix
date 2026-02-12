@@ -31,7 +31,7 @@ const Header1 = () => {
   const services = [
     { name: "Salesforce & Enterprise Platforms Covers", path: "/services/Salesforce-Enterprise-Platforms", },
     { name: "Talent & Hiring Solutions Covers", path: "/services/Talent-Hiring-Solutions", },
-    { name: "Industries We Serve", path: "/services/Industries-We-Serve", },
+    { name: "Mvantix hiring engine", path: "/services/Industries-We-Serve", },
   ];
 
   return (
@@ -61,7 +61,7 @@ const Header1 = () => {
             </div>
             <div className="flex-none">
               <Link href="/" className="group flex flex-col items-center">
-                <motion.div whileHover={{ scale: 1.05 }} className="relative h-10 w-32 md:h-12 md:w-40">
+                <motion.div whileHover={{ scale: 1.05 }} className="relative h-10 w-32 md:h-12 md:w-48 items-center">
                   <Image
                     src="/images/mainlogo.png"
                     alt="Mvantix Logo"
