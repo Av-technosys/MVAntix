@@ -64,7 +64,7 @@ const HomeCore = () => {
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900 "
+              className="text-4xl md:text-5xl font-semibold md:md:leading-13 text-slate-900 "
             >
               Core Services & <br className="md:block hidden" /> <span className="text-[#7191e6] ">CapabiLities</span>
             </motion.h2>

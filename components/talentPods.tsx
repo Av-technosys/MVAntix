@@ -31,7 +31,7 @@ const TalentPods = () => {
                <span className="h-0.5 w-10 bg-[#7191e6]"></span>
                <span className="text-xs  font-semibold uppercase tracking-[0.2em] text-slate-600 backdrop-blur animate-in fade-in slide-in-from-bottom-6 duration-700">Talent Node / v4.0</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900  mb-8 ">
+            <h2 className="text-4xl md:text-5xl font-semibold md:leading-13 text-slate-900  mb-8 ">
               Performance <br />
               <span className="text-[#7191e6] ">Validated</span>
             </h2>

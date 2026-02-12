@@ -35,7 +35,7 @@ const IndustriesWhy = () => {
             <motion.h2 
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900 "
+              className="text-4xl md:text-5xl font-semibold md:leading-13 text-slate-900 "
             >
               More Than <br />
               <span className="text-transparent bg-clip-text bg-linear-to-r from-[#3d52a1] to-[#7191e6]">A Provider</span>

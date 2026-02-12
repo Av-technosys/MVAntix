@@ -60,15 +60,29 @@ export const HeroSection = () => {
             transition={{ delay: 0.3 }}
             className="mt-10 flex flex-col sm:flex-row gap-4"
           >
-            <Button className="bg-black hover:bg-[#7191e6] text-white px-8 py-7 rounded-2xl text-lg font-bold transition-all group">
-              <Link href={"/contact"}> Start Hiring Smarter</Link>
-              <IconArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            {/* PRIMARY BUTTON: Start Hiring Smarter */}
+            <Button className="group relative bg-[#3d52a1] text-white px-8 py-7 rounded-2xl text-lg font-bold overflow-hidden transition-all border-none">
+              <Link
+                href={"/contact"}
+                className="relative z-10 flex items-center"
+              >
+                Start Hiring Smarter
+                <IconArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              {/* Slide-up Background Layer */}
+              <div className="absolute inset-0 bg-[#7191e6] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
             </Button>
+
+            {/* SECONDARY/OUTLINE BUTTON: Explore Our Model */}
             <Button
               variant="outline"
-              className="border border-black text-black px-8 py-7 rounded-2xl text-lg font-bold hover:bg-black hover:text-white transition-all"
+              className="group relative border-2 border-[#3d52a1] text-[#3d52a1] px-8 py-7 rounded-2xl text-lg font-bold overflow-hidden transition-all hover:text-white bg-transparent"
             >
-              <Link href="#model-section">Explore Our Model</Link>
+              <Link href="#model-section" className="relative z-10">
+                Explore Our Model
+              </Link>
+              {/* Slide-up Background Layer */}
+              <div className="absolute inset-0 bg-[#3d52a1] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
             </Button>
           </motion.div>
         </div>

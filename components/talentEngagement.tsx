@@ -49,7 +49,7 @@ const TalentEngagement = () => {
             <div className="h-px flex-1 bg-gray-100" />
           </motion.div>
           
-          <h2 className="text-4xl md:text-6xl font-semibold leading-13 text-slate-900 ">
+          <h2 className="text-4xl md:text-6xl font-semibold md:leading-13 text-slate-900 ">
             Flexible <br />
             <span className="text-[#7191e6] ">Delivery</span>
           </h2>

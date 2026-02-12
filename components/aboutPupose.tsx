@@ -25,11 +25,11 @@ const AboutPurpose = () => {
   return (
     <section className="w-full bg-white py-12 md:py-16 px-6">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900  mb-2">
+        <h2 className="text-4xl md:text-5xl font-semibold md:leading-13 text-slate-900  mb-2">
           Our Purpose
         </h2>
 
-        <p className="text-4xl md:text-5xl font-semibold leading-13 text-[#7191e6]  mb-4">
+        <p className="text-4xl md:text-5xl font-semibold md:leading-13 text-[#7191e6]  mb-4">
           Predictable Talent. Zero Guesswork.
         </p>
 

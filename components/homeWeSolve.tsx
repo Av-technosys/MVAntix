@@ -67,7 +67,7 @@ const HomeWeSolve = () => {
                 </span>
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900">
+              <h2 className="text-4xl md:text-5xl font-semibold md:md:leading-13 text-slate-900">
                 The Talent Gap <br />
                 Enterprises Can <br />
                 No Longer <span className="text-[#3d52a1]">Ignore</span>

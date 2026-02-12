@@ -65,7 +65,7 @@ const IndustriesBuild = () => {
               <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-[#7191e6] mb-6">
                 LET’S BUILD TOGETHER
               </h4>
-              <h2 className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900 mb-8 tracking-tight">
+              <h2 className="text-4xl md:text-5xl font-semibold md:leading-13 text-slate-900 mb-8 tracking-tight">
                 Scalable Talent. <br />
                 Smarter Technology. <br />
                 <span className="text-[#3d52a1]">Real Results.</span>
@@ -76,10 +76,13 @@ const IndustriesBuild = () => {
               </p>
 
               <div className="flex flex-wrap gap-5">
-                <button className="px-10 py-4 bg-[#3d52a1] text-white rounded-full font-bold flex items-center gap-3 hover:bg-[#7191e6] transition-all shadow-xl shadow-[#3d52a1]/20 active:scale-95 group">
-                 <Link href={"/contact"}>  Get in touch </Link> 
-                  <IconArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                </button>
+              <button className="group relative px-10 py-4 bg-[#3d52a1] text-white rounded-full font-bold flex items-center gap-3 overflow-hidden transition-all shadow-xl shadow-[#3d52a1]/20 active:scale-95 border-none">
+  <Link href={"/contact"} className="relative z-10 flex items-center gap-3">
+    Get in touch
+    <IconArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
+  </Link>
+  <div className="absolute inset-0 bg-[#7191e6] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+</button>
               </div>
 
               {/* Subtle Dots Pattern (From your code) */}

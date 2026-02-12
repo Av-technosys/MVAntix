@@ -9,6 +9,7 @@ import {
   IconRocket,
   IconArrowRight
 } from "@tabler/icons-react";
+import Link from "next/link";
 
 const steps = [
   {
@@ -54,7 +55,7 @@ const HomeBusiness = () => {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900 "
+            className="text-4xl md:text-5xl font-semibold md:md:leading-13 text-slate-900 "
           >
             Our Business <span className="text-[#3d52a1]">Model</span>
           </motion.h2>
@@ -122,9 +123,14 @@ const HomeBusiness = () => {
             <h4 className="text-3xl font-semibold tracking-tighter uppercase">The Result?</h4>
             <p className="text-white/70 font-medium">A scalable pipeline of future-ready professionals.</p>
           </div>
-          <button className="px-8 py-4 bg-white text-[#3d52a1] rounded-xl font-semibold uppercase text-sm hover:scale-105 transition-transform shadow-lg">
-            Start Scaling Now
-          </button>
+       <button className="group relative px-8 py-4 bg-white text-[#3d52a1] rounded-xl font-bold uppercase text-sm overflow-hidden transition-all shadow-lg active:scale-95 border border-[#3d52a1]/10">
+  <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+  <Link href={"/career"}> Start Scaling Now</Link> 
+  </span>
+
+  {/* MVAntix Slide-up Layer (Navy Blue) */}
+  <div className="absolute inset-0 bg-[#7191e6] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+</button>
         </motion.div>
 
       </div>

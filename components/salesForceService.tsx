@@ -30,11 +30,11 @@ const SalesForceService = () => {
               <h4 className="text-xs  font-semibold uppercase tracking-[0.2em] text-slate-600 backdrop-blur animate-in fade-in slide-in-from-bottom-6 duration-700 mb-4">
                 Salesforce Services
               </h4>
-              <h2 className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900  mb-8">
+              <h2 className="text-4xl md:text-5xl  font-semibold md:leading-13 text-slate-900  mb-8">
                 End to End CRM & <br />
                 <span className="text-[#7191e6] ">Digital Experience Solutions</span>
               </h2>
-              <p className="text-lg text-slate-600 animate-in fade-in duration-700 delay-100 slide-in-from-bottom-8 mb-10">
+              <p className="text-lg text-slate-600  animate-in fade-in duration-700 delay-100 slide-in-from-bottom-8 mb-10">
                 MVANTIX provides comprehensive Salesforce services that help enterprises streamline sales, service, marketing, and customer engagement across the entire lifecycle.
               </p>
               
