@@ -1,13 +1,12 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react'
-import { motion } from "framer-motion";
+import { motion, AnimatePresence} from "framer-motion";
 import { 
   IconArrowRight, 
   IconSparkles,
   IconTarget, 
   IconRocket, 
-  IconCircleCheck, 
   IconBrandZapier,
   IconUsersGroup,
   IconHierarchy2,
@@ -17,70 +16,66 @@ import {
   IconChecks,
   IconMessageDots,
   IconCode,
-  IconSend,
-  IconUpload,
-  IconChevronDown
+  IconCurrencyDollar,
+  IconWifi,
+  IconSchool,
+  IconHeartPlus,
+  IconFocus2,
+  IconChevronDown, 
+  IconUpload, 
+  IconSend, 
+  IconCircleCheck, 
+  IconLoader2
 } from "@tabler/icons-react";
 const page = () => {
-    const [isSubmitting, setIsSubmitting] = useState(false)
-    const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
-    const [errorMessage, setErrorMessage] = useState('')
-    const [visibleElements, setVisibleElements] = useState<{ [key: string]: boolean }>({})
-    const elementsRef = useRef<{ [key: string]: IntersectionObserver | null }>({})
-
-    useEffect(() => {
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px',
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.getAttribute('data-animate-id')
-                    if (id) {
-                        setVisibleElements((prev) => ({ ...prev, [id]: true }))
-                    }
-                }
-            })
-        }, observerOptions)
-
-        const elements = document.querySelectorAll('[data-animate-id]')
-        elements.forEach((el) => observer.observe(el))
-
-        return () => observer.disconnect()
-    }, [])
+  const [isSubmitting, setIsSubmitting] = useState(false);
+    const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = useState('');
+    const [fileName, setFileName] = useState<string>(''); // For UI feedback on file upload
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault()
-        setIsSubmitting(true)
-        setStatus('idle')
-        setErrorMessage('')
+        event.preventDefault();
+        setIsSubmitting(true);
+        setStatus('idle');
+        setErrorMessage('');
 
-        const form = event.currentTarget
-        const formData = new FormData(form)
+        const form = event.currentTarget;
+        const formData = new FormData(form);
+
+        // UI Form field 'message' ko API ke 'project' field mein map karne ke liye:
+        const msg = formData.get('message');
+        if (msg) formData.append('project', msg as string);
 
         try {
-            const response = await fetch('/api/career', {
+            // Note: API endpoint humne /api/sendmail banaya tha
+            const response = await fetch('/api/sendmail', {
                 method: 'POST',
-                body: formData,
-            })
+                body: formData, // Multipart data automatically handled
+            });
 
-            if (!response.ok) {
-                const data = await response.json().catch(() => ({}))
-                setErrorMessage(data?.error || 'Something went wrong. Please try again.')
-                setStatus('error')
+            const data = await response.json();
+
+            if (data.flag === 1) {
+                setStatus('success');
+                form.reset();
+                setFileName('');
             } else {
-                setStatus('success')
-                form.reset()
+                setErrorMessage(data?.msg || 'Something went wrong. Please try again.');
+                setStatus('error');
             }
-        } catch {
-            setErrorMessage('Network error. Please try again.')
-            setStatus('error')
+        } catch (error) {
+            setErrorMessage('Network error. Please try again.');
+            setStatus('error');
         } finally {
-            setIsSubmitting(false)
+            setIsSubmitting(false);
         }
-    }
+    };
+
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files[0]) {
+            setFileName(e.target.files[0].name);
+        }
+    };
 const values = [
     {
       title: 'Customer obsession',
@@ -145,6 +140,14 @@ const values = [
       text: 'Meet leadership and align on values, vision, and scope.',
       icon: <IconChecks size={20} />
     },
+  ];
+  const benefits = [
+    { title: 'Competitive compensation', icon: <IconCurrencyDollar size={20} /> },
+    { title: 'Flexible remote policy', icon: <IconWifi size={20} /> },
+    { title: 'Annual learning stipend', icon: <IconSchool size={20} /> },
+    { title: 'Premium health coverage', icon: <IconHeartPlus size={20} /> },
+    { title: 'Dedicated focus blocks', icon: <IconFocus2 size={20} /> },
+    { title: 'Career growth coaching', icon: <IconRocket size={20} /> },
   ];
     return (
         <div className="bg-white text-slate-900">
@@ -325,42 +328,64 @@ const values = [
     </section>
 
             {/* Benefits */}
-            <section className="border-t border-slate-200">
-                <div className="mx-auto max-w-6xl px-6 py-16">
-                    <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-                        <div className="slide-up">
-                            <p className="text-xs uppercase tracking-[0.2em] text-slate-500">Benefits</p>
-                            <h2 className="mt-3 text-3xl font-semibold text-slate-900">A place built for deep work</h2>
-                            <p className="mt-4 text-slate-600">
-                                We invest in the conditions that let great people do great work: focus time, autonomy, and supportive
-                                systems.
-                            </p>
-                        </div>
-                        <div className="grid gap-4 sm:grid-cols-2">
-                            {[
-                                'Competitive compensation',
-                                'Flexible remote policy',
-                                'Annual learning stipend',
-                                'Premium health coverage',
-                                'Dedicated focus blocks',
-                                'Career growth coaching',
-                            ].map((benefit, idx) => (
-                                <div
-                                    key={benefit}
-                                    data-animate-id={`benefit-card-${idx}`}
-                                    className={`rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-2 hover:shadow-md hover-lift glow-card ${visibleElements[`benefit-card-${idx}`] ? 'slide-up' : 'opacity-0'
-                                        }`}
-                                    style={{
-                                        animationDelay: `${idx * 100}ms`,
-                                    }}
-                                >
-                                    <p className="text-sm font-semibold text-slate-900">{benefit}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+          <section className="relative border-t border-slate-100 bg-white py-24 overflow-hidden">
+      {/* Background Accent */}
+      <div className="absolute -left-20 top-1/4 h-64 w-64 rounded-full bg-[#7191e6]/5 blur-[100px]" />
+
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="grid gap-16 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+          
+          {/* Left Content */}
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="text-center lg:text-left space-y-6"
+          >
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.4em] text-[#7191e6] font-black italic mb-3">
+                // Benefits
+              </p>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
+                A place built for <br />
+                <span className="text-[#7191e6]">deep work</span>
+              </h2>
+            </div>
+            <p className="text-lg text-slate-500 font-medium leading-relaxed max-w-md mx-auto lg:mx-0">
+              We invest in the conditions that let great people do great work: focus time, autonomy, and supportive systems.
+            </p>
+          </motion.div>
+
+          {/* Right Benefits Grid */}
+          <div className="grid gap-4 sm:grid-cols-2">
+            {benefits.map((benefit, idx) => (
+              <motion.div
+                key={benefit.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                whileHover={{ y: -5 }}
+                className="group relative flex items-center gap-4 rounded-2xl border border-slate-100 bg-slate-50/50 p-5 transition-all hover:bg-white hover:border-[#7191e6]/30 hover:shadow-[0_20px_40px_-15px_rgba(113,145,230,0.1)]"
+              >
+                {/* Icon Container */}
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white border border-slate-200 text-slate-400 shadow-sm transition-all group-hover:bg-[#7191e6] group-hover:text-white group-hover:border-[#7191e6] group-hover:rotate-6">
+                  {benefit.icon}
                 </div>
-            </section>
+
+                {/* Text */}
+                <p className="text-sm font-bold text-slate-700 group-hover:text-slate-900 transition-colors">
+                  {benefit.title}
+                </p>
+
+                {/* Subtle Glow Hover */}
+                <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-[#7191e6]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
 
             {/* Open roles */}
            <section id="open-roles" className="relative border-t border-slate-100 bg-[#fbfcfd] py-24">
@@ -581,148 +606,154 @@ const values = [
           </motion.div>
 
           {/* Right Side: Form */}
-          <motion.div
+         <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="relative"
-          >
+            className="relative max-w-4xl mx-auto py-12"
+        >
             <form
-              onSubmit={handleSubmit}
-              className="rounded-[2.5rem] border border-slate-200 bg-white p-8 md:p-12 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.06)]"
+                onSubmit={handleSubmit}
+                className="rounded-[2.5rem] border border-slate-200 bg-white p-8 md:p-12 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.06)]"
             >
-              <div className="grid gap-6 sm:grid-cols-2">
-                {/* First Name */}
-                <div className="space-y-2">
-                  <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">First name</label>
-                  <input
-                    className="w-full h-14 rounded-2xl border border-slate-100 bg-slate-50/50 px-5 text-sm font-bold text-slate-900 outline-none transition focus:bg-white focus:border-[#7191e6] focus:ring-4 focus:ring-[#7191e6]/5"
-                    placeholder="Jane"
-                    type="text"
-                    name="firstName"
-                    required
-                  />
-                </div>
-
-                {/* Last Name */}
-                <div className="space-y-2">
-                  <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Last name</label>
-                  <input
-                    className="w-full h-14 rounded-2xl border border-slate-100 bg-slate-50/50 px-5 text-sm font-bold text-slate-900 outline-none transition focus:bg-white focus:border-[#7191e6] focus:ring-4 focus:ring-[#7191e6]/5"
-                    placeholder="Doe"
-                    type="text"
-                    name="lastName"
-                    required
-                  />
-                </div>
-
-                {/* Email */}
-                <div className="space-y-2 sm:col-span-2">
-                  <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Email Address</label>
-                  <input
-                    className="w-full h-14 rounded-2xl border border-slate-100 bg-slate-50/50 px-5 text-sm font-bold text-slate-900 outline-none transition focus:bg-white focus:border-[#7191e6] focus:ring-4 focus:ring-[#7191e6]/5"
-                    placeholder="you@example.com"
-                    type="email"
-                    name="email"
-                    required
-                  />
-                </div>
-
-                {/* Role Select */}
-                <div className="space-y-2 sm:col-span-2 relative">
-                  <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Role interested in</label>
-                  <div className="relative">
-                    <select
-                      name="role"
-                      className="w-full h-14 appearance-none rounded-2xl border border-slate-100 bg-slate-50/50 px-5 text-sm font-bold text-slate-900 outline-none transition focus:bg-white focus:border-[#7191e6] focus:ring-4 focus:ring-[#7191e6]/5"
-                    >
-                      <option>AI Product Engineer</option>
-                      <option>Frontend Experience Designer</option>
-                      <option>ML Ops Specialist</option>
-                      <option>Growth & Partnerships</option>
-                      <option>Other</option>
-                    </select>
-                    <IconChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" size={18} />
-                  </div>
-                </div>
-
-                {/* Portfolio */}
-                <div className="space-y-2 sm:col-span-2">
-                  <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Portfolio / LinkedIn</label>
-                  <input
-                    className="w-full h-14 rounded-2xl border border-slate-100 bg-slate-50/50 px-5 text-sm font-bold text-slate-900 outline-none transition focus:bg-white focus:border-[#7191e6] focus:ring-4 focus:ring-[#7191e6]/5"
-                    placeholder="https://"
-                    type="url"
-                    name="portfolio"
-                  />
-                </div>
-
-                {/* Resume Upload */}
-                <div className="space-y-2 sm:col-span-2">
-                  <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Resume</label>
-                  <div className="relative group/file">
-                    <input
-                      className="absolute inset-0 opacity-0 cursor-pointer z-10"
-                      type="file"
-                      name="resume"
-                    />
-                    <div className="h-14 rounded-2xl border-2 border-dashed border-slate-200 bg-slate-50/50 px-5 flex items-center gap-3 text-sm font-bold text-slate-400 transition group-hover/file:border-[#7191e6]/40 group-hover/file:bg-white">
-                      <IconUpload size={18} />
-                      <span>Upload PDF or Docx</span>
+                <div className="grid gap-6 sm:grid-cols-2">
+                    {/* Full Name - API expects 'fullName' */}
+                    <div className="space-y-2 sm:col-span-2">
+                        <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Full Name</label>
+                        <input
+                            className="w-full h-14 rounded-2xl border border-slate-100 bg-slate-50/50 px-5 text-sm font-bold text-slate-900 outline-none transition focus:bg-white focus:border-[#7191e6] focus:ring-4 focus:ring-[#7191e6]/5"
+                            placeholder="Jane Doe"
+                            type="text"
+                            name="fullName"
+                            required
+                        />
                     </div>
-                  </div>
+
+                    {/* Email */}
+                    <div className="space-y-2">
+                        <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Email Address</label>
+                        <input
+                            className="w-full h-14 rounded-2xl border border-slate-100 bg-slate-50/50 px-5 text-sm font-bold text-slate-900 outline-none transition focus:bg-white focus:border-[#7191e6] focus:ring-4 focus:ring-[#7191e6]/5"
+                            placeholder="you@example.com"
+                            type="email"
+                            name="email"
+                            required
+                        />
+                    </div>
+
+                    {/* Mobile - API expects 'mobile' */}
+                    <div className="space-y-2">
+                        <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Phone Number</label>
+                        <input
+                            className="w-full h-14 rounded-2xl border border-slate-100 bg-slate-50/50 px-5 text-sm font-bold text-slate-900 outline-none transition focus:bg-white focus:border-[#7191e6] focus:ring-4 focus:ring-[#7191e6]/5"
+                            placeholder="+91 00000 00000"
+                            type="tel"
+                            name="mobile"
+                            required
+                        />
+                    </div>
+
+                    {/* Role Select - API expects 'role' */}
+                    <div className="space-y-2 sm:col-span-2 relative">
+                        <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Role interested in</label>
+                        <div className="relative">
+                            <select
+                                name="role"
+                                className="w-full h-14 appearance-none rounded-2xl border border-slate-100 bg-slate-50/50 px-5 text-sm font-bold text-slate-900 outline-none transition focus:bg-white focus:border-[#7191e6] focus:ring-4 focus:ring-[#7191e6]/5"
+                            >
+                                <option>AI Product Engineer</option>
+                                <option>Frontend Experience Designer</option>
+                                <option>ML Ops Specialist</option>
+                                <option>Growth & Partnerships</option>
+                                <option>Other</option>
+                            </select>
+                            <IconChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" size={18} />
+                        </div>
+                    </div>
+
+                    {/* Location - API expects 'location' */}
+                    <div className="space-y-2 sm:col-span-2">
+                        <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Current Location</label>
+                        <input
+                            className="w-full h-14 rounded-2xl border border-slate-100 bg-slate-50/50 px-5 text-sm font-bold text-slate-900 outline-none transition focus:bg-white focus:border-[#7191e6] focus:ring-4 focus:ring-[#7191e6]/5"
+                            placeholder="e.g. Jaipur, India"
+                            type="text"
+                            name="location"
+                            required
+                        />
+                    </div>
+
+                    {/* Resume Upload - API expects 'resume' */}
+                    <div className="space-y-2 sm:col-span-2">
+                        <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Resume</label>
+                        <div className="relative group/file">
+                            <input
+                                className="absolute inset-0 opacity-0 cursor-pointer z-10"
+                                type="file"
+                                name="resume"
+                                accept=".pdf,.docx"
+                                onChange={handleFileChange}
+                                required
+                            />
+                            <div className="h-14 rounded-2xl border-2 border-dashed border-slate-200 bg-slate-50/50 px-5 flex items-center gap-3 text-sm font-bold text-slate-400 transition group-hover/file:border-[#7191e6]/40 group-hover/file:bg-white">
+                                <IconUpload size={18} />
+                                <span className="truncate">{fileName || "Upload PDF or Docx"}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Message - Maps to API 'project' */}
+                    <div className="space-y-2 sm:col-span-2">
+                        <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Proudest Project / Objective</label>
+                        <textarea
+                            className="w-full min-h-[120px] rounded-2xl border border-slate-100 bg-slate-50/50 px-5 py-4 text-sm font-bold text-slate-900 outline-none transition focus:bg-white focus:border-[#7191e6] focus:ring-4 focus:ring-[#7191e6]/5"
+                            placeholder="Share the problem, your approach, and the outcome."
+                            name="message"
+                            required
+                        />
+                    </div>
                 </div>
 
-                {/* Message */}
-                <div className="space-y-2 sm:col-span-2">
-                  <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Proudest Project</label>
-                  <textarea
-                    className="w-full min-h-[120px] rounded-2xl border border-slate-100 bg-slate-50/50 px-5 py-4 text-sm font-bold text-slate-900 outline-none transition focus:bg-white focus:border-[#7191e6] focus:ring-4 focus:ring-[#7191e6]/5"
-                    placeholder="Share the problem, your approach, and the outcome."
-                    name="message"
-                  />
-                </div>
-              </div>
+                {/* Consent */}
+                <label className="mt-6 flex items-start gap-3 cursor-pointer group">
+                    <input
+                        type="checkbox"
+                        className="mt-1 h-4 w-4 rounded border-slate-300 text-[#7191e6] focus:ring-[#7191e6]"
+                        required
+                    />
+                    <span className="text-[11px] font-medium text-slate-500 leading-tight">
+                        I agree to be contacted about my application and understand my data will be handled securely.
+                    </span>
+                </label>
 
-              {/* Consent */}
-              <label className="mt-6 flex items-start gap-3 cursor-pointer group">
-                <input
-                  type="checkbox"
-                  name="consent"
-                  value="yes"
-                  className="mt-1 h-4 w-4 rounded border-slate-300 text-[#7191e6] focus:ring-[#7191e6]"
-                  required
-                />
-                <span className="text-[11px] font-medium text-slate-500 leading-tight">
-                  I agree to be contacted about my application and understand my data will be handled securely.
-                </span>
-              </label>
+                {/* Success/Error UI */}
+                <AnimatePresence>
+                    {status === 'success' && (
+                        <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} className="mt-6 rounded-2xl bg-emerald-50 border border-emerald-100 p-4 flex items-center gap-3 text-emerald-700 text-sm font-bold">
+                            <IconCircleCheck size={20} /> 🎉 Sent successfully! We'll talk soon.
+                        </motion.div>
+                    )}
+                    {status === 'error' && (
+                        <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} className="mt-6 rounded-2xl bg-rose-50 border border-rose-100 p-4 text-rose-700 text-sm font-bold">
+                            ⚠️ {errorMessage}
+                        </motion.div>
+                    )}
+                </AnimatePresence>
 
-              {/* Status Messages */}
-              {status === 'success' && (
-                <div className="mt-6 rounded-2xl bg-emerald-50 border border-emerald-100 p-4 flex items-center gap-3 text-emerald-700 text-sm font-bold">
-                  <IconCircleCheck size={20} /> 🎉 Sent successfully! We'll talk soon.
-                </div>
-              )}
-              
-              {status === 'error' && (
-                <div className="mt-6 rounded-2xl bg-rose-50 border border-rose-100 p-4 text-rose-700 text-sm font-bold">
-                  ⚠️ {errorMessage}
-                </div>
-              )}
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="mt-8 w-full h-14 rounded-full bg-slate-900 text-white font-black text-sm uppercase tracking-[0.2em] transition-all hover:bg-[#7191e6] hover:shadow-2xl hover:shadow-[#7191e6]/40 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 group"
-              >
-                {isSubmitting ? 'Processing...' : (
-                  <>Submit application <IconSend size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /></>
-                )}
-              </button>
+                {/* Submit Button */}
+                <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="mt-8 w-full h-14 rounded-full bg-slate-900 text-white font-black text-sm uppercase tracking-[0.2em] transition-all hover:bg-[#7191e6] hover:shadow-2xl hover:shadow-[#7191e6]/40 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 group"
+                >
+                    {isSubmitting ? (
+                        <IconLoader2 className="animate-spin" size={20} />
+                    ) : (
+                        <>Submit application <IconSend size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /></>
+                    )}
+                </button>
             </form>
-          </motion.div>
+        </motion.div>
         </div>
       </div>
     </section>

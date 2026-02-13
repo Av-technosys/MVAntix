@@ -57,7 +57,7 @@ const HomeEngine = () => {
       <div className="absolute -bottom-[10%] -right-[10%] w-[50%] h-[50%] bg-blue-500/5 rounded-full blur-[120px]" />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-20 space-y-6">
+        <div className="text-center mb-20 space-y-6 ">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -75,7 +75,7 @@ const HomeEngine = () => {
           <motion.h2
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            className="text-4xl md:text-5xl font-semibold leading-13  text-white uppercase "
+            className="text-3xl md:text-5xl font-semibold leading-  text-white uppercase "
           >
             THE MVANTIX TALENT <br />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7191e6] to-cyan-400">

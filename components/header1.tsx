@@ -73,7 +73,7 @@ const Header1 = () => {
               </Link>
             </div>
             <div className="hidden md:flex items-center justify-end gap-6 flex-1">
-              <nav className="flex items-center gap-6 ">
+              <nav className="flex items-center gap-6 ml-6">
                 <Link href="/" className={`text-xs font-bold uppercase tracking-widest relative group transition-all ${isScrolled ? 'text-white' : 'text-black/70 hover:text-black'}`}>
                   Home
                   <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#7191e6] group-hover:w-full transition-all" />
@@ -160,7 +160,7 @@ const Header1 = () => {
                 </div>
                 <div className="flex-1 overflow-y-auto px-8 py-10">
                   <nav className="flex flex-col gap-10">
-                    <div className="flex flex-col gap-5">
+                    <div className="flex flex-col gap-5 ">
                       <Link
                         href="/"
                         onClick={() => setMobileMenuOpen(false)}

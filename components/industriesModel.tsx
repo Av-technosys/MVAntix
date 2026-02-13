@@ -25,7 +25,7 @@ const IndustriesModel = () => {
             className="text-center mb-20 lg:mb-0 z-20"
           >
             <span className="text-xs  font-semibold uppercase tracking-[0.2em] text-slate-600 backdrop-blur animate-in fade-in slide-in-from-bottom-6 duration-700 mb-4 block">ENGAGEMENT MODELS</span>
-            <h2 className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900 ">
+            <h2 className="text-4xl md:text-5xl font-semibold md:leading-13 text-slate-900 ">
               Flexible <span className="text-[#7191e6]">Delivery</span>
             </h2>
             <p className="mt-3 text-lg text-slate-600 animate-in fade-in duration-700 delay-100 slide-in-from-bottom-8">

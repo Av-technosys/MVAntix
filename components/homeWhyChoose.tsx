@@ -35,9 +35,9 @@ const HomeWhyChoose = () => {
 
           {/* LEFT CONTENT */}
           <div className="lg:col-span-5 space-y-6 md:space-y-8 text-center lg:text-left">
-            <h2 className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900 ">
-              Talent Built <br />
-              <span className="text-[#7191e6]">For Real</span> <br />
+            <h2 className="text-4xl md:text-5xl font-semibold md:md:leading-13 text-slate-900 ">
+              Talent Built <br className='md:block hidden' />
+              <span className="text-[#7191e6]">For Real</span> <br className='md:block hidden' />
               Business <br />
               Impact
             </h2>

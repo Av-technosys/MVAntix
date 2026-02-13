@@ -38,7 +38,7 @@ const IndustriesEngagement = () => {
               <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-600 mb-4">
                 ENGAGEMENT MODELS
               </h4>
-              <h2 className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900  mb-8">
+              <h2 className="text-4xl md:text-5xl font-semibold md:leading-13 text-slate-900  mb-8">
                 Flexible Delivery Built <br />
                 <span className="text-[#7191e6]">Around Your Needs</span>
               </h2>

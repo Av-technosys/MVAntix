@@ -29,9 +29,9 @@ const HomeStandsFor = () => {
                 <span className="text-[#7191e6] font-semibold uppercase tracking-[0.3em] text-xs">What MVANTIX Stands For</span>
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900  text-center lg:text-left">
+              <h2 className="text-4xl md:text-5xl font-semibold md:md:leading-13 text-slate-900  text-center lg:text-left">
                 Intelligence. <br />
-                Talent. <br />
+                Talent. <br className="md:block hidden"/>
                 <span className="text-[#7191e6]">Execution.</span>
               </h2>
             </motion.div>

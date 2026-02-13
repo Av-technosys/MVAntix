@@ -22,7 +22,7 @@ export default function AboutDeliver() {
 
         {/* RIGHT CONTENT */}
         <div>
-          <h2 className="text-4xl md:text-5xl font-semibold leading-13  text-[#7191e6] mb-4">
+          <h2 className="text-4xl md:text-5xl font-semibold md:leading-13  text-[#7191e6] mb-4">
             What We <span className="text-black">Deliver</span>
           </h2>
 
@@ -58,9 +58,12 @@ export default function AboutDeliver() {
             </div>
           </div>
 
-          <button className="bg-[#7191e6] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#3d52a1] transition">
-           <Link href={"/services/Salesforce-Enterprise-Platforms"}> Get Started</Link>
-          </button>
+         <button className="group relative  bg-[#3d52a1] text-white px-8 py-3 rounded-lg font-bold uppercase tracking-wider text-xs overflow-hidden transition-all shadow-md active:scale-95 border-none">
+  <Link href={"/services/Salesforce-Enterprise-Platforms"} className="relative z-10 block">
+    Get Started
+  </Link>
+  <div className="absolute inset-0 bg-[#7191e6] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+</button>
         </div>
       </div>
     </section>

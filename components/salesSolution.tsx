@@ -27,7 +27,7 @@ const SalesSolution = () => {
               <h4 className="text-xs  font-semibold uppercase tracking-[0.2em] text-slate-600 backdrop-blur animate-in fade-in slide-in-from-bottom-6 duration-700 mb-10">
                 Enterprise Platforms
               </h4>
-              <h2 className="text-4xl md:text-6xl font-semibold leading-13 text-slate-900  mb-12">
+              <h2 className="text-4xl md:text-6xl font-semibold md:leading-13 text-slate-900  mb-12">
                 ERP <br /> <span className="text-[#7191e6] ">HUB</span>
               </h2>
               <p className="text-lg text-slate-600 animate-in fade-in duration-700 delay-100 slide-in-from-bottom-8  border-l-4 border-[#7191e6] pl-6">

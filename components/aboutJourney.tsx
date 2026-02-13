@@ -52,7 +52,7 @@ const AboutJourney = () => {
 
   return (
     <section ref={ref} className="bg-gray-50 py-12 md:py-16 px-4">
-      <h2 className="text-4xl md:text-5xl font-semibold leading-13 text-[#7191e6] text-center mb-12">
+      <h2 className="text-4xl md:text-5xl font-semibold md:leading-13 text-[#7191e6] text-center mb-12">
         The Mvantix <span className="text-black"> Journey </span>
       </h2>
 

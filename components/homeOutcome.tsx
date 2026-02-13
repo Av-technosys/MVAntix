@@ -10,6 +10,7 @@ import {
   IconTimeline,
   IconChartLine
 } from "@tabler/icons-react";
+import Link from "next/link";
 
 const outcomes = [
   {
@@ -71,7 +72,7 @@ const HomeOutcome = () => {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900 "
+            className="text-4xl md:text-5xl font-semibold md:md:leading-13 text-slate-900 "
           >
             The Mvantix <span className="text-[#3d52a1]">Outcome</span>
           </motion.h2>
@@ -128,13 +129,18 @@ const HomeOutcome = () => {
           </div>
 
           <div className="mt-12 flex justify-center">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-black text-white font-semibold uppercase  rounded-2xl text-xl shadow-xl hover:bg-[#3d52a1] transition-all flex items-center gap-3"
-            >
-              Join The Future
-            </motion.button>
+          <motion.button
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  className="group relative px-8 py-3 bg-[#3d52a1] text-white font-semibold uppercase rounded-2xl text-xl shadow-xl overflow-hidden transition-all flex items-center gap-3 border-none"
+>
+
+  <Link href={"/career"} className="relative z-10 flex items-center gap-3">
+    Join The Future
+  </Link>
+
+  <div className="absolute inset-0 bg-[#7191e6] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+</motion.button>
           </div>
         </motion.div>
 

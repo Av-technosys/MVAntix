@@ -44,7 +44,7 @@ const CaseStudy = () => {
 
         {/* --- HEADER SECTION --- */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-20">
-          <div className="max-w-3xl space-y-4">
+          <div className="max-w-3xl space-y-4 text-center lg:text-left mx-auto lg:mx-0">
             <motion.span
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -55,9 +55,9 @@ const CaseStudy = () => {
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900 "
+              className="text-4xl md:text-5xl font-semibold md:md:leading-13 text-slate-900 "
             >
-              Delivering Measurable <br />
+              Delivering Measurable <br/>
               <span className="text-[#3d52a1]">Business Impact</span>
             </motion.h2>
           </div>
@@ -65,9 +65,9 @@ const CaseStudy = () => {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="max-w-sm lg:text-right"
+            className="max-w-sm lg:text-right text-center"
           >
-            <p className="text-lg text-slate-600 animate-in fade-in duration-700 delay-100 slide-in-from-bottom-8">
+            <p className="text-lg text-slate-600 md:mb-4 animate-in fade-in duration-700 delay-100 slide-in-from-bottom-8">
               We focus on real ROI, real performance, and real scalability.
             </p>
           </motion.div>

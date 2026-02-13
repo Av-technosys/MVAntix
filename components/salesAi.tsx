@@ -29,7 +29,7 @@ const SalesAi = () => {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-semibold leading-13 text-slate-900    "
+            className="text-4xl md:text-5xl font-semibold md:leading-13 text-slate-900    "
           >
             Ai , Machine Learning &  <br /> <span className="text-[#7191e6]">Data Science</span>
           </motion.h2>
